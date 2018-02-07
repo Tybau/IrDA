@@ -50,13 +50,13 @@ ARCHITECTURE Behavioral OF MAE_Decoder IS
 
 				WHEN State_Extract =>
 					if(rising_edge(tick)) then
-						if(is_valid = '0') then
-							EF <= State_Error;
-						elsif(i /= -1) then
+						if(is_valid = '1' and i /= -1) then
 							data(i) <= signal_demanchester;
 							i <= i - 1;
-						else
+						elsif(i = -1) then
 							EF <= State_Send;
+						else
+							EF <= State_Error;
 						end if;
 					end if;
 
