@@ -19,11 +19,11 @@ architecture desc_tickgen of tickgen is
 	signal sttrame : integer := 0; --compte jusqu'à 5700000
 
 begin
-	pburst : process(CLK)
+	pburst : process(CLK, reset)
 	begin
 
-		if (reset = '0') then
-			if (stburst = 1389) then
+		if (reset = '0' and rising_edge(CLK)) then
+			if (stburst = 347) then
 				tick_burst <= '1';
 				stburst <= 0;
 			else

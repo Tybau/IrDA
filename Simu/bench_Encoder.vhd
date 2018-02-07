@@ -26,6 +26,7 @@ BEGIN
   
   Test : process
   BEGIN
+    Go <= '0';
     Address <= "11010";
     Cmd <= "101100";
     wait for 100 ns;

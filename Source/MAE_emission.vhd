@@ -19,7 +19,7 @@ architecture desc_MAE_emission of MAE_emission is
 	signal reg : std_logic_vector (13 downto 0);
 	signal i: integer;
 begin
-	process(clk)
+	process(clk, tick)
 	begin
 		case EP is
 			when State_Begin =>
@@ -30,6 +30,7 @@ begin
 				end if;
 				enable <= '0';
 				out_trame <= '0';
+				clear <= '0';
 			when State_Clear =>
 				EF <= State_Init;
 				if (rising_edge(clk)) then

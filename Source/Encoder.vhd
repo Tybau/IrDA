@@ -39,6 +39,8 @@ ARCHITECTURE Behavioral OF Encoder IS
 				tick_burst => tick_burst);
 
 		MAE_emission : entity work.MAE_emission(desc_MAE_emission)
-			port map(address => address, Cmd => Cmd, clk => clk, go => go, start => tick_trame, tick => tick_bit, out_trame => trame, clear => clear, enable => enable);
+			port map(address => address, Cmd => Cmd, clk => clk, go => go, 
+			start => tick_trame, tick => tick_bit, out_trame => trame, 
+			clear => clear, enable => enable);
 
 END ARCHITECTURE Behavioral;
