@@ -15,7 +15,7 @@ architecture desc_MAE_emission of MAE_emission is
 	type State IS (State_Begin, State_Clear, State_Init, State_Send, State_Close);
 	signal EP: State := State_Begin;
 	signal EF: State;
-	signal toggle : std_logic := '0';
+	signal toggle : std_logic := '1';
 	signal reg : std_logic_vector (13 downto 0);
 	signal i: integer;
 begin
@@ -32,7 +32,9 @@ begin
 				out_trame <= '0';
 			when State_Clear =>
 				EF <= State_Init;
-				toggle <= not(toggle);
+				if (rising_edge(clk)) then
+					toggle <= not(toggle);
+				end if;
 				clear <= '1';
 			when State_Init =>
 				if (tick = '1') then
