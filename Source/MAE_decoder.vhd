@@ -68,5 +68,6 @@ ARCHITECTURE Behavioral OF MAE_Decoder IS
 					error_sig <= '1';
 					EF <= State_Begin;
 			END CASE;
+			EP <= EF;
 		END PROCESS;
 END ARCHITECTURE Behavioral;
