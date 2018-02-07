@@ -1,0 +1,32 @@
+
+State Machine - |IrDA|decoder:decoder|MAE_deburst:deburst|EP
+Name EP.E3 EP.E2 EP.E1 EP.E0 
+EP.E0 0 0 0 0 
+EP.E1 0 0 1 1 
+EP.E2 0 1 0 1 
+EP.E3 1 0 0 1 
+
+State Machine - |IrDA|decoder:decoder|MAE_demanchester:demanchester|State
+Name State.Out0_valid State.Out0 State.Out1_valid State.Out1 State.Start State.Init 
+State.Init 0 0 0 0 0 0 
+State.Start 0 0 0 0 1 1 
+State.Out1 0 0 0 1 0 1 
+State.Out1_valid 0 0 1 0 0 1 
+State.Out0 0 1 0 0 0 1 
+State.Out0_valid 1 0 0 0 0 1 
+
+State Machine - |IrDA|decoder:decoder|MAE_Decoder:decoder|EF
+Name EF.State_Error EF.State_Send EF.State_Extract EF.State_Init EF.State_Begin 
+EF.State_Begin 0 0 0 0 0 
+EF.State_Init 0 0 0 1 1 
+EF.State_Extract 0 0 1 0 1 
+EF.State_Send 0 1 0 0 1 
+EF.State_Error 1 0 0 0 1 
+
+State Machine - |IrDA|Encoder:encoder|MAE_emission:MAE_emission|EF
+Name EF.State_Close EF.State_Send EF.State_Init EF.State_Clear EF.State_Begin 
+EF.State_Begin 0 0 0 0 0 
+EF.State_Clear 0 0 0 1 1 
+EF.State_Init 0 0 1 0 1 
+EF.State_Send 0 1 0 0 1 
+EF.State_Close 1 0 0 0 1 
