@@ -4,24 +4,24 @@ USE ieee.std_logic_1164.all;
 entity bench_encoder is
 end entity bench_encoder;
 
-architecture arch_bench_encider is
-  signal CLK : in std_logic;
-  signal Address : in std_logic_vector(4 downto 0);
-  signal Cmd : in std_logic_vector(5 downto 0);
-  signal Go : in std_logic;
-  signal Tx : out std_logic;
+architecture arch_bench_encoder of bench_encoder is
+  signal CLK : std_logic;
+  signal Address : std_logic_vector(4 downto 0);
+  signal Cmd : std_logic_vector(5 downto 0);
+  signal Go : std_logic;
+  signal Tx : std_logic;
 
   BEGIN
 
-    CLK : process
+    cloked : process
       BEGIN
         CLK <= '0';
         wait for 10 ns;
         CLK <= '1';
         wait for 10 ns;
-      end process CLK;
+      end process cloked;
       
-      Test : process(CLK)
+      Test : process
         BEGIN
           Address <= "11010";
           Cmd <= "101100";
@@ -31,4 +31,6 @@ architecture arch_bench_encider is
           Go <= '0';
           wait for 100 ms;
         end process Test;
-          
+
+      end architecture arch_bench_encoder;
+        
