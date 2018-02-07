@@ -1,0 +1,8 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+entity MAE_demanchester is
+  port(CLK : in std_logic;
+       Tick : in std_logic;
+       Signal : in std_logic;
+       Is_Valid : out std_logic)

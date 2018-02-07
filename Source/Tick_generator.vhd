@@ -31,7 +31,7 @@ begin
 				stburst <= stburst + 1;
 			end if;
 	
-			if (stmanch = 44450) then
+			if (stmanch = 22225) then
 				tick_manch <= '1';
 				stmanch <= 1;
 			else
@@ -39,7 +39,7 @@ begin
 				stmanch <= stmanch + 1;
 			end if;
 	
-			if (stbit = 88900) then
+			if (stbit = 44450) then
 				tick_bit <= '1';
 				stbit <= 1;
 			else

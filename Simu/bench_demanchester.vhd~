@@ -1,0 +1,49 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+
+entity bench is
+end entity;
+
+architecture test of bench is
+  signal CLK : std_logic;
+  signal tick_manchester : std_logic;
+  signal signal_in : std_logic;
+  signal signal_out : std_logic;
+  signal is_valid : std_logic;
+
+BEGIN
+  tick : entity work.tickgen(desc_tickgen)
+    port map(CLK => CLK, tick_manch => tick_manchester);
+  demanchester : entity work.MAE_demanchester(arch_MAE_demanchester)
+    port map(CLK => CLK, reset => '0', Tick => tick_manchester, Signal_deburst => signal_in, is_valid => is_valid, Signal_Demanchester => signal_out)
+
+  CLK : process
+    CLK <= '0';
+    wait 10 ns;
+    CLK <= '1';
+    wait 10 ns;
+  end process CLK;
+
+  test : process
+    signal_in <= '0';
+    wait for 44450;
+    signal_in <= '1';
+    wait for 44450;
+    signal_in <= '0';
+    wait for 44450;
+    signal_in <= '1';
+    wait for 44450;
+    signal_in <= '1';
+    wait for 44450;
+    signal_in <= '0';
+    wait for 44450;
+    signal_in <= '1';
+    wait for 44450;
+    signal_in <= '0';
+    wait for 44450;
+    signal_in <= '1';
+    wait for 44450;
+    signal_in <= '1';
+    wait for 44450;
+    signal_in <= '1';
+    wait for 44450;
