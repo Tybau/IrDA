@@ -19,27 +19,26 @@ ARCHITECTURE Behavioral OF Encoder IS
 	SIGNAL trame: std_logic;
 	SIGNAL enable: std_logic;
 	SIGNAL manch: std_logic;
-	SIGNAL not_manch: std_logic;
 	SIGNAL manch_trame: std_logic;
 	SIGNAL burst: std_logic;
 	SIGNAL clear: std_logic;
 
 	BEGIN
-		not_manch <= NOT manch;
-		Tx <= burst AND manch_trame;
+		manch_trame <= manch xor trame;
+		Tx <= enable and manch_trame and burst;
 
-		ManchesterGenerator: entity work.Manchester_Generator(Behavioral)
+		ManchesterGenerator : entity work.Manchester_Generator(Behavioral)
 			port map(Tick => tick_manchester, CLK => CLK, Out_manch => manch);
 
-		BurstGenerator: entity work.Burst_Generator(Behavioral)
+		BurstGenerator : entity work.Burst_Generator(Behavioral)
 			port map(Tick => tick_burst, CLK => CLK, Out_burst => burst);
 
-		TickGenerator: entity work.tickgen(desc_tickgen)
+		TickGenerator : entity work.tickgen(desc_tickgen)
 			port map(CLK => CLK, reset => clear, tick_trame => tick_trame,
 				tick_bit => tick_bit, tick_manchester => tick_manchester,
 				tick_burst => tick_burst);
 
-		-- NEED STATE MACHINE
+		MAE_emission : entity work.MAE_emission(desc_MAE_emission)
+			port map(address => address, Cmd => Cmd, clk => clk, go => go, start => tick_trame, tick => tick_bit, out_trame => trame, clear => clear, enable => enable);
 
-		-- NEED MULTIPLEXER
 END ARCHITECTURE Behavioral;
