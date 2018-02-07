@@ -7,16 +7,18 @@ ENTITY Multiplexer IS
 		not_manch: IN std_logic;
 		enable: IN std_logic;
 		trame: IN std_logic;
-		manch_trame: OUT std_logic;
+		manch_trame: OUT std_logic
 	);
 END ENTITY Multiplexer;
 
 ARCHITECTURE Behavioral OF Multiplexer IS
-
 	BEGIN
-		if(enable = '1' and trame = '1') then
-			manch_trame <= manch;
-		else
-			manch_trame <= not_manch;
-		end if;
+		PROCESS(enable, trame)
+		BEGIN
+			if(enable = '1' and trame = '1') then
+				manch_trame <= manch;
+			else
+				manch_trame <= not_manch;
+			end if;
+		END PROCESS;
 END ARCHITECTURE Behavioral;

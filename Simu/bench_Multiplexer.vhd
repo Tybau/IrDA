@@ -5,11 +5,11 @@ ENTITY tb_Multiplexer IS
 END ENTITY tb_Multiplexer;
 
 ARCHITECTURE tb_Arch_Multiplexer OF tb_Multiplexer IS
-	SIGNAL manch: IN std_logic;
-	SIGNAL not_manch: IN std_logic;
-	SIGNAL enable: IN std_logic;
-	SIGNAL trame: IN std_logic;
-	SIGNAL manch_trame: OUT std_logic;
+	SIGNAL manch: std_logic;
+	SIGNAL not_manch: std_logic;
+	SIGNAL enable: std_logic;
+	SIGNAL trame: std_logic;
+	SIGNAL manch_trame: std_logic;
 
 BEGIN
 	myMultiplexer: entity work.Multiplexer(Behavioral)
