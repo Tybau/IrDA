@@ -17,9 +17,8 @@ END ENTITY MAE_Decoder;
 
 ARCHITECTURE Behavioral OF MAE_Decoder IS
 	type State IS (State_Begin, State_Init, State_Extract, State_Send, State_Error);
-	SIGNAL EP: State := State_Begin;
-	SIGNAL EF: State;
-	SIGNAL data: std_logic_vector(11 downto 0) := (others => '0');
+	SIGNAL EF: State := State_Begin;
+	SIGNAL data: std_logic_vector(12 downto 0) := (others => '0');
 	SIGNAL i: INTEGER;																-- Iterator
 	
 	BEGIN
@@ -29,7 +28,7 @@ ARCHITECTURE Behavioral OF MAE_Decoder IS
 		
 		PROCESS(CLK, tick)
 		BEGIN
-			CASE EP IS
+			CASE EF IS
 				WHEN State_Begin =>
 					enable <= '0';
 					error_sig <= '0';
@@ -40,7 +39,7 @@ ARCHITECTURE Behavioral OF MAE_Decoder IS
 				WHEN State_Init =>
 					if(rising_edge(tick)) then
 						data <= (others => '0');
-						i <= 11;
+						i <= 12;
 						if(signal_demanchester = '0' OR is_valid = '0') then
 							EF <= State_Error;
 						elsif(signal_demanchester = '1') then
@@ -68,6 +67,5 @@ ARCHITECTURE Behavioral OF MAE_Decoder IS
 					error_sig <= '1';
 					EF <= State_Begin;
 			END CASE;
-			EP <= EF;
 		END PROCESS;
 END ARCHITECTURE Behavioral;
