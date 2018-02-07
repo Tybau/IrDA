@@ -1,21 +1,21 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 
-ENTITY MAEDecoder IS
+ENTITY MAE_Decoder IS
 	PORT(
 		is_valid: IN std_logic;
 		signal_demanchester: IN std_logic;
 		tick: IN std_logic;
-		CLK: OUT std_logic;
+		CLK: IN std_logic;
 		enable: OUT std_logic;
 		address: OUT std_logic_vector(4 downto 0);
 		command: OUT std_logic_vector(5 downto 0);
 		toggle: OUT std_logic;
-		error: OUT std_logic
+		error_sig: OUT std_logic
 	);
-END ENTITY MAEDecoder;
+END ENTITY MAE_Decoder;
 
-ARCHITECTURE Behavioral OF MAEDecoder IS
+ARCHITECTURE Behavioral OF MAE_Decoder IS
 	type State IS (State_Begin, State_Init, State_Extract, State_Send, State_Error);
 	SIGNAL EP: State := State_Begin;
 	SIGNAL EF: State;
@@ -32,7 +32,7 @@ ARCHITECTURE Behavioral OF MAEDecoder IS
 			CASE EP IS
 				WHEN State_Begin =>
 					enable <= '0';
-					error <= '0';
+					error_sig <= '0';
 					if(signal_demanchester = '1') then
 						EF <= State_Init;
 					end if;
@@ -65,7 +65,8 @@ ARCHITECTURE Behavioral OF MAEDecoder IS
 					EF <= State_Begin;
 
 				WHEN State_Error =>
-					error <= '1';
+					error_sig <= '1';
 					EF <= State_Begin;
+			END CASE;
 		END PROCESS;
 END ARCHITECTURE Behavioral;
