@@ -35,7 +35,7 @@ ARCHITECTURE Behavioral OF Encoder IS
 
 		TickGenerator : entity work.tickgen(desc_tickgen)
 			port map(CLK => CLK, reset => clear, tick_trame => tick_trame,
-				tick_bit => tick_bit, tick_manchester => tick_manchester,
+				tick_bit => tick_bit, tick_manch => tick_manchester,
 				tick_burst => tick_burst);
 
 		MAE_emission : entity work.MAE_emission(desc_MAE_emission)
