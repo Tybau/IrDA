@@ -6,12 +6,12 @@ ENTITY MAEDecoder IS
 		is_valid: IN std_logic;
 		signal_demanchester: IN std_logic;
 		tick: IN std_logic;
-		CLK: OUT std_logic;
+		CLK: IN std_logic;
 		enable: OUT std_logic;
 		address: OUT std_logic_vector(4 downto 0);
 		command: OUT std_logic_vector(5 downto 0);
 		toggle: OUT std_logic;
-		error: OUT std_logic
+		error_sig: OUT std_logic
 	);
 END ENTITY MAEDecoder;
 
@@ -32,7 +32,7 @@ ARCHITECTURE Behavioral OF MAEDecoder IS
 			CASE EP IS
 				WHEN State_Begin =>
 					enable <= '0';
-					error <= '0';
+					error_sig <= '0';
 					if(signal_demanchester = '1') then
 						EF <= State_Init;
 					end if;
@@ -65,7 +65,8 @@ ARCHITECTURE Behavioral OF MAEDecoder IS
 					EF <= State_Begin;
 
 				WHEN State_Error =>
-					error <= '1';
+					error_sig <= '1';
 					EF <= State_Begin;
+			END CASE;
 		END PROCESS;
 END ARCHITECTURE Behavioral;
