@@ -25,7 +25,7 @@ begin
 		if (reset = '0' and rising_edge(CLK)) then
 			if (stburst = 347) then
 				tick_burst <= '1';
-				stburst <= 0;
+				stburst <= 1;
 			else
 				tick_burst <= '0';
 				stburst <= stburst + 1;
@@ -33,7 +33,7 @@ begin
 	
 			if (stmanch = 44450) then
 				tick_manch <= '1';
-				stmanch <= 0;
+				stmanch <= 1;
 			else
 				tick_manch <= '0';
 				stmanch <= stmanch + 1;
@@ -41,7 +41,7 @@ begin
 	
 			if (stbit = 88900) then
 				tick_bit <= '1';
-				stbit <= 0;
+				stbit <= 1;
 			else
 				tick_bit <= '0';
 				stbit <= stbit + 1;
@@ -49,7 +49,7 @@ begin
 	
 			if (sttrame = 5700000) then
 				tick_trame <= '1';
-				sttrame <= 0;
+				sttrame <= 1;
 			else
 				tick_trame <= '0';
 				sttrame <= sttrame + 1;
@@ -57,17 +57,17 @@ begin
 		end if;
 
 		if (reset = '1') then
-			stburst <= 0;
-			stmanch <= 0;
-			stbit <= 0;
-			sttrame <= 0;
+			stburst <= 1;
+			stmanch <= 1;
+			stbit <= 1;
+			sttrame <= 1;
 		end if;
 
 		if falling_edge(reset) then
-			stburst <= 0;
-			stmanch <= 0;
-			stbit <= 0;
-			sttrame <= 0;
+			stburst <= 1;
+			stmanch <= 1;
+			stbit <= 1;
+			sttrame <= 1;
 			tick_burst <= '1';
 			tick_manch <= '1';
 			tick_bit <= '1';
