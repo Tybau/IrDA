@@ -1,7 +1,7 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 
-ENTITY MAEDecoder IS
+ENTITY MAE_Decoder IS
 	PORT(
 		is_valid: IN std_logic;
 		signal_demanchester: IN std_logic;
@@ -13,9 +13,9 @@ ENTITY MAEDecoder IS
 		toggle: OUT std_logic;
 		error_sig: OUT std_logic
 	);
-END ENTITY MAEDecoder;
+END ENTITY MAE_Decoder;
 
-ARCHITECTURE Behavioral OF MAEDecoder IS
+ARCHITECTURE Behavioral OF MAE_Decoder IS
 	type State IS (State_Begin, State_Init, State_Extract, State_Send, State_Error);
 	SIGNAL EP: State := State_Begin;
 	SIGNAL EF: State;
