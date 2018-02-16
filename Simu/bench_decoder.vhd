@@ -5,7 +5,7 @@ entity bench_decoder is
 end entity bench_decoder;
 
 architecture test_bench_decoder of bench_decoder is
-  signal CLK, rst : std_logic;
+  signal CLK, rst : std_logic := '0';
   signal Address_in, Address_out : std_logic_vector(4 downto 0);
   signal Cmd_in, Cmd_out : std_logic_vector(5 downto 0);
   signal Go : std_logic;
@@ -32,15 +32,13 @@ BEGIN
   Test : process
   BEGIN
     Go <= '0';
-    rst <= '1';
     Address_in <= "11010";
     Cmd_in <= "101100";
     wait for 100 ns;
-    rst <= '0';
     Go <= '1';
-    wait for 300 ms;
+    wait for 30 ms;
     Go <= '0';
-    wait for 100 ms;
+    wait for 10 ms;
   end process Test;
   
 end architecture test_bench_decoder;
