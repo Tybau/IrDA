@@ -26,9 +26,8 @@ ARCHITECTURE Behavioral OF MAE_Decoder IS
 		address <= data(10 downto 6);
 		command <= data(5 downto 0);
 		
-		PROCESS(CLK)
+		PROCESS(CLK, tick)
 		BEGIN
-		if rising_edge(CLK) then
 			CASE EF IS
 				WHEN State_Begin =>
 					enable <= '0';
@@ -38,7 +37,7 @@ ARCHITECTURE Behavioral OF MAE_Decoder IS
 					end if;
 
 				WHEN State_Init =>
-					if(tick = '1') then
+					if(rising_edge(tick)) then
 						data <= (others => '0');
 						i <= 12;
 						if(signal_demanchester = '0' OR is_valid = '0') then
@@ -49,7 +48,7 @@ ARCHITECTURE Behavioral OF MAE_Decoder IS
 					end if;
 
 				WHEN State_Extract =>
-					if(tick = '1') then
+					if(rising_edge(tick)) then
 						if(is_valid = '1' and i /= -1) then
 							data(i) <= signal_demanchester;
 							i <= i - 1;
@@ -68,6 +67,5 @@ ARCHITECTURE Behavioral OF MAE_Decoder IS
 					error_sig <= '1';
 					EF <= State_Begin;
 			END CASE;
-		END IF;
-	END PROCESS;
+		END PROCESS;
 END ARCHITECTURE Behavioral;

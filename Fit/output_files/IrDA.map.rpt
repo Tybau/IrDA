@@ -1,5 +1,5 @@
 Analysis & Synthesis report for IrDA
-Wed Feb  7 17:21:45 2018
+Fri Feb 16 11:12:16 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -51,7 +51,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Feb  7 17:21:45 2018            ;
+; Analysis & Synthesis Status        ; Successful - Fri Feb 16 11:12:16 2018            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; IrDA                                             ;
 ; Top-level Entity Name              ; IrDA                                             ;
@@ -500,7 +500,7 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Wed Feb  7 17:21:42 2018
+    Info: Processing started: Fri Feb 16 11:12:12 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off IrDA -c IrDA
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/Tick_generator.vhd
@@ -973,9 +973,9 @@ Info (21057): Implemented 1041 device resources after synthesis - the final reso
     Info (21059): Implemented 15 output pins
     Info (21061): Implemented 1013 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 285 warnings
-    Info: Peak virtual memory: 656 megabytes
-    Info: Processing ended: Wed Feb  7 17:21:45 2018
-    Info: Elapsed time: 00:00:03
+    Info: Peak virtual memory: 671 megabytes
+    Info: Processing ended: Fri Feb 16 11:12:16 2018
+    Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:02
 
 

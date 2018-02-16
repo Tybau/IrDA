@@ -13,16 +13,15 @@ end entity MAE_emission;
 
 architecture desc_MAE_emission of MAE_emission is
 	type State IS (State_Begin, State_Clear, State_Init, State_Send, State_Close);
-	signal EF: State := State_Begin;
+	signal EP: State := State_Begin;
+	signal EF: State;
 	signal toggle : std_logic := '1';
 	signal reg : std_logic_vector (13 downto 0);
 	signal i: integer;
 begin
-	process(clk)
+	process(clk, tick)
 	begin
-	
-	if rising_edge(clk) then
-		case EF is
+		case EP is
 			when State_Begin =>
 				if (go = '1') then
 					EF <= State_Clear;
@@ -34,7 +33,9 @@ begin
 				clear <= '0';
 			when State_Clear =>
 				EF <= State_Init;
-				toggle <= not(toggle);
+				if (rising_edge(clk)) then
+					toggle <= not(toggle);
+				end if;
 				clear <= '1';
 			when State_Init =>
 				if (tick = '1') then
@@ -44,11 +45,11 @@ begin
 				i <= 13;
 				reg <= "11" & toggle & address & cmd;
 			when State_Send =>
-				if (tick = '1' and i /= -1) then
+				if (rising_edge(tick) and i /= -1) then
 					enable <= '1';
 					out_trame <= reg(i);
 					i <= i - 1;
-				elsif (tick = '1' and i = -1) then
+				elsif (rising_edge(tick) and i = -1) then
 					EF <= State_Close;
 				end if;
 			when State_Close =>
@@ -61,7 +62,7 @@ begin
 				end if;
 				enable <= '0';
 				out_trame <= '0';
-			end case;
-		end if;
+		end case;
+		EP <= EF;
 	end process;
 end architecture desc_MAE_emission;
