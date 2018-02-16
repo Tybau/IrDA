@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for IrDA
-Wed Feb  7 17:22:18 2018
+Fri Feb 16 11:12:48 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -1885,8 +1885,8 @@ No paths to report.
 ; -2.097 ; Encoder:encoder|tickgen:TickGenerator|stbit[9]    ; Encoder:encoder|tickgen:TickGenerator|stbit[30]          ; CLK          ; CLK         ; 1.000        ; -0.038     ; 2.609      ;
 ; -2.094 ; Encoder:encoder|tickgen:TickGenerator|sttrame[13] ; Encoder:encoder|tickgen:TickGenerator|sttrame[5]         ; CLK          ; CLK         ; 1.000        ; -0.018     ; 2.626      ;
 ; -2.094 ; Encoder:encoder|tickgen:TickGenerator|sttrame[6]  ; Encoder:encoder|tickgen:TickGenerator|sttrame[31]        ; CLK          ; CLK         ; 1.000        ; -0.034     ; 2.620      ;
-; -2.091 ; Encoder:encoder|tickgen:TickGenerator|sttrame[9]  ; Encoder:encoder|tickgen:TickGenerator|tick_trame         ; CLK          ; CLK         ; 1.000        ; -0.115     ; 2.627      ;
 ; -2.091 ; Encoder:encoder|tickgen:TickGenerator|sttrame[0]  ; Encoder:encoder|tickgen:TickGenerator|sttrame[5]         ; CLK          ; CLK         ; 1.000        ; -0.010     ; 2.631      ;
+; -2.091 ; Encoder:encoder|tickgen:TickGenerator|sttrame[9]  ; Encoder:encoder|tickgen:TickGenerator|tick_trame         ; CLK          ; CLK         ; 1.000        ; -0.115     ; 2.627      ;
 ; -2.090 ; Encoder:encoder|tickgen:TickGenerator|stbit[9]    ; Encoder:encoder|tickgen:TickGenerator|stbit[26]          ; CLK          ; CLK         ; 1.000        ; -0.037     ; 2.602      ;
 ; -2.082 ; Encoder:encoder|tickgen:TickGenerator|sttrame[9]  ; Encoder:encoder|tickgen:TickGenerator|sttrame[26]        ; CLK          ; CLK         ; 1.000        ; -0.032     ; 2.600      ;
 ; -2.082 ; Encoder:encoder|tickgen:TickGenerator|stburst[0]  ; Encoder:encoder|tickgen:TickGenerator|tick_burst         ; CLK          ; CLK         ; 1.000        ; -0.011     ; 2.631      ;
@@ -2845,7 +2845,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Wed Feb  7 17:22:14 2018
+    Info: Processing started: Fri Feb 16 11:12:44 2018
 Info: Command: quartus_sta IrDA -c IrDA
 Info: qsta_default_script.tcl version: #1
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -2957,8 +2957,8 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 5 warnings
-    Info: Peak virtual memory: 662 megabytes
-    Info: Processing ended: Wed Feb  7 17:22:18 2018
+    Info: Peak virtual memory: 659 megabytes
+    Info: Processing ended: Fri Feb 16 11:12:48 2018
     Info: Elapsed time: 00:00:04
     Info: Total CPU time (on all processors): 00:00:03
 
