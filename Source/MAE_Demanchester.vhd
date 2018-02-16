@@ -16,11 +16,11 @@ architecture arch_MAE_demanchester of MAE_demanchester is
   signal State : StateType := Init;
   
 BEGIN
-  process(CLK, Tick, Reset)
+  process(CLK, Reset)
   BEGIN
     if Reset = '1' then
       State <= Init;
-    elsif rising_edge(Tick) then
+    elsif rising_edge(clk) and tick = '1' then
       case State is
       when Init =>
         if Signal_deburst = '0' then

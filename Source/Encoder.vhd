@@ -3,7 +3,7 @@ USE ieee.std_logic_1164.all;
 
 ENTITY Encoder IS
 	PORT(
-		CLK: IN std_logic;
+		CLK, rst: IN std_logic;
 		Address: IN std_logic_vector(4 downto 0);
 		Cmd: IN std_logic_vector(5 downto 0);
 		Go: In std_logic;
@@ -28,10 +28,10 @@ ARCHITECTURE Behavioral OF Encoder IS
 		Tx <= enable and manch_trame and burst;
 
 		ManchesterGenerator : entity work.Manchester_Generator(Behavioral)
-			port map(Tick => tick_manchester, CLK => CLK, Out_manch => manch);
+			port map(Tick => tick_manchester, CLK => CLK, Out_manch => manch, rst => rst);
 
 		BurstGenerator : entity work.Burst_Generator(Behavioral)
-			port map(Tick => tick_burst, CLK => CLK, Out_burst => burst);
+			port map(Tick => tick_burst, CLK => CLK, Out_burst => burst, rst => rst);
 
 		TickGenerator : entity work.tickgen(desc_tickgen)
 			port map(CLK => CLK, reset => clear, tick_trame => tick_trame,
@@ -41,6 +41,6 @@ ARCHITECTURE Behavioral OF Encoder IS
 		MAE_emission : entity work.MAE_emission(desc_MAE_emission)
 			port map(address => address, Cmd => Cmd, clk => clk, go => go, 
 			start => tick_trame, tick => tick_bit, out_trame => trame, 
-			clear => clear, enable => enable);
+			clear => clear, enable => enable, rst => rst);
 
 END ARCHITECTURE Behavioral;

@@ -6,7 +6,7 @@ entity MAE_emission is
 	port(
 		address: in std_logic_vector (4 downto 0);
 		cmd: in std_logic_vector (5 downto 0);
-		clk, go, start, tick: in std_logic;
+		clk, go, start, tick, rst: in std_logic;
 		out_trame, clear, enable: out std_logic
 	);
 end entity MAE_emission;
@@ -22,46 +22,51 @@ begin
 	begin
 	
 	if rising_edge(clk) then
-		case EF is
-			when State_Begin =>
-				if (go = '1') then
-					EF <= State_Clear;
-				else
-					EF <= State_Begin;
-				end if;
-				enable <= '0';
-				out_trame <= '0';
-				clear <= '0';
-			when State_Clear =>
-				EF <= State_Init;
-				toggle <= not(toggle);
-				clear <= '1';
-			when State_Init =>
-				if (tick = '1') then
-					EF <= State_Send;
-				end if;
-				clear <= '0';
-				i <= 13;
-				reg <= "11" & toggle & address & cmd;
-			when State_Send =>
-				if (tick = '1' and i /= -1) then
-					enable <= '1';
-					out_trame <= reg(i);
-					i <= i - 1;
-				elsif (tick = '1' and i = -1) then
-					EF <= State_Close;
-				end if;
-			when State_Close =>
-				if (go = '1' and start = '1') then
+		if rst = '1' then
+			EF <= State_Begin;
+			toggle <= '1';
+		else
+			case EF is
+				when State_Begin =>
+					if (go = '1') then
+						EF <= State_Clear;
+					else
+						EF <= State_Begin;
+					end if;
+					enable <= '0';
+					out_trame <= '0';
+					clear <= '0';
+				when State_Clear =>
 					EF <= State_Init;
-				elsif (go = '1' and start = '0') then
-					EF <= State_Close;
-				elsif (go = '0') then
-					EF <= State_Begin;
-				end if;
-				enable <= '0';
-				out_trame <= '0';
-			end case;
+					toggle <= not(toggle);
+					clear <= '1';
+				when State_Init =>
+					if (tick = '1') then
+						EF <= State_Send;
+					end if;
+					clear <= '0';
+					i <= 13;
+					reg <= "11" & toggle & address & cmd;
+				when State_Send =>
+					if (tick = '1' and i /= -1) then
+						enable <= '1';
+						out_trame <= reg(i);
+						i <= i - 1;
+					elsif (tick = '1' and i = -1) then
+						EF <= State_Close;
+					end if;
+				when State_Close =>
+					if (go = '1' and start = '1') then
+						EF <= State_Init;
+					elsif (go = '1' and start = '0') then
+						EF <= State_Close;
+					elsif (go = '0') then
+						EF <= State_Begin;
+					end if;
+					enable <= '0';
+					out_trame <= '0';
+				end case;
+			end if;
 		end if;
 	end process;
 end architecture desc_MAE_emission;

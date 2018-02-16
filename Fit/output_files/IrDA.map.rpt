@@ -1,5 +1,5 @@
 Analysis & Synthesis report for IrDA
-Fri Feb 16 11:12:16 2018
+Fri Feb 16 15:29:07 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -11,21 +11,20 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
   5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
+  6. Partition Status Summary
+  7. Partition for Top-Level Resource Utilization by Entity
   8. State Machine - |IrDA|decoder:decoder|MAE_deburst:deburst|EP
   9. State Machine - |IrDA|decoder:decoder|MAE_demanchester:demanchester|State
  10. State Machine - |IrDA|decoder:decoder|MAE_Decoder:decoder|EF
  11. State Machine - |IrDA|Encoder:encoder|MAE_emission:MAE_emission|EF
  12. User-Specified and Inferred Latches
  13. Registers Removed During Synthesis
- 14. General Register Statistics
- 15. Inverted Register Statistics
- 16. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 15. Partition Dependent Files
+ 16. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
  17. Port Connectivity Checks: "decoder:decoder|tickgen:tick_gen"
- 18. Port Connectivity Checks: "decoder:decoder"
- 19. Elapsed Time Per Partition
- 20. Analysis & Synthesis Messages
+ 18. SignalTap II Logic Analyzer Settings
+ 19. Analysis & Synthesis Messages
 
 
 
@@ -51,20 +50,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Feb 16 11:12:16 2018            ;
+; Analysis & Synthesis Status        ; Successful - Fri Feb 16 15:29:07 2018            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; IrDA                                             ;
 ; Top-level Entity Name              ; IrDA                                             ;
 ; Family                             ; Cyclone IV E                                     ;
-; Total logic elements               ; 1,013                                            ;
-;     Total combinational functions  ; 1,000                                            ;
-;     Dedicated logic registers      ; 119                                              ;
-; Total registers                    ; 119                                              ;
-; Total pins                         ; 28                                               ;
-; Total virtual pins                 ; 0                                                ;
-; Total memory bits                  ; 0                                                ;
-; Embedded Multiplier 9-bit elements ; 0                                                ;
-; Total PLLs                         ; 0                                                ;
+; Total logic elements               ; N/A until Partition Merge                        ;
+;     Total combinational functions  ; N/A until Partition Merge                        ;
+;     Dedicated logic registers      ; N/A until Partition Merge                        ;
+; Total registers                    ; N/A until Partition Merge                        ;
+; Total pins                         ; N/A until Partition Merge                        ;
+; Total virtual pins                 ; N/A until Partition Merge                        ;
+; Total memory bits                  ; N/A until Partition Merge                        ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                        ;
+; Total PLLs                         ; N/A until Partition Merge                        ;
 +------------------------------------+--------------------------------------------------+
 
 
@@ -164,79 +163,110 @@ applicable agreement for further details.
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ; < 0.1%      ;
-;     Processors 3-4         ;   0.0%      ;
+;     Processors 2-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                       ;
-+------------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path   ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                              ; Library ;
-+------------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------+---------+
-; ../Source/Tick_generator.vhd       ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/Tick_generator.vhd       ;         ;
-; ../Source/Manchester_Generator.vhd ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/Manchester_Generator.vhd ;         ;
-; ../Source/MAE_emission.vhd         ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/MAE_emission.vhd         ;         ;
-; ../Source/MAE_Demanchester.vhd     ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/MAE_Demanchester.vhd     ;         ;
-; ../Source/MAE_decoder.vhd          ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/MAE_decoder.vhd          ;         ;
-; ../Source/MAE_deburst.vhd          ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/MAE_deburst.vhd          ;         ;
-; ../Source/Encoder.vhd              ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/Encoder.vhd              ;         ;
-; ../Source/Decoder.vhd              ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/Decoder.vhd              ;         ;
-; ../Source/Burst_Generator.vhd      ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/Burst_Generator.vhd      ;         ;
-; IrDA.vhd                           ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Fit/IrDA.vhd                    ;         ;
-+------------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                    ;
++------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path   ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                              ; Library ;
++------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
+; ../Source/Tick_generator.vhd       ; yes             ; User VHDL File               ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/Tick_generator.vhd       ;         ;
+; ../Source/Manchester_Generator.vhd ; yes             ; User VHDL File               ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/Manchester_Generator.vhd ;         ;
+; ../Source/MAE_emission.vhd         ; yes             ; User VHDL File               ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/MAE_emission.vhd         ;         ;
+; ../Source/MAE_Demanchester.vhd     ; yes             ; User VHDL File               ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/MAE_Demanchester.vhd     ;         ;
+; ../Source/MAE_decoder.vhd          ; yes             ; User VHDL File               ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/MAE_decoder.vhd          ;         ;
+; ../Source/MAE_deburst.vhd          ; yes             ; User VHDL File               ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/MAE_deburst.vhd          ;         ;
+; ../Source/Encoder.vhd              ; yes             ; User VHDL File               ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/Encoder.vhd              ;         ;
+; ../Source/Decoder.vhd              ; yes             ; User VHDL File               ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/Decoder.vhd              ;         ;
+; ../Source/Burst_Generator.vhd      ; yes             ; User VHDL File               ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/Burst_Generator.vhd      ;         ;
+; IrDA.vhd                           ; yes             ; User VHDL File               ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Fit/IrDA.vhd                    ;         ;
+; sld_signaltap.vhd                  ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/sld_signaltap.vhd                        ;         ;
+; sld_signaltap_impl.vhd             ; yes             ; Encrypted Megafunction       ; /opt/altera/13.0/quartus/libraries/megafunctions/sld_signaltap_impl.vhd                   ;         ;
+; sld_ela_control.vhd                ; yes             ; Encrypted Megafunction       ; /opt/altera/13.0/quartus/libraries/megafunctions/sld_ela_control.vhd                      ;         ;
+; lpm_shiftreg.tdf                   ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/lpm_shiftreg.tdf                         ;         ;
+; lpm_constant.inc                   ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/lpm_constant.inc                         ;         ;
+; dffeea.inc                         ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/dffeea.inc                               ;         ;
+; aglobal130.inc                     ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/aglobal130.inc                           ;         ;
+; sld_mbpmg.vhd                      ; yes             ; Encrypted Megafunction       ; /opt/altera/13.0/quartus/libraries/megafunctions/sld_mbpmg.vhd                            ;         ;
+; sld_transition_detector.vhd        ; yes             ; Encrypted Megafunction       ; /opt/altera/13.0/quartus/libraries/megafunctions/sld_transition_detector.vhd              ;         ;
+; sld_ela_trigger_flow_mgr.vhd       ; yes             ; Encrypted Megafunction       ; /opt/altera/13.0/quartus/libraries/megafunctions/sld_ela_trigger_flow_mgr.vhd             ;         ;
+; sld_buffer_manager.vhd             ; yes             ; Encrypted Megafunction       ; /opt/altera/13.0/quartus/libraries/megafunctions/sld_buffer_manager.vhd                   ;         ;
+; sld_gap_detector.vhd               ; yes             ; Encrypted Megafunction       ; /opt/altera/13.0/quartus/libraries/megafunctions/sld_gap_detector.vhd                     ;         ;
+; altsyncram.tdf                     ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/altsyncram.tdf                           ;         ;
+; stratix_ram_block.inc              ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/stratix_ram_block.inc                    ;         ;
+; lpm_mux.inc                        ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/lpm_mux.inc                              ;         ;
+; lpm_decode.inc                     ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/lpm_decode.inc                           ;         ;
+; a_rdenreg.inc                      ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/a_rdenreg.inc                            ;         ;
+; altrom.inc                         ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/altrom.inc                               ;         ;
+; altram.inc                         ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/altram.inc                               ;         ;
+; altdpram.inc                       ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/altdpram.inc                             ;         ;
+; db/altsyncram_6124.tdf             ; yes             ; Auto-Generated Megafunction  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Fit/db/altsyncram_6124.tdf      ;         ;
+; db/decode_jsa.tdf                  ; yes             ; Auto-Generated Megafunction  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Fit/db/decode_jsa.tdf           ;         ;
+; db/mux_gob.tdf                     ; yes             ; Auto-Generated Megafunction  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Fit/db/mux_gob.tdf              ;         ;
+; altdpram.tdf                       ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/altdpram.tdf                             ;         ;
+; memmodes.inc                       ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/others/maxplus2/memmodes.inc                           ;         ;
+; a_hdffe.inc                        ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/a_hdffe.inc                              ;         ;
+; alt_le_rden_reg.inc                ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/alt_le_rden_reg.inc                      ;         ;
+; altsyncram.inc                     ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/altsyncram.inc                           ;         ;
+; lpm_mux.tdf                        ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/lpm_mux.tdf                              ;         ;
+; muxlut.inc                         ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/muxlut.inc                               ;         ;
+; bypassff.inc                       ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/bypassff.inc                             ;         ;
+; altshift.inc                       ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/altshift.inc                             ;         ;
+; db/mux_1tc.tdf                     ; yes             ; Auto-Generated Megafunction  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Fit/db/mux_1tc.tdf              ;         ;
+; lpm_decode.tdf                     ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/lpm_decode.tdf                           ;         ;
+; declut.inc                         ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/declut.inc                               ;         ;
+; lpm_compare.inc                    ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/lpm_compare.inc                          ;         ;
+; db/decode_dvf.tdf                  ; yes             ; Auto-Generated Megafunction  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Fit/db/decode_dvf.tdf           ;         ;
+; lpm_counter.tdf                    ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/lpm_counter.tdf                          ;         ;
+; lpm_add_sub.inc                    ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/lpm_add_sub.inc                          ;         ;
+; cmpconst.inc                       ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/cmpconst.inc                             ;         ;
+; lpm_counter.inc                    ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/lpm_counter.inc                          ;         ;
+; alt_counter_stratix.inc            ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/alt_counter_stratix.inc                  ;         ;
+; db/cntr_fgi.tdf                    ; yes             ; Auto-Generated Megafunction  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Fit/db/cntr_fgi.tdf             ;         ;
+; db/cntr_bbj.tdf                    ; yes             ; Auto-Generated Megafunction  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Fit/db/cntr_bbj.tdf             ;         ;
+; db/cntr_mgi.tdf                    ; yes             ; Auto-Generated Megafunction  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Fit/db/cntr_mgi.tdf             ;         ;
+; db/cmpr_rgc.tdf                    ; yes             ; Auto-Generated Megafunction  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Fit/db/cmpr_rgc.tdf             ;         ;
+; db/cntr_23j.tdf                    ; yes             ; Auto-Generated Megafunction  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Fit/db/cntr_23j.tdf             ;         ;
+; db/cmpr_ngc.tdf                    ; yes             ; Auto-Generated Megafunction  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Fit/db/cmpr_ngc.tdf             ;         ;
+; sld_rom_sr.vhd                     ; yes             ; Encrypted Megafunction       ; /opt/altera/13.0/quartus/libraries/megafunctions/sld_rom_sr.vhd                           ;         ;
+; sld_hub.vhd                        ; yes             ; Encrypted Megafunction       ; /opt/altera/13.0/quartus/libraries/megafunctions/sld_hub.vhd                              ;         ;
+; sld_jtag_hub.vhd                   ; yes             ; Encrypted Megafunction       ; /opt/altera/13.0/quartus/libraries/megafunctions/sld_jtag_hub.vhd                         ;         ;
++------------------------------------+-----------------+------------------------------+-------------------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 1,013     ;
-;                                             ;           ;
-; Total combinational functions               ; 1000      ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 303       ;
-;     -- 3 input functions                    ; 275       ;
-;     -- <=2 input functions                  ; 422       ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 721       ;
-;     -- arithmetic mode                      ; 279       ;
-;                                             ;           ;
-; Total registers                             ; 119       ;
-;     -- Dedicated logic registers            ; 119       ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 28        ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-; Maximum fan-out node                        ; CLK~input ;
-; Maximum fan-out                             ; 265       ;
-; Total fan-out                               ; 3220      ;
-; Average fan-out                             ; 2.74      ;
-+---------------------------------------------+-----------+
++--------------------------------------------------------------------+
+; Partition Status Summary                                           ;
++--------------------------------+-------------+---------------------+
+; Partition Name                 ; Synthesized ; Reason              ;
++--------------------------------+-------------+---------------------+
+; Top                            ; no          ; No relevant changes ;
+; sld_signaltap:auto_signaltap_0 ; no          ; No relevant changes ;
+; sld_hub:auto_hub               ; no          ; No relevant changes ;
++--------------------------------+-------------+---------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                          ;
+; Partition for Top-Level Resource Utilization by Entity                                                                                                                                                                                       ;
 +--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                       ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                            ; Library Name ;
 +--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------+--------------+
-; |IrDA                                            ; 1000 (0)          ; 119 (0)      ; 0           ; 0            ; 0       ; 0         ; 28   ; 0            ; |IrDA                                                          ; work         ;
-;    |Encoder:encoder|                             ; 546 (0)           ; 57 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder                                          ; work         ;
-;       |Burst_Generator:BurstGenerator|           ; 3 (3)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder|Burst_Generator:BurstGenerator           ; work         ;
-;       |MAE_emission:MAE_emission|                ; 102 (102)         ; 53 (53)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder|MAE_emission:MAE_emission                ; work         ;
+; |IrDA                                            ; 645 (0)           ; 349 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA                                                          ; work         ;
+;    |Encoder:encoder|                             ; 345 (1)           ; 188 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder                                          ; work         ;
+;       |Burst_Generator:BurstGenerator|           ; 4 (4)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder|Burst_Generator:BurstGenerator           ; work         ;
+;       |MAE_emission:MAE_emission|                ; 132 (132)         ; 53 (53)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder|MAE_emission:MAE_emission                ; work         ;
 ;       |Manchester_Generator:ManchesterGenerator| ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder|Manchester_Generator:ManchesterGenerator ; work         ;
-;       |tickgen:TickGenerator|                    ; 440 (440)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder|tickgen:TickGenerator                    ; work         ;
-;    |decoder:decoder|                             ; 454 (0)           ; 62 (0)       ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder                                          ; work         ;
-;       |MAE_Decoder:decoder|                      ; 116 (116)         ; 51 (51)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder|MAE_Decoder:decoder                      ; work         ;
-;       |MAE_deburst:deburst|                      ; 4 (4)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder|MAE_deburst:deburst                      ; work         ;
-;       |MAE_demanchester:demanchester|            ; 10 (10)           ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder|MAE_demanchester:demanchester            ; work         ;
-;       |tickgen:tick_gen|                         ; 324 (324)         ; 0 (0)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder|tickgen:tick_gen                         ; work         ;
+;       |tickgen:TickGenerator|                    ; 207 (207)         ; 131 (131)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder|tickgen:TickGenerator                    ; work         ;
+;    |decoder:decoder|                             ; 300 (0)           ; 161 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder                                          ; work         ;
+;       |MAE_Decoder:decoder|                      ; 129 (129)         ; 51 (51)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder|MAE_Decoder:decoder                      ; work         ;
+;       |MAE_deburst:deburst|                      ; 7 (7)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder|MAE_deburst:deburst                      ; work         ;
+;       |MAE_demanchester:demanchester|            ; 11 (11)           ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder|MAE_demanchester:demanchester            ; work         ;
+;       |tickgen:tick_gen|                         ; 153 (153)         ; 99 (99)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder|tickgen:tick_gen                         ; work         ;
 +--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -297,174 +327,120 @@ Encoding Type:  One-Hot
 +----------------+----------------+---------------+---------------+----------------+----------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------+
-; User-Specified and Inferred Latches                                                                                                           ;
-+-------------------------------------------------------------------+--------------------------------------------------+------------------------+
-; Latch Name                                                        ; Latch Enable Signal                              ; Free of Timing Hazards ;
-+-------------------------------------------------------------------+--------------------------------------------------+------------------------+
-; decoder:decoder|MAE_demanchester:demanchester|Is_Valid            ; GND                                              ; yes                    ;
-; decoder:decoder|MAE_demanchester:demanchester|Signal_Demanchester ; GND                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|tick_bit                         ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[0]                         ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[1]                         ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[2]                         ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[3]                         ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[4]                         ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[5]                         ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[6]                         ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[7]                         ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[8]                         ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[9]                         ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[10]                        ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[11]                        ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[12]                        ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[13]                        ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[14]                        ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[15]                        ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[16]                        ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[17]                        ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[18]                        ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[19]                        ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[20]                        ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[21]                        ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[22]                        ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[23]                        ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[24]                        ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[25]                        ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[26]                        ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[27]                        ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[28]                        ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[29]                        ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[30]                        ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stbit[31]                        ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|tick_manch                       ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|tick_burst                       ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[0]                       ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[1]                       ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[2]                       ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[3]                       ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[4]                       ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[5]                       ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[6]                       ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[7]                       ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[8]                       ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[9]                       ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[10]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[11]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[12]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[13]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[14]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[15]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[16]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[17]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[18]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[19]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[20]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[21]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[22]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[23]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[24]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[25]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[26]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[27]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[28]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[29]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[30]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stmanch[31]                      ; CLK                                              ; yes                    ;
-; Encoder:encoder|tickgen:TickGenerator|tick_manch                  ; Encoder:encoder|tickgen:TickGenerator|tick_trame ; yes                    ;
-; Encoder:encoder|tickgen:TickGenerator|tick_bit                    ; Encoder:encoder|tickgen:TickGenerator|tick_trame ; yes                    ;
-; Encoder:encoder|tickgen:TickGenerator|tick_burst                  ; Encoder:encoder|tickgen:TickGenerator|tick_trame ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stburst[0]                       ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stburst[1]                       ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stburst[2]                       ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stburst[3]                       ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stburst[4]                       ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stburst[5]                       ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stburst[6]                       ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stburst[7]                       ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stburst[8]                       ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stburst[9]                       ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stburst[10]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stburst[11]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stburst[12]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stburst[13]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stburst[14]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stburst[15]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stburst[16]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stburst[17]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stburst[18]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stburst[19]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stburst[20]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stburst[21]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stburst[22]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stburst[23]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stburst[24]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stburst[25]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stburst[26]                      ; CLK                                              ; yes                    ;
-; decoder:decoder|tickgen:tick_gen|stburst[27]                      ; CLK                                              ; yes                    ;
-; Number of user-specified and inferred latches = 233               ;                                                  ;                        ;
-+-------------------------------------------------------------------+--------------------------------------------------+------------------------+
-Table restricted to first 100 entries. Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
++------------------------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                                              ;
++-------------------------------------------------------------------+---------------------+------------------------+
+; Latch Name                                                        ; Latch Enable Signal ; Free of Timing Hazards ;
++-------------------------------------------------------------------+---------------------+------------------------+
+; decoder:decoder|MAE_demanchester:demanchester|Is_Valid            ; GND                 ; yes                    ;
+; decoder:decoder|MAE_demanchester:demanchester|Signal_Demanchester ; GND                 ; yes                    ;
+; Number of user-specified and inferred latches = 2                 ;                     ;                        ;
++-------------------------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+-----------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                            ;
-+------------------------------------------------------+----------------------------------------+
-; Register name                                        ; Reason for Removal                     ;
-+------------------------------------------------------+----------------------------------------+
-; Encoder:encoder|MAE_emission:MAE_emission|reg[12,13] ; Stuck at VCC due to stuck port data_in ;
-; Total Number of Removed Registers = 2                ;                                        ;
-+------------------------------------------------------+----------------------------------------+
++-------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                ;
++------------------------------------------------------+------------------------------------------------------------+
+; Register name                                        ; Reason for Removal                                         ;
++------------------------------------------------------+------------------------------------------------------------+
+; Encoder:encoder|MAE_emission:MAE_emission|reg[12,13] ; Stuck at VCC due to stuck port data_in                     ;
+; Encoder:encoder|tickgen:TickGenerator|sttrame[0]     ; Merged with Encoder:encoder|tickgen:TickGenerator|stbit[0] ;
+; Total Number of Removed Registers = 3                ;                                                            ;
++------------------------------------------------------+------------------------------------------------------------+
 
 
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 119   ;
-; Number of registers using Synchronous Clear  ; 12    ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 58    ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                           ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
+; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |IrDA|Encoder:encoder|MAE_emission:MAE_emission|i[2] ;
+; 6:1                ; 30 bits   ; 120 LEs       ; 30 LEs               ; 90 LEs                 ; Yes        ; |IrDA|decoder:decoder|MAE_Decoder:decoder|i[15]      ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |IrDA|decoder:decoder|MAE_Decoder:decoder|i[0]       ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |IrDA|decoder:decoder|MAE_deburst:deburst|EP         ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |IrDA|Encoder:encoder|MAE_emission:MAE_emission|EF   ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |IrDA|decoder:decoder|MAE_Decoder:decoder|EF         ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 8 LEs                ; 6 LEs                  ; No         ; |IrDA|decoder:decoder|MAE_Decoder:decoder|EF         ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------+
 
 
-+------------------------------------------------------------+
-; Inverted Register Statistics                               ;
-+--------------------------------------------------+---------+
-; Inverted Register                                ; Fan out ;
-+--------------------------------------------------+---------+
-; decoder:decoder|MAE_Decoder:decoder|i[0]         ; 14      ;
-; decoder:decoder|MAE_Decoder:decoder|i[31]        ; 2       ;
-; Encoder:encoder|MAE_emission:MAE_emission|i[0]   ; 8       ;
-; Encoder:encoder|MAE_emission:MAE_emission|i[31]  ; 3       ;
-; Encoder:encoder|MAE_emission:MAE_emission|toggle ; 2       ;
-; Total number of inverted registers = 5           ;         ;
-+--------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------+
+; Partition Dependent Files                                                                           ;
++------------------------------------+-------------------+---------+----------------------------------+
+; File                               ; Location          ; Library ; Checksum                         ;
++------------------------------------+-------------------+---------+----------------------------------+
+; IrDA.vhd                           ; Project Directory ; work    ; 68b9d24b3c97b412a4a536312f8b14d6 ;
+; ../Source/Burst_Generator.vhd      ; Project Directory ; work    ; f1faad8e6358daf1a834a4d9d7e1363c ;
+; ../Source/Decoder.vhd              ; Project Directory ; work    ; 3d0b327442eb48cd7ffd2909fc5d38ed ;
+; ../Source/Encoder.vhd              ; Project Directory ; work    ; 7814b2003be20c1def3f96529ae89dda ;
+; ../Source/MAE_Demanchester.vhd     ; Project Directory ; work    ; faf31e7f7af787eb68438ae7ed9bd2bb ;
+; ../Source/MAE_deburst.vhd          ; Project Directory ; work    ; f734c2c97dc017a8f408abd054c7fae2 ;
+; ../Source/MAE_decoder.vhd          ; Project Directory ; work    ; 60004af5a158ef34a72717360abf603b ;
+; ../Source/MAE_emission.vhd         ; Project Directory ; work    ; 04fc1c4873a8b2c58e3c9f40579c774c ;
+; ../Source/Manchester_Generator.vhd ; Project Directory ; work    ; 8330e75fbf4dd5cdc9916a3e175e762b ;
+; ../Source/Tick_generator.vhd       ; Project Directory ; work    ; 0c8c9465d199c08e214f736b6eae29b7 ;
++------------------------------------+-------------------+---------+----------------------------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                          ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
-; 4:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |IrDA|Encoder:encoder|MAE_emission:MAE_emission|i[3]      ;
-; 6:1                ; 30 bits   ; 120 LEs       ; 30 LEs               ; 90 LEs                 ; Yes        ; |IrDA|decoder:decoder|MAE_Decoder:decoder|i[1]            ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |IrDA|decoder:decoder|MAE_Decoder:decoder|i[31]           ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |IrDA|decoder:decoder|tickgen:tick_gen|stburst[31]        ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |IrDA|decoder:decoder|tickgen:tick_gen|stmanch[21]        ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |IrDA|decoder:decoder|tickgen:tick_gen|stbit[10]          ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |IrDA|Encoder:encoder|tickgen:TickGenerator|stbit[21]     ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |IrDA|Encoder:encoder|tickgen:TickGenerator|sttrame[22]   ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |IrDA|Encoder:encoder|tickgen:TickGenerator|stmanch[7]    ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |IrDA|Encoder:encoder|tickgen:TickGenerator|stburst[27]   ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |IrDA|Encoder:encoder|MAE_emission:MAE_emission|Selector4 ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |IrDA|decoder:decoder|MAE_Decoder:decoder|Selector5       ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |IrDA|decoder:decoder|MAE_Decoder:decoder|Selector4       ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0                                                                                                                                              ;
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+----------------+
+; Parameter Name                                  ; Value                                                                                                                                                     ; Type           ;
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+----------------+
+; lpm_type                                        ; sld_signaltap                                                                                                                                             ; String         ;
+; sld_node_info                                   ; 805334528                                                                                                                                                 ; Untyped        ;
+; SLD_IP_VERSION                                  ; 6                                                                                                                                                         ; Signed Integer ;
+; SLD_IP_MINOR_VERSION                            ; 0                                                                                                                                                         ; Signed Integer ;
+; SLD_COMMON_IP_VERSION                           ; 0                                                                                                                                                         ; Signed Integer ;
+; sld_data_bits                                   ; 31                                                                                                                                                        ; Untyped        ;
+; sld_trigger_bits                                ; 31                                                                                                                                                        ; Untyped        ;
+; SLD_NODE_CRC_BITS                               ; 32                                                                                                                                                        ; Signed Integer ;
+; sld_node_crc_hiword                             ; 64935                                                                                                                                                     ; Untyped        ;
+; sld_node_crc_loword                             ; 55462                                                                                                                                                     ; Untyped        ;
+; SLD_INCREMENTAL_ROUTING                         ; 0                                                                                                                                                         ; Signed Integer ;
+; sld_sample_depth                                ; 16384                                                                                                                                                     ; Untyped        ;
+; sld_segment_size                                ; 16384                                                                                                                                                     ; Untyped        ;
+; SLD_RAM_BLOCK_TYPE                              ; AUTO                                                                                                                                                      ; String         ;
+; sld_state_bits                                  ; 11                                                                                                                                                        ; Untyped        ;
+; sld_buffer_full_stop                            ; 1                                                                                                                                                         ; Untyped        ;
+; SLD_MEM_ADDRESS_BITS                            ; 7                                                                                                                                                         ; Signed Integer ;
+; SLD_DATA_BIT_CNTR_BITS                          ; 4                                                                                                                                                         ; Signed Integer ;
+; sld_trigger_level                               ; 1                                                                                                                                                         ; Untyped        ;
+; sld_trigger_in_enabled                          ; 0                                                                                                                                                         ; Untyped        ;
+; SLD_HPS_TRIGGER_IN_ENABLED                      ; 0                                                                                                                                                         ; Signed Integer ;
+; SLD_HPS_TRIGGER_OUT_ENABLED                     ; 0                                                                                                                                                         ; Signed Integer ;
+; SLD_HPS_EVENT_ENABLED                           ; 0                                                                                                                                                         ; Signed Integer ;
+; SLD_HPS_EVENT_ID                                ; 0                                                                                                                                                         ; Signed Integer ;
+; sld_advanced_trigger_entity                     ; basic,1,                                                                                                                                                  ; Untyped        ;
+; sld_trigger_level_pipeline                      ; 1                                                                                                                                                         ; Untyped        ;
+; sld_enable_advanced_trigger                     ; 0                                                                                                                                                         ; Untyped        ;
+; SLD_ADVANCED_TRIGGER_1                          ; NONE                                                                                                                                                      ; String         ;
+; SLD_ADVANCED_TRIGGER_2                          ; NONE                                                                                                                                                      ; String         ;
+; SLD_ADVANCED_TRIGGER_3                          ; NONE                                                                                                                                                      ; String         ;
+; SLD_ADVANCED_TRIGGER_4                          ; NONE                                                                                                                                                      ; String         ;
+; SLD_ADVANCED_TRIGGER_5                          ; NONE                                                                                                                                                      ; String         ;
+; SLD_ADVANCED_TRIGGER_6                          ; NONE                                                                                                                                                      ; String         ;
+; SLD_ADVANCED_TRIGGER_7                          ; NONE                                                                                                                                                      ; String         ;
+; SLD_ADVANCED_TRIGGER_8                          ; NONE                                                                                                                                                      ; String         ;
+; SLD_ADVANCED_TRIGGER_9                          ; NONE                                                                                                                                                      ; String         ;
+; SLD_ADVANCED_TRIGGER_10                         ; NONE                                                                                                                                                      ; String         ;
+; sld_inversion_mask_length                       ; 153                                                                                                                                                       ; Untyped        ;
+; sld_inversion_mask                              ; 000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 ; Untyped        ;
+; sld_power_up_trigger                            ; 0                                                                                                                                                         ; Untyped        ;
+; SLD_STATE_FLOW_MGR_ENTITY                       ; state_flow_mgr_entity.vhd                                                                                                                                 ; String         ;
+; sld_state_flow_use_generated                    ; 0                                                                                                                                                         ; Untyped        ;
+; sld_current_resource_width                      ; 1                                                                                                                                                         ; Untyped        ;
+; sld_attribute_mem_mode                          ; OFF                                                                                                                                                       ; Untyped        ;
+; sld_storage_qualifier_bits                      ; 31                                                                                                                                                        ; Untyped        ;
+; sld_storage_qualifier_gap_record                ; 1                                                                                                                                                         ; Untyped        ;
+; sld_storage_qualifier_mode                      ; TRANSITIONAL                                                                                                                                              ; Untyped        ;
+; SLD_STORAGE_QUALIFIER_ENABLE_ADVANCED_CONDITION ; 0                                                                                                                                                         ; Signed Integer ;
+; sld_storage_qualifier_inversion_mask_length     ; 32                                                                                                                                                        ; Untyped        ;
+; SLD_STORAGE_QUALIFIER_ADVANCED_CONDITION_ENTITY ; basic                                                                                                                                                     ; String         ;
+; SLD_STORAGE_QUALIFIER_PIPELINE                  ; 0                                                                                                                                                         ; Signed Integer ;
++-------------------------------------------------+-----------------------------------------------------------------------------------------------------------------------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
 +----------------------------------------------------------------------------------------------------------------------+
@@ -476,22 +452,13 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 +------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------+
-; Port Connectivity Checks: "decoder:decoder" ;
-+-------+-------+----------+------------------+
-; Port  ; Type  ; Severity ; Details          ;
-+-------+-------+----------+------------------+
-; reset ; Input ; Info     ; Stuck at GND     ;
-+-------+-------+----------+------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:01     ;
-+----------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; SignalTap II Logic Analyzer Settings                                                                                                                                                                                                                                    ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+; Instance Index ; Instance Name    ; Trigger Input Width ; Data Input Width ; Sample Depth ; Segments ; Storage Qualifier Type ; Trigger Flow Control ; Trigger Conditions ; Advanced Trigger Conditions ; Trigger In Used ; Trigger Out Used ; Power-Up Trigger Enabled ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+; 0              ; auto_signaltap_0 ; 31                  ; 31               ; 16384        ; 1        ; continuous             ; sequential           ; 1                  ; 0                           ; no              ; no               ; no                       ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
 
 
 +-------------------------------+
@@ -500,7 +467,7 @@ Table restricted to first 100 entries. Note: All latches listed above may not be
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Fri Feb 16 11:12:12 2018
+    Info: Processing started: Fri Feb 16 15:29:04 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off IrDA -c IrDA
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/Tick_generator.vhd
@@ -540,442 +507,52 @@ Info (12127): Elaborating entity "IrDA" for the top level hierarchy
 Info (12129): Elaborating entity "Encoder" using architecture "A:behavioral" for hierarchy "Encoder:encoder"
 Info (12129): Elaborating entity "Manchester_Generator" using architecture "A:behavioral" for hierarchy "Encoder:encoder|Manchester_Generator:ManchesterGenerator"
 Info (12129): Elaborating entity "Burst_Generator" using architecture "A:behavioral" for hierarchy "Encoder:encoder|Burst_Generator:BurstGenerator"
+Warning (10492): VHDL Process Statement warning at Burst_Generator.vhd(20): signal "rst" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
+Warning (10492): VHDL Process Statement warning at Burst_Generator.vhd(22): signal "Tick" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Info (12129): Elaborating entity "tickgen" using architecture "A:desc_tickgen" for hierarchy "Encoder:encoder|tickgen:TickGenerator"
-Warning (10492): VHDL Process Statement warning at Tick_generator.vhd(25): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at Tick_generator.vhd(26): signal "stburst" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at Tick_generator.vhd(31): signal "stburst" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at Tick_generator.vhd(34): signal "stmanch" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at Tick_generator.vhd(39): signal "stmanch" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at Tick_generator.vhd(42): signal "stbit" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at Tick_generator.vhd(47): signal "stbit" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at Tick_generator.vhd(50): signal "sttrame" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at Tick_generator.vhd(55): signal "sttrame" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10492): VHDL Process Statement warning at Tick_generator.vhd(58): signal "reset" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
-Warning (10631): VHDL Process Statement warning at Tick_generator.vhd(22): inferring latch(es) for signal or variable "tick_burst", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at Tick_generator.vhd(22): inferring latch(es) for signal or variable "stburst", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at Tick_generator.vhd(22): inferring latch(es) for signal or variable "tick_manch", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at Tick_generator.vhd(22): inferring latch(es) for signal or variable "stmanch", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at Tick_generator.vhd(22): inferring latch(es) for signal or variable "tick_bit", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at Tick_generator.vhd(22): inferring latch(es) for signal or variable "stbit", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at Tick_generator.vhd(22): inferring latch(es) for signal or variable "tick_trame", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at Tick_generator.vhd(22): inferring latch(es) for signal or variable "sttrame", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "sttrame[0]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[1]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[2]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[3]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[4]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[5]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[6]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[7]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[8]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[9]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[10]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[11]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[12]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[13]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[14]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[15]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[16]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[17]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[18]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[19]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[20]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[21]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[22]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[23]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[24]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[25]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[26]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[27]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[28]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[29]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[30]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "sttrame[31]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "tick_trame" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[0]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[1]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[2]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[3]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[4]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[5]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[6]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[7]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[8]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[9]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[10]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[11]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[12]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[13]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[14]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[15]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[16]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[17]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[18]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[19]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[20]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[21]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[22]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[23]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[24]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[25]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[26]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[27]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[28]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[29]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[30]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stbit[31]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "tick_bit" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[0]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[1]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[2]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[3]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[4]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[5]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[6]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[7]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[8]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[9]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[10]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[11]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[12]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[13]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[14]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[15]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[16]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[17]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[18]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[19]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[20]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[21]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[22]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[23]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[24]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[25]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[26]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[27]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[28]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[29]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[30]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stmanch[31]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "tick_manch" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[0]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[1]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[2]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[3]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[4]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[5]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[6]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[7]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[8]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[9]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[10]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[11]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[12]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[13]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[14]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[15]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[16]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[17]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[18]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[19]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[20]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[21]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[22]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[23]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[24]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[25]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[26]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[27]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[28]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[29]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[30]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "stburst[31]" at Tick_generator.vhd(22)
-Info (10041): Inferred latch for "tick_burst" at Tick_generator.vhd(22)
 Info (12129): Elaborating entity "MAE_emission" using architecture "A:desc_mae_emission" for hierarchy "Encoder:encoder|MAE_emission:MAE_emission"
 Info (12129): Elaborating entity "decoder" using architecture "A:arch_decoder" for hierarchy "decoder:decoder"
 Warning (10036): Verilog HDL or VHDL warning at Decoder.vhd(16): object "tick_trame" assigned a value but never read
 Info (12129): Elaborating entity "MAE_Decoder" using architecture "A:behavioral" for hierarchy "decoder:decoder|MAE_Decoder:decoder"
 Info (12129): Elaborating entity "MAE_demanchester" using architecture "A:arch_mae_demanchester" for hierarchy "decoder:decoder|MAE_demanchester:demanchester"
+Warning (10492): VHDL Process Statement warning at MAE_Demanchester.vhd(23): signal "Tick" is read inside the Process Statement but isn't in the Process Statement's sensitivity list
 Warning (10631): VHDL Process Statement warning at MAE_Demanchester.vhd(70): inferring latch(es) for signal or variable "Is_Valid", which holds its previous value in one or more paths through the process
 Warning (10631): VHDL Process Statement warning at MAE_Demanchester.vhd(70): inferring latch(es) for signal or variable "Signal_Demanchester", which holds its previous value in one or more paths through the process
 Info (10041): Inferred latch for "Signal_Demanchester" at MAE_Demanchester.vhd(70)
 Info (10041): Inferred latch for "Is_Valid" at MAE_Demanchester.vhd(70)
 Info (12129): Elaborating entity "MAE_deburst" using architecture "A:desc_mae_deburst" for hierarchy "decoder:decoder|MAE_deburst:deburst"
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|tick_manch has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|tick_bit has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|tick_burst has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[5] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[6] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[7] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[8] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[9] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[10] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[11] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[12] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[13] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[14] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[15] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[16] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[17] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[18] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[19] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[20] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[21] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[22] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[23] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[24] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[25] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[26] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[27] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[28] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[29] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[30] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stmanch[31] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[5] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[6] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[7] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[8] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[9] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[10] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[11] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[12] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[13] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[14] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[15] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[16] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[17] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[18] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[19] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[20] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[21] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[22] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[23] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[24] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[25] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[26] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[27] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[28] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[29] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[30] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stbit[31] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|tick_trame has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[5] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[6] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[7] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[8] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[9] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[10] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[11] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[12] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[13] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[14] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[15] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[16] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[17] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[18] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[19] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[20] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[21] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[22] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[23] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[24] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[25] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[26] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[27] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[28] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[29] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[30] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|stburst[31] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[5] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[4] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[3] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[2] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[1] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[0] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[7] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[8] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[9] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[10] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[11] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[12] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[13] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[14] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[15] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[16] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[17] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[18] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[19] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[20] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[21] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[22] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[23] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[24] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[25] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[26] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[27] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[28] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[29] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[30] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[31] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Warning (13012): Latch Encoder:encoder|tickgen:TickGenerator|sttrame[6] has unsafe behavior
-    Warning (13013): Ports D and ENA on the latch are fed by the same signal CLK
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 1041 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 13 input pins
-    Info (21059): Implemented 15 output pins
-    Info (21061): Implemented 1013 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 285 warnings
-    Info: Peak virtual memory: 671 megabytes
-    Info: Processing ended: Fri Feb 16 11:12:16 2018
-    Info: Elapsed time: 00:00:04
-    Info: Total CPU time (on all processors): 00:00:02
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_6124.tdf
+    Info (12023): Found entity 1: altsyncram_6124
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_jsa.tdf
+    Info (12023): Found entity 1: decode_jsa
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_gob.tdf
+    Info (12023): Found entity 1: mux_gob
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_1tc.tdf
+    Info (12023): Found entity 1: mux_1tc
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_dvf.tdf
+    Info (12023): Found entity 1: decode_dvf
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_fgi.tdf
+    Info (12023): Found entity 1: cntr_fgi
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_bbj.tdf
+    Info (12023): Found entity 1: cntr_bbj
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_mgi.tdf
+    Info (12023): Found entity 1: cntr_mgi
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_rgc.tdf
+    Info (12023): Found entity 1: cmpr_rgc
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_23j.tdf
+    Info (12023): Found entity 1: cntr_23j
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_ngc.tdf
+    Info (12023): Found entity 1: cmpr_ngc
+Info (12033): Analysis and Synthesis generated SignalTap II or debug node instance "auto_signaltap_0"
+Info (12206): 0 design partitions require synthesis
+Info (12208): 3 design partitions do not require synthesis
+    Info (12229): Partition "Top" does not require synthesis because there were no relevant design changes
+    Info (12229): Partition "sld_signaltap:auto_signaltap_0" does not require synthesis because there were no relevant design changes
+    Info (12229): Partition "sld_hub:auto_hub" does not require synthesis because there were no relevant design changes
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 6 warnings
+    Info: Peak virtual memory: 670 megabytes
+    Info: Processing ended: Fri Feb 16 15:29:07 2018
+    Info: Elapsed time: 00:00:03
+    Info: Total CPU time (on all processors): 00:00:03
 
 

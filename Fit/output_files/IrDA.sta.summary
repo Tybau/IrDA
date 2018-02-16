@@ -2,184 +2,64 @@
 TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
-Type  : Slow 1200mV 85C Model Setup 'CLK'
-Slack : -5.552
-TNS   : -1308.842
-
-Type  : Slow 1200mV 85C Model Setup 'decoder:decoder|tickgen:tick_gen|tick_manch'
-Slack : -0.430
-TNS   : -1.132
-
-Type  : Slow 1200mV 85C Model Setup 'decoder:decoder|tickgen:tick_gen|tick_burst'
-Slack : -0.346
-TNS   : -1.031
-
-Type  : Slow 1200mV 85C Model Setup 'Encoder:encoder|tickgen:TickGenerator|tick_burst'
-Slack : -0.170
-TNS   : -0.170
-
-Type  : Slow 1200mV 85C Model Setup 'Encoder:encoder|tickgen:TickGenerator|tick_manch'
-Slack : 0.210
+Type  : Slow 1200mV 85C Model Setup 'altera_reserved_tck'
+Slack : 43.500
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'CLK'
-Slack : -0.945
-TNS   : -82.267
-
-Type  : Slow 1200mV 85C Model Hold 'decoder:decoder|tickgen:tick_gen|tick_burst'
-Slack : 0.030
+Type  : Slow 1200mV 85C Model Hold 'altera_reserved_tck'
+Slack : 0.403
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'decoder:decoder|tickgen:tick_gen|tick_manch'
-Slack : 0.326
+Type  : Slow 1200mV 85C Model Recovery 'altera_reserved_tck'
+Slack : 47.988
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'Encoder:encoder|tickgen:TickGenerator|tick_burst'
-Slack : 0.405
+Type  : Slow 1200mV 85C Model Removal 'altera_reserved_tck'
+Slack : 1.466
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Hold 'Encoder:encoder|tickgen:TickGenerator|tick_manch'
-Slack : 0.445
+Type  : Slow 1200mV 85C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.565
 TNS   : 0.000
 
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK'
-Slack : -3.000
-TNS   : -136.640
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'decoder:decoder|tickgen:tick_gen|tick_manch'
-Slack : -1.285
-TNS   : -7.710
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'decoder:decoder|tickgen:tick_gen|tick_burst'
-Slack : -1.285
-TNS   : -6.425
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Encoder:encoder|tickgen:TickGenerator|tick_burst'
-Slack : -1.285
-TNS   : -3.855
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'Encoder:encoder|tickgen:TickGenerator|tick_manch'
-Slack : -1.285
-TNS   : -1.285
-
-Type  : Slow 1200mV 0C Model Setup 'CLK'
-Slack : -4.978
-TNS   : -1171.799
-
-Type  : Slow 1200mV 0C Model Setup 'decoder:decoder|tickgen:tick_gen|tick_manch'
-Slack : -0.276
-TNS   : -0.561
-
-Type  : Slow 1200mV 0C Model Setup 'decoder:decoder|tickgen:tick_gen|tick_burst'
-Slack : -0.248
-TNS   : -0.739
-
-Type  : Slow 1200mV 0C Model Setup 'Encoder:encoder|tickgen:TickGenerator|tick_burst'
-Slack : -0.051
-TNS   : -0.051
-
-Type  : Slow 1200mV 0C Model Setup 'Encoder:encoder|tickgen:TickGenerator|tick_manch'
-Slack : 0.297
+Type  : Slow 1200mV 0C Model Setup 'altera_reserved_tck'
+Slack : 44.177
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'CLK'
-Slack : -0.765
-TNS   : -63.085
-
-Type  : Slow 1200mV 0C Model Hold 'decoder:decoder|tickgen:tick_gen|tick_burst'
-Slack : 0.102
+Type  : Slow 1200mV 0C Model Hold 'altera_reserved_tck'
+Slack : 0.354
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'decoder:decoder|tickgen:tick_gen|tick_manch'
-Slack : 0.274
+Type  : Slow 1200mV 0C Model Recovery 'altera_reserved_tck'
+Slack : 48.264
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'Encoder:encoder|tickgen:TickGenerator|tick_burst'
-Slack : 0.357
+Type  : Slow 1200mV 0C Model Removal 'altera_reserved_tck'
+Slack : 1.326
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Hold 'Encoder:encoder|tickgen:TickGenerator|tick_manch'
-Slack : 0.398
+Type  : Slow 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.488
 TNS   : 0.000
 
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK'
-Slack : -3.000
-TNS   : -136.640
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'decoder:decoder|tickgen:tick_gen|tick_manch'
-Slack : -1.285
-TNS   : -7.710
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'decoder:decoder|tickgen:tick_gen|tick_burst'
-Slack : -1.285
-TNS   : -6.425
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Encoder:encoder|tickgen:TickGenerator|tick_burst'
-Slack : -1.285
-TNS   : -3.855
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'Encoder:encoder|tickgen:TickGenerator|tick_manch'
-Slack : -1.285
-TNS   : -1.285
-
-Type  : Fast 1200mV 0C Model Setup 'CLK'
-Slack : -2.734
-TNS   : -508.124
-
-Type  : Fast 1200mV 0C Model Setup 'decoder:decoder|tickgen:tick_gen|tick_burst'
-Slack : 0.274
+Type  : Fast 1200mV 0C Model Setup 'altera_reserved_tck'
+Slack : 46.959
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Setup 'decoder:decoder|tickgen:tick_gen|tick_manch'
-Slack : 0.293
+Type  : Fast 1200mV 0C Model Hold 'altera_reserved_tck'
+Slack : 0.181
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Setup 'Encoder:encoder|tickgen:TickGenerator|tick_burst'
-Slack : 0.427
+Type  : Fast 1200mV 0C Model Recovery 'altera_reserved_tck'
+Slack : 49.199
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Setup 'Encoder:encoder|tickgen:TickGenerator|tick_manch'
-Slack : 0.626
+Type  : Fast 1200mV 0C Model Removal 'altera_reserved_tck'
+Slack : 0.676
 TNS   : 0.000
 
-Type  : Fast 1200mV 0C Model Hold 'CLK'
-Slack : -0.743
-TNS   : -65.371
-
-Type  : Fast 1200mV 0C Model Hold 'decoder:decoder|tickgen:tick_gen|tick_burst'
-Slack : -0.122
-TNS   : -0.362
-
-Type  : Fast 1200mV 0C Model Hold 'decoder:decoder|tickgen:tick_gen|tick_manch'
-Slack : 0.126
+Type  : Fast 1200mV 0C Model Minimum Pulse Width 'altera_reserved_tck'
+Slack : 49.456
 TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'Encoder:encoder|tickgen:TickGenerator|tick_burst'
-Slack : 0.183
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Hold 'Encoder:encoder|tickgen:TickGenerator|tick_manch'
-Slack : 0.208
-TNS   : 0.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK'
-Slack : -3.000
-TNS   : -114.104
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'decoder:decoder|tickgen:tick_gen|tick_manch'
-Slack : -1.000
-TNS   : -6.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'decoder:decoder|tickgen:tick_gen|tick_burst'
-Slack : -1.000
-TNS   : -5.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Encoder:encoder|tickgen:TickGenerator|tick_burst'
-Slack : -1.000
-TNS   : -3.000
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'Encoder:encoder|tickgen:TickGenerator|tick_manch'
-Slack : -1.000
-TNS   : -1.000
 
 ------------------------------------------------------------

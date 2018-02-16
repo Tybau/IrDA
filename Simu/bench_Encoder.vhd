@@ -10,11 +10,12 @@ architecture arch_bench_encoder of bench_encoder is
   signal Cmd : std_logic_vector(5 downto 0);
   signal Go : std_logic;
   signal Tx : std_logic;
+  signal rst : std_logic;
   
 BEGIN
 
   encoder : entity work.Encoder(behavioral)
-    port map(CLK => CLK, Address => Address, Cmd => Cmd, Go => Go, Tx => Tx);
+    port map(CLK => CLK, rst => rst, Address => Address, Cmd => Cmd, Go => Go, Tx => Tx);
   
   cloked : process
   BEGIN
@@ -27,9 +28,11 @@ BEGIN
   Test : process
   BEGIN
     Go <= '0';
+    rst <= '1';
     Address <= "11010";
     Cmd <= "101100";
     wait for 100 ns;
+    rst <= '0';
     Go <= '1';
     wait for 300 ms;
     Go <= '0';

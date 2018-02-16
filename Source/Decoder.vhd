@@ -24,11 +24,12 @@ architecture arch_decoder of decoder is
 BEGIN
 
   decoder : entity work.MAE_Decoder(behavioral)
-    port map (is_valid => is_valid, signal_demanchester => signal_demanchester, tick => tick_bit, CLK => CLK, enable => enable, address => address, command => command, toggle => toggle, error_sig => error_sig);
+    port map (rst => reset, is_valid => is_valid, signal_demanchester => signal_demanchester,
+     tick => tick_bit, CLK => CLK, enable => enable, address => address, command => command, toggle => toggle, error_sig => error_sig);
   demanchester : entity work.MAE_demanchester(arch_MAE_demanchester)
-    port map (CLK => CLK, Reset => Reset, Tick => tick_manchester, Signal_deburst => Signal_deburst, Is_Valid => Is_Valid, Signal_Demanchester => Signal_Demanchester);
+    port map (CLK => CLK, reset => Reset, Tick => tick_manchester, Signal_deburst => Signal_deburst, Is_Valid => Is_Valid, Signal_Demanchester => Signal_Demanchester);
   deburst : entity work.MAE_deburst(desc_MAE_deburst)
-    port map (CLK => CLK, tick => tick_burst, trame_burst => signal_in, trame_deburst => Signal_deburst);
+    port map (rst => reset, CLK => CLK, tick => tick_burst, trame_burst => signal_in, trame_deburst => Signal_deburst);
   tick_gen : entity work.tickgen(desc_tickgen)
     port map(CLK => CLK, reset => reset, tick_trame => tick_trame, tick_bit => tick_bit, tick_manch => tick_manchester, tick_burst => tick_burst);
 
