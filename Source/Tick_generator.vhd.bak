@@ -19,7 +19,7 @@ architecture desc_tickgen of tickgen is
 	signal sttrame : integer := 0; --compte jusqu'à 5700000
 
 begin
-	pburst : process(CLK,rst)
+	pburst : process(CLK,reset)
 	begin
 		if (reset = '1') then
 			stburst <= 347;
@@ -39,7 +39,7 @@ begin
 				stburst <= stburst + 1;
 			end if;
 	
-			if (stmanch = 22225) then
+			if (stmanch = 44416) then
 				tick_manch <= '1';
 				stmanch <= 1;
 			else
@@ -47,7 +47,7 @@ begin
 				stmanch <= stmanch + 1;
 			end if;
 	
-			if (stbit = 44450) then
+			if (stbit = 88832) then
 				tick_bit <= '1';
 				stbit <= 1;
 			else

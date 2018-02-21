@@ -1,12 +1,12 @@
-Fitter Status : Successful - Fri Feb 16 15:53:17 2018
+Fitter Status : Successful - Fri Feb 16 17:47:45 2018
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version
 Revision Name : IrDA
 Top-level Entity Name : IrDA
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 655 / 114,480 ( < 1 % )
-    Total combinational functions : 645 / 114,480 ( < 1 % )
+Total logic elements : 666 / 114,480 ( < 1 % )
+    Total combinational functions : 659 / 114,480 ( < 1 % )
     Dedicated logic registers : 349 / 114,480 ( < 1 % )
 Total registers : 349
 Total pins : 30 / 529 ( 6 % )

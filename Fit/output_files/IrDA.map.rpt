@@ -1,5 +1,5 @@
 Analysis & Synthesis report for IrDA
-Fri Feb 16 15:53:01 2018
+Fri Feb 16 17:47:29 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -50,13 +50,13 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Feb 16 15:53:01 2018            ;
+; Analysis & Synthesis Status        ; Successful - Fri Feb 16 17:47:29 2018            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; IrDA                                             ;
 ; Top-level Entity Name              ; IrDA                                             ;
 ; Family                             ; Cyclone IV E                                     ;
-; Total logic elements               ; 656                                              ;
-;     Total combinational functions  ; 645                                              ;
+; Total logic elements               ; 670                                              ;
+;     Total combinational functions  ; 659                                              ;
 ;     Dedicated logic registers      ; 349                                              ;
 ; Total registers                    ; 349                                              ;
 ; Total pins                         ; 30                                               ;
@@ -194,16 +194,16 @@ applicable agreement for further details.
 +---------------------------------------------+-----------+
 ; Resource                                    ; Usage     ;
 +---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 656       ;
+; Estimated Total logic elements              ; 670       ;
 ;                                             ;           ;
-; Total combinational functions               ; 645       ;
+; Total combinational functions               ; 659       ;
 ; Logic element usage by number of LUT inputs ;           ;
 ;     -- 4 input functions                    ; 167       ;
 ;     -- 3 input functions                    ; 45        ;
-;     -- <=2 input functions                  ; 433       ;
+;     -- <=2 input functions                  ; 447       ;
 ;                                             ;           ;
 ; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 367       ;
+;     -- normal mode                          ; 381       ;
 ;     -- arithmetic mode                      ; 278       ;
 ;                                             ;           ;
 ; Total registers                             ; 349       ;
@@ -214,8 +214,8 @@ applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0         ;
 ; Maximum fan-out node                        ; CLK~input ;
 ; Maximum fan-out                             ; 349       ;
-; Total fan-out                               ; 2802      ;
-; Average fan-out                             ; 2.66      ;
+; Total fan-out                               ; 2806      ;
+; Average fan-out                             ; 2.63      ;
 +---------------------------------------------+-----------+
 
 
@@ -224,17 +224,17 @@ applicable agreement for further details.
 +--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                       ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                            ; Library Name ;
 +--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------+--------------+
-; |IrDA                                            ; 645 (0)           ; 349 (0)      ; 0           ; 0            ; 0       ; 0         ; 30   ; 0            ; |IrDA                                                          ; work         ;
-;    |Encoder:encoder|                             ; 345 (1)           ; 188 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder                                          ; work         ;
+; |IrDA                                            ; 659 (0)           ; 349 (0)      ; 0           ; 0            ; 0       ; 0         ; 30   ; 0            ; |IrDA                                                          ; work         ;
+;    |Encoder:encoder|                             ; 352 (1)           ; 188 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder                                          ; work         ;
 ;       |Burst_Generator:BurstGenerator|           ; 4 (4)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder|Burst_Generator:BurstGenerator           ; work         ;
 ;       |MAE_emission:MAE_emission|                ; 132 (132)         ; 53 (53)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder|MAE_emission:MAE_emission                ; work         ;
 ;       |Manchester_Generator:ManchesterGenerator| ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder|Manchester_Generator:ManchesterGenerator ; work         ;
-;       |tickgen:TickGenerator|                    ; 207 (207)         ; 131 (131)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder|tickgen:TickGenerator                    ; work         ;
-;    |decoder:decoder|                             ; 300 (0)           ; 161 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder                                          ; work         ;
+;       |tickgen:TickGenerator|                    ; 214 (214)         ; 131 (131)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder|tickgen:TickGenerator                    ; work         ;
+;    |decoder:decoder|                             ; 307 (0)           ; 161 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder                                          ; work         ;
 ;       |MAE_Decoder:decoder|                      ; 129 (129)         ; 51 (51)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder|MAE_Decoder:decoder                      ; work         ;
 ;       |MAE_deburst:deburst|                      ; 7 (7)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder|MAE_deburst:deburst                      ; work         ;
 ;       |MAE_demanchester:demanchester|            ; 11 (11)           ; 6 (6)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder|MAE_demanchester:demanchester            ; work         ;
-;       |tickgen:tick_gen|                         ; 153 (153)         ; 99 (99)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder|tickgen:tick_gen                         ; work         ;
+;       |tickgen:tick_gen|                         ; 160 (160)         ; 99 (99)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder|tickgen:tick_gen                         ; work         ;
 +--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -344,8 +344,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Encoder:encoder|MAE_emission:MAE_emission|i[31]   ; 3       ;
 ; decoder:decoder|tickgen:tick_gen|stbit[15]        ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stbit[13]        ; 2       ;
-; decoder:decoder|tickgen:tick_gen|stbit[11]        ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stbit[10]        ; 2       ;
+; decoder:decoder|tickgen:tick_gen|stbit[11]        ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stbit[8]         ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stbit[7]         ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stbit[5]         ; 2       ;
@@ -358,20 +358,20 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Encoder:encoder|tickgen:TickGenerator|stburst[0]  ; 2       ;
 ; Encoder:encoder|tickgen:TickGenerator|stbit[15]   ; 2       ;
 ; Encoder:encoder|tickgen:TickGenerator|stbit[13]   ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|stbit[11]   ; 2       ;
 ; Encoder:encoder|tickgen:TickGenerator|stbit[10]   ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|stbit[11]   ; 2       ;
 ; Encoder:encoder|tickgen:TickGenerator|stbit[8]    ; 2       ;
 ; Encoder:encoder|tickgen:TickGenerator|stbit[7]    ; 2       ;
 ; Encoder:encoder|tickgen:TickGenerator|stbit[5]    ; 2       ;
 ; Encoder:encoder|tickgen:TickGenerator|stbit[1]    ; 2       ;
 ; Encoder:encoder|tickgen:TickGenerator|stmanch[14] ; 2       ;
 ; Encoder:encoder|tickgen:TickGenerator|stmanch[12] ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|stmanch[10] ; 2       ;
 ; Encoder:encoder|tickgen:TickGenerator|stmanch[9]  ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|stmanch[7]  ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|stmanch[10] ; 2       ;
 ; Encoder:encoder|tickgen:TickGenerator|stmanch[6]  ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|stmanch[0]  ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|stmanch[7]  ; 2       ;
 ; Encoder:encoder|tickgen:TickGenerator|stmanch[4]  ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|stmanch[0]  ; 3       ;
 ; Encoder:encoder|MAE_emission:MAE_emission|toggle  ; 2       ;
 ; Encoder:encoder|tickgen:TickGenerator|sttrame[22] ; 2       ;
 ; Encoder:encoder|tickgen:TickGenerator|sttrame[20] ; 2       ;
@@ -386,13 +386,13 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; Encoder:encoder|tickgen:TickGenerator|sttrame[7]  ; 2       ;
 ; Encoder:encoder|tickgen:TickGenerator|sttrame[5]  ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stmanch[14]      ; 2       ;
-; decoder:decoder|tickgen:tick_gen|stmanch[10]      ; 2       ;
-; decoder:decoder|tickgen:tick_gen|stmanch[9]       ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stmanch[12]      ; 2       ;
-; decoder:decoder|tickgen:tick_gen|stmanch[7]       ; 2       ;
+; decoder:decoder|tickgen:tick_gen|stmanch[9]       ; 2       ;
+; decoder:decoder|tickgen:tick_gen|stmanch[10]      ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stmanch[6]       ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stmanch[4]       ; 2       ;
-; decoder:decoder|tickgen:tick_gen|stmanch[0]       ; 2       ;
+; decoder:decoder|tickgen:tick_gen|stmanch[7]       ; 2       ;
+; decoder:decoder|tickgen:tick_gen|stmanch[0]       ; 3       ;
 ; decoder:decoder|tickgen:tick_gen|stburst[8]       ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stburst[6]       ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stburst[4]       ; 2       ;
@@ -442,7 +442,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Fri Feb 16 15:52:58 2018
+    Info: Processing started: Fri Feb 16 17:47:27 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off irda -c IrDA
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/IrDA.vhd
@@ -558,14 +558,14 @@ Critical Warning (18061): Ignored Power-Up Level option on the following registe
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 693 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 707 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 14 input pins
     Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 663 logic cells
+    Info (21061): Implemented 677 logic cells
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 63 warnings
-    Info: Peak virtual memory: 652 megabytes
-    Info: Processing ended: Fri Feb 16 15:53:01 2018
-    Info: Elapsed time: 00:00:03
+    Info: Peak virtual memory: 659 megabytes
+    Info: Processing ended: Fri Feb 16 17:47:29 2018
+    Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 
 

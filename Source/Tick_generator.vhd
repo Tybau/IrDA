@@ -13,18 +13,18 @@ entity tickgen is
 end entity tickgen;
 
 architecture desc_tickgen of tickgen is
-	signal stburst : integer := 0; --compte jusqu'à 1389
-	signal stmanch : integer := 0; --compte jusqu'à 44450
-	signal stbit : integer := 0;   --compte jusqu'à 88900
-	signal sttrame : integer := 0; --compte jusqu'à 5700000
+	signal stburst : integer := 0;
+	signal stmanch : integer := 0;
+	signal stbit : integer := 0;
+	signal sttrame : integer := 0;
 
 begin
 	pburst : process(CLK,reset)
 	begin
 		if (reset = '1') then
 			stburst <= 347;
-			stmanch <= 22225;
-			stbit <= 44450;
+			stmanch <= 44416;
+			stbit <= 88832;
 			sttrame <= 5700000;
 			tick_burst <= '0';
 			tick_manch <= '0';
@@ -39,7 +39,7 @@ begin
 				stburst <= stburst + 1;
 			end if;
 	
-			if (stmanch = 22225) then
+			if (stmanch = 44416) then
 				tick_manch <= '1';
 				stmanch <= 1;
 			else
@@ -47,7 +47,7 @@ begin
 				stmanch <= stmanch + 1;
 			end if;
 	
-			if (stbit = 44450) then
+			if (stbit = 88832) then
 				tick_bit <= '1';
 				stbit <= 1;
 			else
