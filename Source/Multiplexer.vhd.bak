@@ -13,7 +13,7 @@ END ENTITY Multiplexer;
 
 ARCHITECTURE Behavioral OF Multiplexer IS
 	BEGIN
-		PROCESS(enable, trame,manch,not_manch)
+		PROCESS(enable, trame)
 		BEGIN
 			if(enable = '1' and trame = '1') then
 				manch_trame <= manch;

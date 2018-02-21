@@ -18,14 +18,16 @@ architecture desc_MAE_emission of MAE_emission is
 	signal reg : std_logic_vector (13 downto 0);
 	signal i: integer;
 begin
-	process(clk)
+	process(clk,rst)
 	begin
-	
-	if rising_edge(clk) then
-		if rst = '1' then
+	if rst = '1' then
 			EF <= State_Begin;
 			toggle <= '1';
-		else
+			enable <= '0';
+			out_trame <= '0';
+			clear <= '0';
+			i<= 13;
+	elsif rising_edge(clk) then
 			case EF is
 				when State_Begin =>
 					if (go = '1') then
@@ -65,8 +67,9 @@ begin
 					end if;
 					enable <= '0';
 					out_trame <= '0';
+				when others => 
+					EF <= State_Begin;
 				end case;
 			end if;
-		end if;
 	end process;
 end architecture desc_MAE_emission;

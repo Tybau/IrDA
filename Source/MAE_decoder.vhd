@@ -28,11 +28,10 @@ ARCHITECTURE Behavioral OF MAE_Decoder IS
 		
 		PROCESS(CLK, rst)
 		BEGIN
-		if rising_edge(CLK) then
-			if rst = '1' then
+		if rst = '1' then
 				EF <= State_Begin;
 				data <= (others => '0');
-			else
+		elsif rising_edge(CLK) then
 				CASE EF IS
 					WHEN State_Begin =>
 						enable <= '0';
@@ -73,6 +72,5 @@ ARCHITECTURE Behavioral OF MAE_Decoder IS
 						EF <= State_Begin;
 				END CASE;
 			END IF;
-		END IF;
 	END PROCESS;
 END ARCHITECTURE Behavioral;

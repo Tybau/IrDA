@@ -15,18 +15,20 @@ ARCHITECTURE Behavioral OF Burst_Generator IS
 	SIGNAL state: unsigned(1 downto 0) := (others => '0');
 
 	BEGIN
-		PROCESS(clk)
+		PROCESS(clk,rst)
 		BEGIN
 			if(rst = '1') then
 				state <= (others => '0');
-			elsif rising_edge(clk) and tick = '1' then
-				state <= state + 1;
+			elsif rising_edge(clk) then
+				if tick = '1' then
+					state <= state + 1;
 
-				if(state = 2) then			-- HIGH
-					Out_burst <= '1';
-				elsif(state = 3) then		-- RESET & LOW
-					Out_burst <= '0';
-					state <= (others => '0');
+					if(state = 2) then			-- HIGH
+						Out_burst <= '1';
+					elsif(state = 3) then		-- RESET & LOW
+						Out_burst <= '0';
+						state <= (others => '0');
+					end if;
 				end if;
 			end if;
 		END PROCESS;

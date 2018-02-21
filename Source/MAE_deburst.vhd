@@ -14,10 +14,11 @@ architecture desc_MAE_deburst of MAE_deburst is
 begin
 	process(clk, rst)
 	begin
-		if(rising_edge(clk)) then
-			if (rst = '1') then
+		if (rst = '1') then
 				EP <= E0;
-			elsif (tick = '1') then
+				trame_deburst <= '0';
+		elsif(rising_edge(clk)) then
+			if (tick = '1') then
 				case EP is
 					when E0 =>
 						if (trame_burst = '1') then
