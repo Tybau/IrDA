@@ -3,99 +3,63 @@ TimeQuest Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'CLK'
-Slack : -3.665
-TNS   : -803.201
+Slack : -3.766
+TNS   : -816.105
 
 Type  : Slow 1200mV 85C Model Hold 'CLK'
-Slack : -0.844
-TNS   : -18.388
-
-Type  : Slow 1200mV 85C Model Recovery 'decoder:decoder|MAE_demanchester:demanchester|State.Out0'
-Slack : -4.457
-TNS   : -4.457
+Slack : 0.384
+TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'CLK'
-Slack : -1.041
-TNS   : -73.323
-
-Type  : Slow 1200mV 85C Model Removal 'decoder:decoder|MAE_demanchester:demanchester|State.Out0'
-Slack : -0.284
-TNS   : -0.284
+Slack : -1.054
+TNS   : -64.450
 
 Type  : Slow 1200mV 85C Model Removal 'CLK'
-Slack : 0.539
+Slack : 0.596
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'CLK'
 Slack : -3.000
-TNS   : -428.335
-
-Type  : Slow 1200mV 85C Model Minimum Pulse Width 'decoder:decoder|MAE_demanchester:demanchester|State.Out0'
-Slack : 0.359
-TNS   : 0.000
+TNS   : -430.905
 
 Type  : Slow 1200mV 0C Model Setup 'CLK'
-Slack : -3.304
-TNS   : -697.800
+Slack : -3.334
+TNS   : -705.965
 
 Type  : Slow 1200mV 0C Model Hold 'CLK'
-Slack : -0.800
-TNS   : -15.146
-
-Type  : Slow 1200mV 0C Model Recovery 'decoder:decoder|MAE_demanchester:demanchester|State.Out0'
-Slack : -3.944
-TNS   : -3.944
+Slack : 0.337
+TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'CLK'
-Slack : -0.836
-TNS   : -53.121
-
-Type  : Slow 1200mV 0C Model Removal 'decoder:decoder|MAE_demanchester:demanchester|State.Out0'
-Slack : -0.267
-TNS   : -0.267
+Slack : -0.844
+TNS   : -44.910
 
 Type  : Slow 1200mV 0C Model Removal 'CLK'
-Slack : 0.481
+Slack : 0.532
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'CLK'
 Slack : -3.000
-TNS   : -428.335
-
-Type  : Slow 1200mV 0C Model Minimum Pulse Width 'decoder:decoder|MAE_demanchester:demanchester|State.Out0'
-Slack : 0.395
-TNS   : 0.000
+TNS   : -430.905
 
 Type  : Fast 1200mV 0C Model Setup 'CLK'
-Slack : -1.313
-TNS   : -235.521
+Slack : -1.396
+TNS   : -236.867
 
 Type  : Fast 1200mV 0C Model Hold 'CLK'
-Slack : -0.509
-TNS   : -16.524
-
-Type  : Fast 1200mV 0C Model Recovery 'decoder:decoder|MAE_demanchester:demanchester|State.Out0'
-Slack : -1.883
-TNS   : -1.883
+Slack : 0.173
+TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'CLK'
-Slack : -0.053
-TNS   : -0.194
-
-Type  : Fast 1200mV 0C Model Removal 'decoder:decoder|MAE_demanchester:demanchester|State.Out0'
-Slack : -0.120
-TNS   : -0.120
+Slack : -0.055
+TNS   : -0.055
 
 Type  : Fast 1200mV 0C Model Removal 'CLK'
-Slack : 0.273
+Slack : 0.299
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'CLK'
 Slack : -3.000
-TNS   : -357.482
-
-Type  : Fast 1200mV 0C Model Minimum Pulse Width 'decoder:decoder|MAE_demanchester:demanchester|State.Out0'
-Slack : 0.403
-TNS   : 0.000
+TNS   : -359.685
 
 ------------------------------------------------------------

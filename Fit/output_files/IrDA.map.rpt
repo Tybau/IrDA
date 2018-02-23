@@ -1,5 +1,5 @@
 Analysis & Synthesis report for IrDA
-Wed Feb 21 12:10:52 2018
+Fri Feb 23 11:09:06 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -10,7 +10,20 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |IrDA|decoder:decoder|MAE_deburst:deburst|EP
+  9. State Machine - |IrDA|decoder:decoder|MAE_demanchester:demanchester|State
+ 10. State Machine - |IrDA|decoder:decoder|MAE_Decoder:decoder|EF
+ 11. State Machine - |IrDA|Encoder:encoder|MAE_emission:MAE_emission|EF
+ 12. Registers Removed During Synthesis
+ 13. General Register Statistics
+ 14. Inverted Register Statistics
+ 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 16. Port Connectivity Checks: "decoder:decoder|tickgen:tick_gen"
+ 17. Elapsed Time Per Partition
+ 18. Analysis & Synthesis Messages
 
 
 
@@ -36,20 +49,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Wed Feb 21 12:10:51 2018                ;
+; Analysis & Synthesis Status        ; Successful - Fri Feb 23 11:09:06 2018            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; IrDA                                             ;
 ; Top-level Entity Name              ; IrDA                                             ;
 ; Family                             ; Cyclone IV E                                     ;
-; Total logic elements               ; N/A until Partition Merge                        ;
-;     Total combinational functions  ; N/A until Partition Merge                        ;
-;     Dedicated logic registers      ; N/A until Partition Merge                        ;
-; Total registers                    ; N/A until Partition Merge                        ;
-; Total pins                         ; N/A until Partition Merge                        ;
-; Total virtual pins                 ; N/A until Partition Merge                        ;
-; Total memory bits                  ; N/A until Partition Merge                        ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                        ;
-; Total PLLs                         ; N/A until Partition Merge                        ;
+; Total logic elements               ; 608                                              ;
+;     Total combinational functions  ; 595                                              ;
+;     Dedicated logic registers      ; 333                                              ;
+; Total registers                    ; 333                                              ;
+; Total pins                         ; 30                                               ;
+; Total virtual pins                 ; 0                                                ;
+; Total memory bits                  ; 0                                                ;
+; Embedded Multiplier 9-bit elements ; 0                                                ;
+; Total PLLs                         ; 0                                                ;
 +------------------------------------+--------------------------------------------------+
 
 
@@ -146,16 +159,282 @@ applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 4           ;
+; Maximum allowed            ; 2           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
-; Maximum used               ; 1           ;
+; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-8         ;   0.0%      ;
+;     Processor 2            ; < 0.1%      ;
+;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                       ;
++------------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path   ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                              ; Library ;
++------------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------+---------+
+; ../Source/IrDA.vhd                 ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/IrDA.vhd                 ;         ;
+; ../Source/Tick_generator.vhd       ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/Tick_generator.vhd       ;         ;
+; ../Source/Manchester_Generator.vhd ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/Manchester_Generator.vhd ;         ;
+; ../Source/MAE_emission.vhd         ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/MAE_emission.vhd         ;         ;
+; ../Source/MAE_Demanchester.vhd     ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/MAE_Demanchester.vhd     ;         ;
+; ../Source/MAE_decoder.vhd          ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/MAE_decoder.vhd          ;         ;
+; ../Source/MAE_deburst.vhd          ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/MAE_deburst.vhd          ;         ;
+; ../Source/Encoder.vhd              ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/Encoder.vhd              ;         ;
+; ../Source/Decoder.vhd              ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/Decoder.vhd              ;         ;
+; ../Source/Burst_Generator.vhd      ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/Burst_Generator.vhd      ;         ;
++------------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary             ;
++---------------------------------------------+-----------+
+; Resource                                    ; Usage     ;
++---------------------------------------------+-----------+
+; Estimated Total logic elements              ; 608       ;
+;                                             ;           ;
+; Total combinational functions               ; 595       ;
+; Logic element usage by number of LUT inputs ;           ;
+;     -- 4 input functions                    ; 184       ;
+;     -- 3 input functions                    ; 36        ;
+;     -- <=2 input functions                  ; 375       ;
+;                                             ;           ;
+; Logic elements by mode                      ;           ;
+;     -- normal mode                          ; 319       ;
+;     -- arithmetic mode                      ; 276       ;
+;                                             ;           ;
+; Total registers                             ; 333       ;
+;     -- Dedicated logic registers            ; 333       ;
+;     -- I/O registers                        ; 0         ;
+;                                             ;           ;
+; I/O pins                                    ; 30        ;
+; Embedded Multiplier 9-bit elements          ; 0         ;
+; Maximum fan-out node                        ; CLK~input ;
+; Maximum fan-out                             ; 333       ;
+; Total fan-out                               ; 2667      ;
+; Average fan-out                             ; 2.70      ;
++---------------------------------------------+-----------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                          ;
++--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------+--------------+
+; Compilation Hierarchy Node                       ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                            ; Library Name ;
++--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------+--------------+
+; |IrDA                                            ; 595 (0)           ; 333 (0)      ; 0           ; 0            ; 0       ; 0         ; 30   ; 0            ; |IrDA                                                          ; work         ;
+;    |Encoder:encoder|                             ; 308 (1)           ; 177 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder                                          ; work         ;
+;       |Burst_Generator:BurstGenerator|           ; 4 (4)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder|Burst_Generator:BurstGenerator           ; work         ;
+;       |MAE_emission:MAE_emission|                ; 104 (104)         ; 53 (53)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder|MAE_emission:MAE_emission                ; work         ;
+;       |Manchester_Generator:ManchesterGenerator| ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder|Manchester_Generator:ManchesterGenerator ; work         ;
+;       |tickgen:TickGenerator|                    ; 198 (198)         ; 120 (120)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder|tickgen:TickGenerator                    ; work         ;
+;    |decoder:decoder|                             ; 287 (0)           ; 156 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder                                          ; work         ;
+;       |MAE_Decoder:decoder|                      ; 129 (129)         ; 51 (51)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder|MAE_Decoder:decoder                      ; work         ;
+;       |MAE_deburst:deburst|                      ; 3 (3)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder|MAE_deburst:deburst                      ; work         ;
+;       |MAE_demanchester:demanchester|            ; 10 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder|MAE_demanchester:demanchester            ; work         ;
+;       |tickgen:tick_gen|                         ; 145 (145)         ; 92 (92)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder|tickgen:tick_gen                         ; work         ;
++--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------+
+; State Machine - |IrDA|decoder:decoder|MAE_deburst:deburst|EP ;
++-------+-------+-------+-------+------------------------------+
+; Name  ; EP.E3 ; EP.E2 ; EP.E1 ; EP.E0                        ;
++-------+-------+-------+-------+------------------------------+
+; EP.E0 ; 0     ; 0     ; 0     ; 0                            ;
+; EP.E1 ; 0     ; 0     ; 1     ; 1                            ;
+; EP.E2 ; 0     ; 1     ; 0     ; 1                            ;
+; EP.E3 ; 1     ; 0     ; 0     ; 1                            ;
++-------+-------+-------+-------+------------------------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |IrDA|decoder:decoder|MAE_demanchester:demanchester|State                                                         ;
++--------------+--------------+--------------+--------------+--------------+--------------+--------------+-------------+------------+
+; Name         ; State.suit11 ; State.suit10 ; State.suit01 ; State.suit00 ; State.valid1 ; State.valid0 ; State.Start ; State.Init ;
++--------------+--------------+--------------+--------------+--------------+--------------+--------------+-------------+------------+
+; State.Init   ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0           ; 0          ;
+; State.Start  ; 0            ; 0            ; 0            ; 0            ; 0            ; 0            ; 1           ; 1          ;
+; State.valid0 ; 0            ; 0            ; 0            ; 0            ; 0            ; 1            ; 0           ; 1          ;
+; State.valid1 ; 0            ; 0            ; 0            ; 0            ; 1            ; 0            ; 0           ; 1          ;
+; State.suit00 ; 0            ; 0            ; 0            ; 1            ; 0            ; 0            ; 0           ; 1          ;
+; State.suit01 ; 0            ; 0            ; 1            ; 0            ; 0            ; 0            ; 0           ; 1          ;
+; State.suit10 ; 0            ; 1            ; 0            ; 0            ; 0            ; 0            ; 0           ; 1          ;
+; State.suit11 ; 1            ; 0            ; 0            ; 0            ; 0            ; 0            ; 0           ; 1          ;
++--------------+--------------+--------------+--------------+--------------+--------------+--------------+-------------+------------+
+
+
+Encoding Type:  One-Hot
++-------------------------------------------------------------------------------------------------------+
+; State Machine - |IrDA|decoder:decoder|MAE_Decoder:decoder|EF                                          ;
++------------------+----------------+---------------+------------------+---------------+----------------+
+; Name             ; EF.State_Error ; EF.State_Send ; EF.State_Extract ; EF.State_Init ; EF.State_Begin ;
++------------------+----------------+---------------+------------------+---------------+----------------+
+; EF.State_Begin   ; 0              ; 0             ; 0                ; 0             ; 0              ;
+; EF.State_Init    ; 0              ; 0             ; 0                ; 1             ; 1              ;
+; EF.State_Extract ; 0              ; 0             ; 1                ; 0             ; 1              ;
+; EF.State_Send    ; 0              ; 1             ; 0                ; 0             ; 1              ;
+; EF.State_Error   ; 1              ; 0             ; 0                ; 0             ; 1              ;
++------------------+----------------+---------------+------------------+---------------+----------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------+
+; State Machine - |IrDA|Encoder:encoder|MAE_emission:MAE_emission|EF                                ;
++----------------+----------------+---------------+---------------+----------------+----------------+
+; Name           ; EF.State_Close ; EF.State_Send ; EF.State_Init ; EF.State_Clear ; EF.State_Begin ;
++----------------+----------------+---------------+---------------+----------------+----------------+
+; EF.State_Begin ; 0              ; 0             ; 0             ; 0              ; 0              ;
+; EF.State_Clear ; 0              ; 0             ; 0             ; 1              ; 1              ;
+; EF.State_Init  ; 0              ; 0             ; 1             ; 0              ; 1              ;
+; EF.State_Send  ; 0              ; 1             ; 0             ; 0              ; 1              ;
+; EF.State_Close ; 1              ; 0             ; 0             ; 0              ; 1              ;
++----------------+----------------+---------------+---------------+----------------+----------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                  ;
++------------------------------------------------------+--------------------------------------------------------------+
+; Register name                                        ; Reason for Removal                                           ;
++------------------------------------------------------+--------------------------------------------------------------+
+; Encoder:encoder|MAE_emission:MAE_emission|reg[12,13] ; Stuck at VCC due to stuck port data_in                       ;
+; decoder:decoder|tickgen:tick_gen|stmanch[0]          ; Merged with decoder:decoder|tickgen:tick_gen|stbit[0]        ;
+; Encoder:encoder|tickgen:TickGenerator|sttrame[0]     ; Merged with Encoder:encoder|tickgen:TickGenerator|stmanch[0] ;
+; Encoder:encoder|tickgen:TickGenerator|stbit[0]       ; Merged with Encoder:encoder|tickgen:TickGenerator|stmanch[0] ;
+; decoder:decoder|tickgen:tick_gen|stmanch[1]          ; Merged with decoder:decoder|tickgen:tick_gen|stbit[1]        ;
+; Encoder:encoder|tickgen:TickGenerator|stbit[1]       ; Merged with Encoder:encoder|tickgen:TickGenerator|stmanch[1] ;
+; Encoder:encoder|tickgen:TickGenerator|sttrame[1]     ; Merged with Encoder:encoder|tickgen:TickGenerator|stmanch[1] ;
+; Encoder:encoder|tickgen:TickGenerator|sttrame[2]     ; Merged with Encoder:encoder|tickgen:TickGenerator|stbit[2]   ;
+; decoder:decoder|tickgen:tick_gen|stmanch[2]          ; Merged with decoder:decoder|tickgen:tick_gen|stbit[2]        ;
+; Encoder:encoder|tickgen:TickGenerator|stbit[2]       ; Merged with Encoder:encoder|tickgen:TickGenerator|stmanch[2] ;
+; Encoder:encoder|tickgen:TickGenerator|sttrame[3]     ; Merged with Encoder:encoder|tickgen:TickGenerator|stbit[3]   ;
+; decoder:decoder|tickgen:tick_gen|stmanch[3]          ; Merged with decoder:decoder|tickgen:tick_gen|stbit[3]        ;
+; Encoder:encoder|tickgen:TickGenerator|stbit[3]       ; Merged with Encoder:encoder|tickgen:TickGenerator|stmanch[3] ;
+; Encoder:encoder|tickgen:TickGenerator|sttrame[4]     ; Merged with Encoder:encoder|tickgen:TickGenerator|stbit[4]   ;
+; decoder:decoder|tickgen:tick_gen|stmanch[4]          ; Merged with decoder:decoder|tickgen:tick_gen|stbit[4]        ;
+; Encoder:encoder|tickgen:TickGenerator|stbit[4]       ; Merged with Encoder:encoder|tickgen:TickGenerator|stmanch[4] ;
+; decoder:decoder|tickgen:tick_gen|stmanch[5]          ; Merged with decoder:decoder|tickgen:tick_gen|stbit[5]        ;
+; Encoder:encoder|tickgen:TickGenerator|stbit[5]       ; Merged with Encoder:encoder|tickgen:TickGenerator|stmanch[5] ;
+; decoder:decoder|tickgen:tick_gen|stmanch[6]          ; Merged with decoder:decoder|tickgen:tick_gen|stbit[6]        ;
+; Encoder:encoder|tickgen:TickGenerator|stbit[6]       ; Merged with Encoder:encoder|tickgen:TickGenerator|stmanch[6] ;
+; Total Number of Removed Registers = 21               ;                                                              ;
++------------------------------------------------------+--------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 333   ;
+; Number of registers using Synchronous Clear  ; 12    ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 286   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 76    ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------+
+; Inverted Register Statistics                                ;
++---------------------------------------------------+---------+
+; Inverted Register                                 ; Fan out ;
++---------------------------------------------------+---------+
+; decoder:decoder|MAE_Decoder:decoder|i[0]          ; 14      ;
+; decoder:decoder|MAE_Decoder:decoder|i[31]         ; 2       ;
+; Encoder:encoder|MAE_emission:MAE_emission|i[0]    ; 8       ;
+; Encoder:encoder|MAE_emission:MAE_emission|i[3]    ; 4       ;
+; Encoder:encoder|MAE_emission:MAE_emission|i[2]    ; 3       ;
+; decoder:decoder|tickgen:tick_gen|stbit[16]        ; 2       ;
+; decoder:decoder|tickgen:tick_gen|stbit[14]        ; 2       ;
+; decoder:decoder|tickgen:tick_gen|stbit[12]        ; 2       ;
+; decoder:decoder|tickgen:tick_gen|stbit[11]        ; 2       ;
+; decoder:decoder|tickgen:tick_gen|stbit[9]         ; 2       ;
+; decoder:decoder|tickgen:tick_gen|stbit[8]         ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|stburst[8]  ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|stburst[6]  ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|stburst[4]  ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|stburst[3]  ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|stburst[1]  ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|stburst[0]  ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|stbit[16]   ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|stbit[14]   ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|stbit[12]   ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|stbit[11]   ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|stbit[9]    ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|stbit[8]    ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|stmanch[15] ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|stmanch[13] ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|stmanch[11] ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|stmanch[10] ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|stmanch[8]  ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|stmanch[7]  ; 2       ;
+; Encoder:encoder|MAE_emission:MAE_emission|toggle  ; 2       ;
+; decoder:decoder|tickgen:tick_gen|stmanch[15]      ; 2       ;
+; decoder:decoder|tickgen:tick_gen|stmanch[13]      ; 2       ;
+; decoder:decoder|tickgen:tick_gen|stmanch[11]      ; 2       ;
+; decoder:decoder|tickgen:tick_gen|stmanch[10]      ; 2       ;
+; decoder:decoder|tickgen:tick_gen|stmanch[8]       ; 2       ;
+; decoder:decoder|tickgen:tick_gen|stmanch[7]       ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|sttrame[7]  ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|sttrame[5]  ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|sttrame[22] ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|sttrame[20] ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|sttrame[18] ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|sttrame[17] ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|sttrame[15] ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|sttrame[14] ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|sttrame[13] ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|sttrame[12] ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|sttrame[11] ; 2       ;
+; Encoder:encoder|tickgen:TickGenerator|sttrame[8]  ; 2       ;
+; decoder:decoder|tickgen:tick_gen|stburst[8]       ; 2       ;
+; decoder:decoder|tickgen:tick_gen|stburst[6]       ; 2       ;
+; decoder:decoder|tickgen:tick_gen|stburst[4]       ; 2       ;
+; decoder:decoder|tickgen:tick_gen|stburst[3]       ; 2       ;
+; decoder:decoder|tickgen:tick_gen|stburst[1]       ; 2       ;
+; decoder:decoder|tickgen:tick_gen|stburst[0]       ; 2       ;
+; Total number of inverted registers = 54           ;         ;
++---------------------------------------------------+---------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+; 6:1                ; 30 bits   ; 120 LEs       ; 30 LEs               ; 90 LEs                 ; Yes        ; |IrDA|decoder:decoder|MAE_Decoder:decoder|i[20]           ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |IrDA|Encoder:encoder|MAE_emission:MAE_emission|i[0]      ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |IrDA|decoder:decoder|MAE_Decoder:decoder|i[0]            ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |IrDA|Encoder:encoder|MAE_emission:MAE_emission|Selector3 ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |IrDA|decoder:decoder|MAE_Decoder:decoder|Selector5       ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |IrDA|decoder:decoder|MAE_Decoder:decoder|Selector3       ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "decoder:decoder|tickgen:tick_gen"                                                         ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; tick_trame ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
 
 
 +-------------------------------+
@@ -164,9 +443,9 @@ applicable agreement for further details.
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Wed Feb 21 12:10:51 2018
+    Info: Processing started: Fri Feb 23 11:09:01 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off irda -c IrDA
-Info (11104): Parallel Compilation has detected 8 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 4 of the 4 physical processors detected instead.
+Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
 Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/IrDA.vhd
     Info (12022): Found design unit 1: IrDA-test_IrDA
     Info (12023): Found entity 1: IrDA
@@ -210,17 +489,73 @@ Info (12129): Elaborating entity "decoder" using architecture "A:arch_decoder" f
 Warning (10036): Verilog HDL or VHDL warning at Decoder.vhd(16): object "tick_trame" assigned a value but never read
 Info (12129): Elaborating entity "MAE_Decoder" using architecture "A:behavioral" for hierarchy "decoder:decoder|MAE_Decoder:decoder"
 Info (12129): Elaborating entity "MAE_demanchester" using architecture "A:arch_mae_demanchester" for hierarchy "decoder:decoder|MAE_demanchester:demanchester"
-Warning (10631): VHDL Process Statement warning at MAE_Demanchester.vhd(21): inferring latch(es) for signal or variable "out_tmp", which holds its previous value in one or more paths through the process
-Warning (10631): VHDL Process Statement warning at MAE_Demanchester.vhd(76): inferring latch(es) for signal or variable "out_tmp", which holds its previous value in one or more paths through the process
-Info (10041): Inferred latch for "out_tmp" at MAE_Demanchester.vhd(76)
-Info (10041): Inferred latch for "out_tmp" at MAE_Demanchester.vhd(21)
-Error (10028): Can't resolve multiple constant drivers for net "out_tmp" at MAE_Demanchester.vhd(76) File: /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/MAE_Demanchester.vhd Line: 76
-Error (10029): Constant driver at MAE_Demanchester.vhd(21) File: /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/MAE_Demanchester.vhd Line: 21
-Error (12152): Can't elaborate user hierarchy "decoder:decoder|MAE_demanchester:demanchester" File: /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/Decoder.vhd Line: 29
-Error: Quartus II 64-Bit Analysis & Synthesis was unsuccessful. 3 errors, 3 warnings
-    Error: Peak virtual memory: 595 megabytes
-    Error: Processing ended: Wed Feb 21 12:10:52 2018
-    Error: Elapsed time: 00:00:01
-    Error: Total CPU time (on all processors): 00:00:01
+Warning (10036): Verilog HDL or VHDL warning at MAE_Demanchester.vhd(17): object "out_tmp" assigned a value but never read
+Info (12129): Elaborating entity "MAE_deburst" using architecture "A:desc_mae_deburst" for hierarchy "decoder:decoder|MAE_deburst:deburst"
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Critical Warning (18061): Ignored Power-Up Level option on the following registers
+    Critical Warning (18010): Register Encoder:encoder|MAE_emission:MAE_emission|i[3] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|MAE_emission:MAE_emission|i[2] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|MAE_emission:MAE_emission|i[31] will power up to Low
+    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stbit[16] will power up to High
+    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stbit[14] will power up to High
+    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stbit[12] will power up to High
+    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stbit[11] will power up to High
+    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stbit[9] will power up to High
+    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stbit[8] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stmanch[15] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stmanch[13] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stmanch[11] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stmanch[10] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stmanch[8] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stmanch[7] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stbit[16] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stbit[14] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stbit[12] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stbit[11] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stbit[9] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stbit[8] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stburst[8] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stburst[6] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stburst[4] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stburst[3] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stburst[1] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stburst[0] will power up to High
+    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stmanch[15] will power up to High
+    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stmanch[13] will power up to High
+    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stmanch[11] will power up to High
+    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stmanch[10] will power up to High
+    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stmanch[8] will power up to High
+    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stmanch[7] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|sttrame[22] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|sttrame[20] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|sttrame[18] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|sttrame[17] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|sttrame[15] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|sttrame[14] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|sttrame[13] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|sttrame[12] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|sttrame[11] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|sttrame[8] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|sttrame[7] will power up to High
+    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|sttrame[5] will power up to High
+    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stburst[8] will power up to High
+    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stburst[6] will power up to High
+    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stburst[4] will power up to High
+    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stburst[3] will power up to High
+    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stburst[1] will power up to High
+    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stburst[0] will power up to High
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 643 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 14 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 613 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 54 warnings
+    Info: Peak virtual memory: 657 megabytes
+    Info: Processing ended: Fri Feb 23 11:09:06 2018
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:03
 
 

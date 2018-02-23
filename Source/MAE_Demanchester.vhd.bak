@@ -12,84 +12,126 @@ entity MAE_demanchester is
 end entity MAE_demanchester;
 
 architecture arch_MAE_demanchester of MAE_demanchester is
-  type StateType is (Init, Start, Out1, Out1_valid, Out0, Out0_valid);
+  type StateType is (Init, Start, valid0, valid1, suit00, suit01, suit10, suit11);
   signal State : StateType := Init;
+  signal out_tmp : std_logic;
   
 BEGIN
+
   process(CLK, Reset)
   BEGIN
     if Reset = '1' then
       State <= Init;
+		  out_tmp <= '0';
 		
     elsif rising_edge(clk) then 
-		if tick = '1' then
-			case State is
-			when Init =>
-			  if Signal_deburst = '0' then
-				 State <= Init;
-			  elsif Signal_deburst = '1' then
-				 State <= Start;
-			  end if;
-
-			when Start =>
-			  if Signal_deburst = '0' then
-				 State <= Out1;
-			  elsif Signal_deburst = '1' then
-				 State <= Out0;
-			  end if;
-
-			when Out1 =>
-			  if Signal_deburst = '0' then
-				 State <= Init;
-			  elsif Signal_deburst = '1' then
-				 State <= Out1_valid;
-			  end if;
-
-			when Out1_valid =>
-			  if Signal_deburst = '0' then
-				 State <= Out1;
-			  elsif Signal_deburst = '1' then
-				 State <= Out0;
-			  end if;
-
-			when Out0 =>
-			  if Signal_deburst = '0' then
-				 State <= Out0_valid;
-			  elsif Signal_deburst = '1' then
-				 State <= Init;
-			  end if;
-
-			when Out0_valid =>
-			  if Signal_deburst = '0' then
-				 State <= Out1;
-			  elsif Signal_deburst = '1' then
-				 State <= Out0;
-			  end if;
-			end case;
-		end if;
+    		if tick = '1' then
+    			case State is
+    			when Init =>
+    			  if Signal_deburst = '0' then
+    				  State <= Init;
+    			  elsif Signal_deburst = '1' then
+    				  State <= Start;
+   			   end if;
+       			    
+    			when Start =>
+    			  if Signal_deburst = '0' then
+    				  State <= suit11;
+    			  elsif Signal_deburst = '1' then
+    				  State <= suit10;
+    			  end if;
+    			     
+    			when valid0 =>
+    			  if Signal_deburst = '0' then
+    				  State <= suit01;
+    			  elsif Signal_deburst = '1' then
+    				  State <= suit00;
+    			  end if;
+    			      			  
+    			when valid1 =>
+    			  if Signal_deburst = '0' then
+    				  State <= suit11;
+    			  elsif Signal_deburst = '1' then
+    				  State <= suit10;
+    			  end if;
+    			      			  
+    			when suit00 =>
+    			  if Signal_deburst = '0' then
+    				  State <= valid0;
+    			  elsif Signal_deburst = '1' then
+    				  State <= init;
+    			  end if;
+    			      			  
+    			when suit01 =>
+    			  if Signal_deburst = '0' then
+    				  State <= init;
+    			  elsif Signal_deburst = '1' then
+    				  State <= valid1;
+    			  end if;
+    			  	  
+    			when suit10 =>
+    			  if Signal_deburst = '0' then
+    				  State <= valid0;
+    			  elsif Signal_deburst = '1' then
+    				  State <= init;
+    			  end if;
+    			     			
+    			when suit11 =>
+    			  if Signal_deburst = '1' then
+    				  State <= valid1;
+    			  elsif Signal_deburst = '0' then
+    				  State <= init;
+    			  end if;
+    			     			  
+ 			 when others =>
+ 			   State <= init;
+ 			    
+ 			 end case;
+    		end if;
     end if;
   end process;
-
-  output : process(State)
+  
+  process(all)
   BEGIN
-	
-    if State = Init then
-      Is_Valid <= '0';
+    case State is
+    when Init =>
       Signal_Demanchester <= '0';
-    elsif State = Start then
-      Is_Valid <= '1';
+ 			is_Valid <= '0';
+ 			
+    when Start =>
       Signal_Demanchester <= '1';
-    elsif State = Out1_valid then
-      Signal_Demanchester <= '1';
-		  Is_Valid <= '1';
-    elsif State = Out0_valid then
-      Signal_Demanchester <= '0';
-		  Is_Valid <= '1';
-	  else 
-		  Signal_Demanchester <= '0';
-		  Is_Valid <= '0';
-    end if;
-  end process output;
+ 			is_Valid <= '1'; 
+ 			
+ 		when valid0 =>
+ 		  signal_Demanchester <= '0';
+    		is_Valid <= '1';
+ 		
+ 		when valid1 =>
+ 		  signal_Demanchester <= '1';
+ 			is_Valid <= '1';
+ 		
+ 		when suit00 =>
+ 		  signal_Demanchester <= '0';
+   			is_Valid <= '1';
+ 		
+ 		when suit01 =>
+ 		  signal_Demanchester <= '0';
+ 			is_Valid <= '1';
+ 		
+ 		when suit10 =>
+ 		  signal_Demanchester <= '1';
+ 			is_Valid <= '1';
+ 		
+ 		when suit11 =>
+ 		  signal_Demanchester <= '1';
+ 			is_Valid <= '1';
+ 			
+ 		when others =>
+ 		  Signal_Demanchester <= '0';
+ 			is_Valid <= '0';
+ 			
+ 		end case;  
+ 	end process;    
 end architecture;
   
     

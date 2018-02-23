@@ -743,14 +743,30 @@ error_sig <= error_sig~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |IrDA|decoder:decoder|MAE_demanchester:demanchester
-CLK => State~7.DATAIN
-Reset => State~9.DATAIN
+CLK => State~8.DATAIN
+Reset => State~10.DATAIN
 Tick => State.OUTPUTSELECT
 Tick => State.OUTPUTSELECT
 Tick => State.OUTPUTSELECT
 Tick => State.OUTPUTSELECT
 Tick => State.OUTPUTSELECT
 Tick => State.OUTPUTSELECT
+Tick => State.OUTPUTSELECT
+Tick => State.OUTPUTSELECT
+Signal_deburst => State.OUTPUTSELECT
+Signal_deburst => State.OUTPUTSELECT
+Signal_deburst => State.OUTPUTSELECT
+Signal_deburst => State.OUTPUTSELECT
+Signal_deburst => State.OUTPUTSELECT
+Signal_deburst => State.OUTPUTSELECT
+Signal_deburst => State.OUTPUTSELECT
+Signal_deburst => State.OUTPUTSELECT
+Signal_deburst => State.OUTPUTSELECT
+Signal_deburst => State.OUTPUTSELECT
+Signal_deburst => State.OUTPUTSELECT
+Signal_deburst => State.OUTPUTSELECT
+Signal_deburst => State.OUTPUTSELECT
+Signal_deburst => Selector3.IN7
 Signal_deburst => State.OUTPUTSELECT
 Signal_deburst => State.OUTPUTSELECT
 Signal_deburst => State.OUTPUTSELECT
@@ -768,14 +784,9 @@ Signal_deburst => State.OUTPUTSELECT
 Signal_deburst => State.OUTPUTSELECT
 Signal_deburst => State.OUTPUTSELECT
 Signal_deburst => State.OUTPUTSELECT
-Signal_deburst => State.OUTPUTSELECT
-Signal_deburst => State.OUTPUTSELECT
-Signal_deburst => State.OUTPUTSELECT
-Signal_deburst => State.OUTPUTSELECT
-Signal_deburst => State.OUTPUTSELECT
-Signal_deburst => State.OUTPUTSELECT
+Signal_deburst => Selector0.IN0
 Is_Valid <= Is_Valid.DB_MAX_OUTPUT_PORT_TYPE
-Signal_Demanchester <= Signal_Demanchester$latch.DB_MAX_OUTPUT_PORT_TYPE
+Signal_Demanchester <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |IrDA|decoder:decoder|MAE_deburst:deburst
