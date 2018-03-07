@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for IrDA
-Fri Feb 23 11:09:48 2018
+Wed Mar  7 14:04:20 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -125,15 +125,14 @@ applicable agreement for further details.
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
 ; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
-; Maximum used               ; 2           ;
+; Average used               ; 2.00        ;
+; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ; < 0.1%      ;
-;     Processors 3-4         ;   0.0%      ;
+;     Processors 2-4         ;  33.3%      ;
 +----------------------------+-------------+
 
 
@@ -1290,12 +1289,6 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; 0.971 ; Encoder:encoder|MAE_emission:MAE_emission|clear ; Encoder:encoder|tickgen:TickGenerator|stburst[4]  ; CLK          ; CLK         ; 0.000        ; 0.480      ; 1.622      ;
 ; 0.971 ; Encoder:encoder|MAE_emission:MAE_emission|clear ; Encoder:encoder|tickgen:TickGenerator|stburst[6]  ; CLK          ; CLK         ; 0.000        ; 0.480      ; 1.622      ;
 ; 0.971 ; Encoder:encoder|MAE_emission:MAE_emission|clear ; Encoder:encoder|tickgen:TickGenerator|stburst[8]  ; CLK          ; CLK         ; 0.000        ; 0.480      ; 1.622      ;
-; 0.993 ; Encoder:encoder|MAE_emission:MAE_emission|clear ; Encoder:encoder|tickgen:TickGenerator|stbit[8]    ; CLK          ; CLK         ; 0.000        ; 0.468      ; 1.632      ;
-; 0.993 ; Encoder:encoder|MAE_emission:MAE_emission|clear ; Encoder:encoder|tickgen:TickGenerator|stbit[9]    ; CLK          ; CLK         ; 0.000        ; 0.468      ; 1.632      ;
-; 0.993 ; Encoder:encoder|MAE_emission:MAE_emission|clear ; Encoder:encoder|tickgen:TickGenerator|stbit[11]   ; CLK          ; CLK         ; 0.000        ; 0.468      ; 1.632      ;
-; 0.993 ; Encoder:encoder|MAE_emission:MAE_emission|clear ; Encoder:encoder|tickgen:TickGenerator|stbit[12]   ; CLK          ; CLK         ; 0.000        ; 0.468      ; 1.632      ;
-; 0.993 ; Encoder:encoder|MAE_emission:MAE_emission|clear ; Encoder:encoder|tickgen:TickGenerator|stbit[14]   ; CLK          ; CLK         ; 0.000        ; 0.468      ; 1.632      ;
-; 0.993 ; Encoder:encoder|MAE_emission:MAE_emission|clear ; Encoder:encoder|tickgen:TickGenerator|stbit[16]   ; CLK          ; CLK         ; 0.000        ; 0.468      ; 1.632      ;
 ; 0.993 ; Encoder:encoder|MAE_emission:MAE_emission|clear ; Encoder:encoder|tickgen:TickGenerator|stburst[16] ; CLK          ; CLK         ; 0.000        ; 0.477      ; 1.641      ;
 ; 0.993 ; Encoder:encoder|MAE_emission:MAE_emission|clear ; Encoder:encoder|tickgen:TickGenerator|stburst[17] ; CLK          ; CLK         ; 0.000        ; 0.477      ; 1.641      ;
 ; 0.993 ; Encoder:encoder|MAE_emission:MAE_emission|clear ; Encoder:encoder|tickgen:TickGenerator|stburst[18] ; CLK          ; CLK         ; 0.000        ; 0.477      ; 1.641      ;
@@ -1312,6 +1305,12 @@ This panel reports FMAX for every clock in the design, regardless of the user-sp
 ; 0.993 ; Encoder:encoder|MAE_emission:MAE_emission|clear ; Encoder:encoder|tickgen:TickGenerator|stburst[29] ; CLK          ; CLK         ; 0.000        ; 0.477      ; 1.641      ;
 ; 0.993 ; Encoder:encoder|MAE_emission:MAE_emission|clear ; Encoder:encoder|tickgen:TickGenerator|stburst[30] ; CLK          ; CLK         ; 0.000        ; 0.477      ; 1.641      ;
 ; 0.993 ; Encoder:encoder|MAE_emission:MAE_emission|clear ; Encoder:encoder|tickgen:TickGenerator|stburst[31] ; CLK          ; CLK         ; 0.000        ; 0.477      ; 1.641      ;
+; 0.993 ; Encoder:encoder|MAE_emission:MAE_emission|clear ; Encoder:encoder|tickgen:TickGenerator|stbit[8]    ; CLK          ; CLK         ; 0.000        ; 0.468      ; 1.632      ;
+; 0.993 ; Encoder:encoder|MAE_emission:MAE_emission|clear ; Encoder:encoder|tickgen:TickGenerator|stbit[9]    ; CLK          ; CLK         ; 0.000        ; 0.468      ; 1.632      ;
+; 0.993 ; Encoder:encoder|MAE_emission:MAE_emission|clear ; Encoder:encoder|tickgen:TickGenerator|stbit[11]   ; CLK          ; CLK         ; 0.000        ; 0.468      ; 1.632      ;
+; 0.993 ; Encoder:encoder|MAE_emission:MAE_emission|clear ; Encoder:encoder|tickgen:TickGenerator|stbit[12]   ; CLK          ; CLK         ; 0.000        ; 0.468      ; 1.632      ;
+; 0.993 ; Encoder:encoder|MAE_emission:MAE_emission|clear ; Encoder:encoder|tickgen:TickGenerator|stbit[14]   ; CLK          ; CLK         ; 0.000        ; 0.468      ; 1.632      ;
+; 0.993 ; Encoder:encoder|MAE_emission:MAE_emission|clear ; Encoder:encoder|tickgen:TickGenerator|stbit[16]   ; CLK          ; CLK         ; 0.000        ; 0.468      ; 1.632      ;
 ; 0.994 ; Encoder:encoder|MAE_emission:MAE_emission|clear ; Encoder:encoder|tickgen:TickGenerator|stbit[7]    ; CLK          ; CLK         ; 0.000        ; 0.470      ; 1.635      ;
 ; 0.994 ; Encoder:encoder|MAE_emission:MAE_emission|clear ; Encoder:encoder|tickgen:TickGenerator|stbit[10]   ; CLK          ; CLK         ; 0.000        ; 0.470      ; 1.635      ;
 ; 0.994 ; Encoder:encoder|MAE_emission:MAE_emission|clear ; Encoder:encoder|tickgen:TickGenerator|stbit[13]   ; CLK          ; CLK         ; 0.000        ; 0.470      ; 1.635      ;
@@ -2614,10 +2613,10 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Fri Feb 23 11:09:42 2018
+    Info: Processing started: Wed Mar  7 14:04:16 2018
 Info: Command: quartus_sta irda -c IrDA
 Info: qsta_default_script.tcl version: #1
-Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (21077): Core supply voltage is 1.2V
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
@@ -2704,9 +2703,9 @@ Info (332146): Worst-case minimum pulse width slack is -3.000
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
-    Info: Peak virtual memory: 641 megabytes
-    Info: Processing ended: Fri Feb 23 11:09:48 2018
-    Info: Elapsed time: 00:00:06
-    Info: Total CPU time (on all processors): 00:00:04
+    Info: Peak virtual memory: 647 megabytes
+    Info: Processing ended: Wed Mar  7 14:04:20 2018
+    Info: Elapsed time: 00:00:04
+    Info: Total CPU time (on all processors): 00:00:03
 
 

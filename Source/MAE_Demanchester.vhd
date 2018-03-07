@@ -14,7 +14,6 @@ end entity MAE_demanchester;
 architecture arch_MAE_demanchester of MAE_demanchester is
   type StateType is (Init, Start, valid0, valid1, suit00, suit01, suit10, suit11);
   signal State : StateType := Init;
-  signal out_tmp : std_logic;
   
 BEGIN
 
@@ -22,7 +21,6 @@ BEGIN
   BEGIN
     if Reset = '1' then
       State <= Init;
-		  out_tmp <= '0';
 		
     elsif rising_edge(clk) then 
     		if tick = '1' then
