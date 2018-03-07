@@ -28,7 +28,7 @@ ARCHITECTURE Behavioral OF Encoder IS
 		Tx <= enable and manch_trame and burst;
 
 		ManchesterGenerator : entity work.Manchester_Generator(Behavioral)
-			port map(Tick => tick_manchester, CLK => CLK, Out_manch => manch, rst => rst);
+			port map(Tick => tick_manchester, CLK => CLK, Out_manch => manch, rst => rst, clear => clear);
 
 		BurstGenerator : entity work.Burst_Generator(Behavioral)
 			port map(Tick => tick_burst, CLK => CLK, Out_burst => burst, rst => rst);

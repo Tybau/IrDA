@@ -16,6 +16,8 @@ Cmd_in[4] => encoder:encoder.Cmd[4]
 Cmd_in[5] => encoder:encoder.Cmd[5]
 Go => encoder:encoder.Go
 Go => go_out.DATAIN
+signal_in => signal_out.DATAIN
+signal_in => decoder:decoder.signal_in
 Address_out[0] <= decoder:decoder.address[0]
 Address_out[1] <= decoder:decoder.address[1]
 Address_out[2] <= decoder:decoder.address[2]
@@ -32,6 +34,7 @@ toggle <= decoder:decoder.toggle
 go_out <= Go.DB_MAX_OUTPUT_PORT_TYPE
 enable <= decoder:decoder.enable
 Tx_out <= encoder:encoder.Tx
+signal_out <= signal_in.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |IrDA|Encoder:encoder
@@ -60,7 +63,8 @@ Tx <= Tx.DB_MAX_OUTPUT_PORT_TYPE
 |IrDA|Encoder:encoder|Manchester_Generator:ManchesterGenerator
 Tick => manch.ENA
 CLK => manch.CLK
-rst => manch.ACLR
+rst => process_0.IN0
+clear => process_0.IN1
 Out_manch <= manch.DB_MAX_OUTPUT_PORT_TYPE
 
 

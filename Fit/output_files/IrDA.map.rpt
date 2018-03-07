@@ -1,5 +1,5 @@
 Analysis & Synthesis report for IrDA
-Fri Feb 23 11:09:06 2018
+Wed Mar  7 16:45:15 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -11,19 +11,20 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
   5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
+  6. Partition Status Summary
+  7. Partition for Top-Level Resource Utilization by Entity
   8. State Machine - |IrDA|decoder:decoder|MAE_deburst:deburst|EP
   9. State Machine - |IrDA|decoder:decoder|MAE_demanchester:demanchester|State
  10. State Machine - |IrDA|decoder:decoder|MAE_Decoder:decoder|EF
  11. State Machine - |IrDA|Encoder:encoder|MAE_emission:MAE_emission|EF
  12. Registers Removed During Synthesis
- 13. General Register Statistics
- 14. Inverted Register Statistics
- 15. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Partition Dependent Files
+ 15. Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0
  16. Port Connectivity Checks: "decoder:decoder|tickgen:tick_gen"
- 17. Elapsed Time Per Partition
- 18. Analysis & Synthesis Messages
+ 17. SignalTap II Logic Analyzer Settings
+ 18. Elapsed Time Per Partition
+ 19. Analysis & Synthesis Messages
 
 
 
@@ -49,20 +50,20 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Fri Feb 23 11:09:06 2018            ;
+; Analysis & Synthesis Status        ; Successful - Wed Mar  7 16:45:15 2018            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; IrDA                                             ;
 ; Top-level Entity Name              ; IrDA                                             ;
-; Family                             ; Cyclone IV E                                     ;
-; Total logic elements               ; 608                                              ;
-;     Total combinational functions  ; 595                                              ;
-;     Dedicated logic registers      ; 333                                              ;
-; Total registers                    ; 333                                              ;
-; Total pins                         ; 30                                               ;
-; Total virtual pins                 ; 0                                                ;
-; Total memory bits                  ; 0                                                ;
-; Embedded Multiplier 9-bit elements ; 0                                                ;
-; Total PLLs                         ; 0                                                ;
+; Family                             ; Cyclone II                                       ;
+; Total logic elements               ; N/A until Partition Merge                        ;
+;     Total combinational functions  ; N/A until Partition Merge                        ;
+;     Dedicated logic registers      ; N/A until Partition Merge                        ;
+; Total registers                    ; N/A until Partition Merge                        ;
+; Total pins                         ; N/A until Partition Merge                        ;
+; Total virtual pins                 ; N/A until Partition Merge                        ;
+; Total memory bits                  ; N/A until Partition Merge                        ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                        ;
+; Total PLLs                         ; N/A until Partition Merge                        ;
 +------------------------------------+--------------------------------------------------+
 
 
@@ -71,9 +72,9 @@ applicable agreement for further details.
 +----------------------------------------------------------------------------+--------------------+--------------------+
 ; Option                                                                     ; Setting            ; Default Value      ;
 +----------------------------------------------------------------------------+--------------------+--------------------+
-; Device                                                                     ; EP4CE115F29C7      ;                    ;
+; Device                                                                     ; EP2C35F672C6       ;                    ;
 ; Top-level entity name                                                      ; IrDA               ; IrDA               ;
-; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
 ; VHDL Show LMF Mapping Messages                                             ; Off                ;                    ;
 ; VHDL Version                                                               ; VHDL_2008          ; VHDL_1993          ;
 ; Use smart compilation                                                      ; Off                ; Off                ;
@@ -113,14 +114,12 @@ applicable agreement for further details.
 ; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
 ; Auto ROM Replacement                                                       ; On                 ; On                 ;
 ; Auto RAM Replacement                                                       ; On                 ; On                 ;
-; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
 ; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
 ; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
 ; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
 ; Strict RAM Replacement                                                     ; Off                ; Off                ;
 ; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
 ; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
-; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
 ; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
 ; Auto Resource Sharing                                                      ; Off                ; Off                ;
 ; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
@@ -128,7 +127,7 @@ applicable agreement for further details.
 ; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
 ; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
 ; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
-; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
 ; Report Parameter Settings                                                  ; On                 ; On                 ;
 ; Report Source Assignments                                                  ; On                 ; On                 ;
 ; Report Connectivity Checks                                                 ; On                 ; On                 ;
@@ -160,79 +159,111 @@ applicable agreement for further details.
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
 ; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.00        ;
+; Average used               ; 1.57        ;
 ; Maximum used               ; 2           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ; < 0.1%      ;
+;     Processor 2            ;  57.1%      ;
 ;     Processors 3-4         ;   0.0%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                       ;
-+------------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path   ; Used in Netlist ; File Type       ; File Name with Absolute Path                                                              ; Library ;
-+------------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------+---------+
-; ../Source/IrDA.vhd                 ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/IrDA.vhd                 ;         ;
-; ../Source/Tick_generator.vhd       ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/Tick_generator.vhd       ;         ;
-; ../Source/Manchester_Generator.vhd ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/Manchester_Generator.vhd ;         ;
-; ../Source/MAE_emission.vhd         ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/MAE_emission.vhd         ;         ;
-; ../Source/MAE_Demanchester.vhd     ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/MAE_Demanchester.vhd     ;         ;
-; ../Source/MAE_decoder.vhd          ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/MAE_decoder.vhd          ;         ;
-; ../Source/MAE_deburst.vhd          ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/MAE_deburst.vhd          ;         ;
-; ../Source/Encoder.vhd              ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/Encoder.vhd              ;         ;
-; ../Source/Decoder.vhd              ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/Decoder.vhd              ;         ;
-; ../Source/Burst_Generator.vhd      ; yes             ; User VHDL File  ; /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/Burst_Generator.vhd      ;         ;
-+------------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------+---------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                          ;
++------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path   ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                    ; Library ;
++------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
+; ../Source/IrDA.vhd                 ; yes             ; User VHDL File               ; /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Source/IrDA.vhd                 ;         ;
+; ../Source/Tick_generator.vhd       ; yes             ; User VHDL File               ; /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Source/Tick_generator.vhd       ;         ;
+; ../Source/Manchester_Generator.vhd ; yes             ; User VHDL File               ; /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Source/Manchester_Generator.vhd ;         ;
+; ../Source/MAE_emission.vhd         ; yes             ; User VHDL File               ; /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Source/MAE_emission.vhd         ;         ;
+; ../Source/MAE_Demanchester.vhd     ; yes             ; User VHDL File               ; /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Source/MAE_Demanchester.vhd     ;         ;
+; ../Source/MAE_decoder.vhd          ; yes             ; User VHDL File               ; /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Source/MAE_decoder.vhd          ;         ;
+; ../Source/MAE_deburst.vhd          ; yes             ; User VHDL File               ; /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Source/MAE_deburst.vhd          ;         ;
+; ../Source/Encoder.vhd              ; yes             ; User VHDL File               ; /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Source/Encoder.vhd              ;         ;
+; ../Source/Decoder.vhd              ; yes             ; User VHDL File               ; /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Source/Decoder.vhd              ;         ;
+; ../Source/Burst_Generator.vhd      ; yes             ; User VHDL File               ; /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Source/Burst_Generator.vhd      ;         ;
+; sld_signaltap.vhd                  ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/sld_signaltap.vhd              ;         ;
+; sld_signaltap_impl.vhd             ; yes             ; Encrypted Megafunction       ; /opt/altera/13.0/quartus/libraries/megafunctions/sld_signaltap_impl.vhd         ;         ;
+; sld_ela_control.vhd                ; yes             ; Encrypted Megafunction       ; /opt/altera/13.0/quartus/libraries/megafunctions/sld_ela_control.vhd            ;         ;
+; lpm_shiftreg.tdf                   ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/lpm_shiftreg.tdf               ;         ;
+; lpm_constant.inc                   ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/lpm_constant.inc               ;         ;
+; dffeea.inc                         ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/dffeea.inc                     ;         ;
+; aglobal130.inc                     ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/aglobal130.inc                 ;         ;
+; sld_mbpmg.vhd                      ; yes             ; Encrypted Megafunction       ; /opt/altera/13.0/quartus/libraries/megafunctions/sld_mbpmg.vhd                  ;         ;
+; sld_ela_trigger_flow_mgr.vhd       ; yes             ; Encrypted Megafunction       ; /opt/altera/13.0/quartus/libraries/megafunctions/sld_ela_trigger_flow_mgr.vhd   ;         ;
+; sld_buffer_manager.vhd             ; yes             ; Encrypted Megafunction       ; /opt/altera/13.0/quartus/libraries/megafunctions/sld_buffer_manager.vhd         ;         ;
+; altsyncram.tdf                     ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/altsyncram.tdf                 ;         ;
+; stratix_ram_block.inc              ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/stratix_ram_block.inc          ;         ;
+; lpm_mux.inc                        ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/lpm_mux.inc                    ;         ;
+; lpm_decode.inc                     ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/lpm_decode.inc                 ;         ;
+; a_rdenreg.inc                      ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/a_rdenreg.inc                  ;         ;
+; altrom.inc                         ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/altrom.inc                     ;         ;
+; altram.inc                         ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/altram.inc                     ;         ;
+; altdpram.inc                       ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/altdpram.inc                   ;         ;
+; db/altsyncram_mp14.tdf             ; yes             ; Auto-Generated Megafunction  ; /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Fit/db/altsyncram_mp14.tdf      ;         ;
+; db/altsyncram_udq1.tdf             ; yes             ; Auto-Generated Megafunction  ; /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Fit/db/altsyncram_udq1.tdf      ;         ;
+; db/decode_opa.tdf                  ; yes             ; Auto-Generated Megafunction  ; /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Fit/db/decode_opa.tdf           ;         ;
+; db/mux_3kb.tdf                     ; yes             ; Auto-Generated Megafunction  ; /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Fit/db/mux_3kb.tdf              ;         ;
+; altdpram.tdf                       ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/altdpram.tdf                   ;         ;
+; memmodes.inc                       ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/others/maxplus2/memmodes.inc                 ;         ;
+; a_hdffe.inc                        ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/a_hdffe.inc                    ;         ;
+; alt_le_rden_reg.inc                ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/alt_le_rden_reg.inc            ;         ;
+; altsyncram.inc                     ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/altsyncram.inc                 ;         ;
+; lpm_mux.tdf                        ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/lpm_mux.tdf                    ;         ;
+; muxlut.inc                         ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/muxlut.inc                     ;         ;
+; bypassff.inc                       ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/bypassff.inc                   ;         ;
+; altshift.inc                       ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/altshift.inc                   ;         ;
+; db/mux_coc.tdf                     ; yes             ; Auto-Generated Megafunction  ; /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Fit/db/mux_coc.tdf              ;         ;
+; lpm_decode.tdf                     ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/lpm_decode.tdf                 ;         ;
+; declut.inc                         ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/declut.inc                     ;         ;
+; lpm_compare.inc                    ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/lpm_compare.inc                ;         ;
+; db/decode_rqf.tdf                  ; yes             ; Auto-Generated Megafunction  ; /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Fit/db/decode_rqf.tdf           ;         ;
+; lpm_counter.tdf                    ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/lpm_counter.tdf                ;         ;
+; lpm_add_sub.inc                    ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/lpm_add_sub.inc                ;         ;
+; cmpconst.inc                       ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/cmpconst.inc                   ;         ;
+; lpm_counter.inc                    ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/lpm_counter.inc                ;         ;
+; alt_counter_stratix.inc            ; yes             ; Megafunction                 ; /opt/altera/13.0/quartus/libraries/megafunctions/alt_counter_stratix.inc        ;         ;
+; db/cntr_7ai.tdf                    ; yes             ; Auto-Generated Megafunction  ; /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Fit/db/cntr_7ai.tdf             ;         ;
+; db/cmpr_6cc.tdf                    ; yes             ; Auto-Generated Megafunction  ; /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Fit/db/cmpr_6cc.tdf             ;         ;
+; db/cntr_48j.tdf                    ; yes             ; Auto-Generated Megafunction  ; /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Fit/db/cntr_48j.tdf             ;         ;
+; db/cntr_0ci.tdf                    ; yes             ; Auto-Generated Megafunction  ; /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Fit/db/cntr_0ci.tdf             ;         ;
+; db/cmpr_acc.tdf                    ; yes             ; Auto-Generated Megafunction  ; /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Fit/db/cmpr_acc.tdf             ;         ;
+; db/cntr_gui.tdf                    ; yes             ; Auto-Generated Megafunction  ; /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Fit/db/cntr_gui.tdf             ;         ;
+; db/cmpr_5cc.tdf                    ; yes             ; Auto-Generated Megafunction  ; /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Fit/db/cmpr_5cc.tdf             ;         ;
+; sld_rom_sr.vhd                     ; yes             ; Encrypted Megafunction       ; /opt/altera/13.0/quartus/libraries/megafunctions/sld_rom_sr.vhd                 ;         ;
+; sld_hub.vhd                        ; yes             ; Encrypted Megafunction       ; /opt/altera/13.0/quartus/libraries/megafunctions/sld_hub.vhd                    ;         ;
+; sld_jtag_hub.vhd                   ; yes             ; Encrypted Megafunction       ; /opt/altera/13.0/quartus/libraries/megafunctions/sld_jtag_hub.vhd               ;         ;
++------------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimated Total logic elements              ; 608       ;
-;                                             ;           ;
-; Total combinational functions               ; 595       ;
-; Logic element usage by number of LUT inputs ;           ;
-;     -- 4 input functions                    ; 184       ;
-;     -- 3 input functions                    ; 36        ;
-;     -- <=2 input functions                  ; 375       ;
-;                                             ;           ;
-; Logic elements by mode                      ;           ;
-;     -- normal mode                          ; 319       ;
-;     -- arithmetic mode                      ; 276       ;
-;                                             ;           ;
-; Total registers                             ; 333       ;
-;     -- Dedicated logic registers            ; 333       ;
-;     -- I/O registers                        ; 0         ;
-;                                             ;           ;
-; I/O pins                                    ; 30        ;
-; Embedded Multiplier 9-bit elements          ; 0         ;
-; Maximum fan-out node                        ; CLK~input ;
-; Maximum fan-out                             ; 333       ;
-; Total fan-out                               ; 2667      ;
-; Average fan-out                             ; 2.70      ;
-+---------------------------------------------+-----------+
++------------------------------------------------------------------------+
+; Partition Status Summary                                               ;
++--------------------------------+-------------+-------------------------+
+; Partition Name                 ; Synthesized ; Reason                  ;
++--------------------------------+-------------+-------------------------+
+; Top                            ; no          ; No relevant changes     ;
+; sld_signaltap:auto_signaltap_0 ; yes         ; Dependent files changed ;
+; sld_hub:auto_hub               ; yes         ; Parameters changed      ;
++--------------------------------+-------------+-------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                          ;
+; Partition for Top-Level Resource Utilization by Entity                                                                                                                                                                                       ;
 +--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                       ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                            ; Library Name ;
 +--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------+--------------+
-; |IrDA                                            ; 595 (0)           ; 333 (0)      ; 0           ; 0            ; 0       ; 0         ; 30   ; 0            ; |IrDA                                                          ; work         ;
+; |IrDA                                            ; 596 (0)           ; 333 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA                                                          ; work         ;
 ;    |Encoder:encoder|                             ; 308 (1)           ; 177 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder                                          ; work         ;
 ;       |Burst_Generator:BurstGenerator|           ; 4 (4)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder|Burst_Generator:BurstGenerator           ; work         ;
-;       |MAE_emission:MAE_emission|                ; 104 (104)         ; 53 (53)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder|MAE_emission:MAE_emission                ; work         ;
-;       |Manchester_Generator:ManchesterGenerator| ; 1 (1)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder|Manchester_Generator:ManchesterGenerator ; work         ;
+;       |MAE_emission:MAE_emission|                ; 103 (103)         ; 53 (53)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder|MAE_emission:MAE_emission                ; work         ;
+;       |Manchester_Generator:ManchesterGenerator| ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder|Manchester_Generator:ManchesterGenerator ; work         ;
 ;       |tickgen:TickGenerator|                    ; 198 (198)         ; 120 (120)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder|tickgen:TickGenerator                    ; work         ;
-;    |decoder:decoder|                             ; 287 (0)           ; 156 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder                                          ; work         ;
-;       |MAE_Decoder:decoder|                      ; 129 (129)         ; 51 (51)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder|MAE_Decoder:decoder                      ; work         ;
+;    |decoder:decoder|                             ; 288 (0)           ; 156 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder                                          ; work         ;
+;       |MAE_Decoder:decoder|                      ; 130 (130)         ; 51 (51)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder|MAE_Decoder:decoder                      ; work         ;
 ;       |MAE_deburst:deburst|                      ; 3 (3)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder|MAE_deburst:deburst                      ; work         ;
 ;       |MAE_demanchester:demanchester|            ; 10 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder|MAE_demanchester:demanchester            ; work         ;
 ;       |tickgen:tick_gen|                         ; 145 (145)         ; 92 (92)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder|tickgen:tick_gen                         ; work         ;
@@ -305,11 +336,11 @@ Encoding Type:  One-Hot
 +------------------------------------------------------+--------------------------------------------------------------+
 ; Encoder:encoder|MAE_emission:MAE_emission|reg[12,13] ; Stuck at VCC due to stuck port data_in                       ;
 ; decoder:decoder|tickgen:tick_gen|stmanch[0]          ; Merged with decoder:decoder|tickgen:tick_gen|stbit[0]        ;
-; Encoder:encoder|tickgen:TickGenerator|sttrame[0]     ; Merged with Encoder:encoder|tickgen:TickGenerator|stmanch[0] ;
 ; Encoder:encoder|tickgen:TickGenerator|stbit[0]       ; Merged with Encoder:encoder|tickgen:TickGenerator|stmanch[0] ;
+; Encoder:encoder|tickgen:TickGenerator|sttrame[0]     ; Merged with Encoder:encoder|tickgen:TickGenerator|stmanch[0] ;
 ; decoder:decoder|tickgen:tick_gen|stmanch[1]          ; Merged with decoder:decoder|tickgen:tick_gen|stbit[1]        ;
-; Encoder:encoder|tickgen:TickGenerator|stbit[1]       ; Merged with Encoder:encoder|tickgen:TickGenerator|stmanch[1] ;
 ; Encoder:encoder|tickgen:TickGenerator|sttrame[1]     ; Merged with Encoder:encoder|tickgen:TickGenerator|stmanch[1] ;
+; Encoder:encoder|tickgen:TickGenerator|stbit[1]       ; Merged with Encoder:encoder|tickgen:TickGenerator|stmanch[1] ;
 ; Encoder:encoder|tickgen:TickGenerator|sttrame[2]     ; Merged with Encoder:encoder|tickgen:TickGenerator|stbit[2]   ;
 ; decoder:decoder|tickgen:tick_gen|stmanch[2]          ; Merged with decoder:decoder|tickgen:tick_gen|stbit[2]        ;
 ; Encoder:encoder|tickgen:TickGenerator|stbit[2]       ; Merged with Encoder:encoder|tickgen:TickGenerator|stmanch[2] ;
@@ -327,84 +358,6 @@ Encoding Type:  One-Hot
 +------------------------------------------------------+--------------------------------------------------------------+
 
 
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 333   ;
-; Number of registers using Synchronous Clear  ; 12    ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 286   ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 76    ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-------------------------------------------------------------+
-; Inverted Register Statistics                                ;
-+---------------------------------------------------+---------+
-; Inverted Register                                 ; Fan out ;
-+---------------------------------------------------+---------+
-; decoder:decoder|MAE_Decoder:decoder|i[0]          ; 14      ;
-; decoder:decoder|MAE_Decoder:decoder|i[31]         ; 2       ;
-; Encoder:encoder|MAE_emission:MAE_emission|i[0]    ; 8       ;
-; Encoder:encoder|MAE_emission:MAE_emission|i[3]    ; 4       ;
-; Encoder:encoder|MAE_emission:MAE_emission|i[2]    ; 3       ;
-; decoder:decoder|tickgen:tick_gen|stbit[16]        ; 2       ;
-; decoder:decoder|tickgen:tick_gen|stbit[14]        ; 2       ;
-; decoder:decoder|tickgen:tick_gen|stbit[12]        ; 2       ;
-; decoder:decoder|tickgen:tick_gen|stbit[11]        ; 2       ;
-; decoder:decoder|tickgen:tick_gen|stbit[9]         ; 2       ;
-; decoder:decoder|tickgen:tick_gen|stbit[8]         ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|stburst[8]  ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|stburst[6]  ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|stburst[4]  ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|stburst[3]  ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|stburst[1]  ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|stburst[0]  ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|stbit[16]   ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|stbit[14]   ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|stbit[12]   ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|stbit[11]   ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|stbit[9]    ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|stbit[8]    ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|stmanch[15] ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|stmanch[13] ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|stmanch[11] ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|stmanch[10] ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|stmanch[8]  ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|stmanch[7]  ; 2       ;
-; Encoder:encoder|MAE_emission:MAE_emission|toggle  ; 2       ;
-; decoder:decoder|tickgen:tick_gen|stmanch[15]      ; 2       ;
-; decoder:decoder|tickgen:tick_gen|stmanch[13]      ; 2       ;
-; decoder:decoder|tickgen:tick_gen|stmanch[11]      ; 2       ;
-; decoder:decoder|tickgen:tick_gen|stmanch[10]      ; 2       ;
-; decoder:decoder|tickgen:tick_gen|stmanch[8]       ; 2       ;
-; decoder:decoder|tickgen:tick_gen|stmanch[7]       ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|sttrame[7]  ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|sttrame[5]  ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|sttrame[22] ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|sttrame[20] ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|sttrame[18] ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|sttrame[17] ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|sttrame[15] ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|sttrame[14] ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|sttrame[13] ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|sttrame[12] ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|sttrame[11] ; 2       ;
-; Encoder:encoder|tickgen:TickGenerator|sttrame[8]  ; 2       ;
-; decoder:decoder|tickgen:tick_gen|stburst[8]       ; 2       ;
-; decoder:decoder|tickgen:tick_gen|stburst[6]       ; 2       ;
-; decoder:decoder|tickgen:tick_gen|stburst[4]       ; 2       ;
-; decoder:decoder|tickgen:tick_gen|stburst[3]       ; 2       ;
-; decoder:decoder|tickgen:tick_gen|stburst[1]       ; 2       ;
-; decoder:decoder|tickgen:tick_gen|stburst[0]       ; 2       ;
-; Total number of inverted registers = 54           ;         ;
-+---------------------------------------------------+---------+
-
-
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                          ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
@@ -419,6 +372,84 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
 
 
++-----------------------------------------------------------------------------------------------------+
+; Partition Dependent Files                                                                           ;
++------------------------------------+-------------------+---------+----------------------------------+
+; File                               ; Location          ; Library ; Checksum                         ;
++------------------------------------+-------------------+---------+----------------------------------+
+; ../Source/Burst_Generator.vhd      ; Project Directory ; work    ; 6a9b783a07def769fe13d1bc44189eda ;
+; ../Source/Decoder.vhd              ; Project Directory ; work    ; 3d0b327442eb48cd7ffd2909fc5d38ed ;
+; ../Source/Encoder.vhd              ; Project Directory ; work    ; f5769dd826033ed1921aa881537aa8a2 ;
+; ../Source/IrDA.vhd                 ; Project Directory ; work    ; 0bbe6dd743621607b51a283c75028e77 ;
+; ../Source/MAE_Demanchester.vhd     ; Project Directory ; work    ; 78ba03438065869ae8d9de9f5a9d5b1f ;
+; ../Source/MAE_deburst.vhd          ; Project Directory ; work    ; 3f94e9f848934d9d708380fd893ad9e3 ;
+; ../Source/MAE_decoder.vhd          ; Project Directory ; work    ; 864381997bd15bd3248f0a0d93b28435 ;
+; ../Source/MAE_emission.vhd         ; Project Directory ; work    ; 669939aeb9d6e841a91e79fc4af03f0d ;
+; ../Source/Manchester_Generator.vhd ; Project Directory ; work    ; 3546d341f8c0e6dc5f101254b9027ad0 ;
+; ../Source/Tick_generator.vhd       ; Project Directory ; work    ; b74ae2a976f53daaa78edb0934cc6825 ;
++------------------------------------+-------------------+---------+----------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: sld_signaltap:auto_signaltap_0                             ;
++-------------------------------------------------+------------------------------------------+----------------+
+; Parameter Name                                  ; Value                                    ; Type           ;
++-------------------------------------------------+------------------------------------------+----------------+
+; lpm_type                                        ; sld_signaltap                            ; String         ;
+; sld_node_info                                   ; 805334528                                ; Untyped        ;
+; SLD_IP_VERSION                                  ; 6                                        ; Signed Integer ;
+; SLD_IP_MINOR_VERSION                            ; 0                                        ; Signed Integer ;
+; SLD_COMMON_IP_VERSION                           ; 0                                        ; Signed Integer ;
+; sld_data_bits                                   ; 3                                        ; Untyped        ;
+; sld_trigger_bits                                ; 3                                        ; Untyped        ;
+; SLD_NODE_CRC_BITS                               ; 32                                       ; Signed Integer ;
+; sld_node_crc_hiword                             ; 30306                                    ; Untyped        ;
+; sld_node_crc_loword                             ; 42474                                    ; Untyped        ;
+; SLD_INCREMENTAL_ROUTING                         ; 0                                        ; Signed Integer ;
+; sld_sample_depth                                ; 131072                                   ; Untyped        ;
+; sld_segment_size                                ; 131072                                   ; Untyped        ;
+; SLD_RAM_BLOCK_TYPE                              ; AUTO                                     ; String         ;
+; sld_state_bits                                  ; 11                                       ; Untyped        ;
+; sld_buffer_full_stop                            ; 1                                        ; Untyped        ;
+; SLD_MEM_ADDRESS_BITS                            ; 7                                        ; Signed Integer ;
+; SLD_DATA_BIT_CNTR_BITS                          ; 4                                        ; Signed Integer ;
+; sld_trigger_level                               ; 1                                        ; Untyped        ;
+; sld_trigger_in_enabled                          ; 0                                        ; Untyped        ;
+; SLD_HPS_TRIGGER_IN_ENABLED                      ; 0                                        ; Signed Integer ;
+; SLD_HPS_TRIGGER_OUT_ENABLED                     ; 0                                        ; Signed Integer ;
+; SLD_HPS_EVENT_ENABLED                           ; 0                                        ; Signed Integer ;
+; SLD_HPS_EVENT_ID                                ; 0                                        ; Signed Integer ;
+; sld_advanced_trigger_entity                     ; basic,1,                                 ; Untyped        ;
+; sld_trigger_level_pipeline                      ; 1                                        ; Untyped        ;
+; sld_enable_advanced_trigger                     ; 0                                        ; Untyped        ;
+; SLD_ADVANCED_TRIGGER_1                          ; NONE                                     ; String         ;
+; SLD_ADVANCED_TRIGGER_2                          ; NONE                                     ; String         ;
+; SLD_ADVANCED_TRIGGER_3                          ; NONE                                     ; String         ;
+; SLD_ADVANCED_TRIGGER_4                          ; NONE                                     ; String         ;
+; SLD_ADVANCED_TRIGGER_5                          ; NONE                                     ; String         ;
+; SLD_ADVANCED_TRIGGER_6                          ; NONE                                     ; String         ;
+; SLD_ADVANCED_TRIGGER_7                          ; NONE                                     ; String         ;
+; SLD_ADVANCED_TRIGGER_8                          ; NONE                                     ; String         ;
+; SLD_ADVANCED_TRIGGER_9                          ; NONE                                     ; String         ;
+; SLD_ADVANCED_TRIGGER_10                         ; NONE                                     ; String         ;
+; sld_inversion_mask_length                       ; 40                                       ; Untyped        ;
+; sld_inversion_mask                              ; 0000000000000000000000000000000000000000 ; Untyped        ;
+; sld_power_up_trigger                            ; 0                                        ; Untyped        ;
+; SLD_STATE_FLOW_MGR_ENTITY                       ; state_flow_mgr_entity.vhd                ; String         ;
+; sld_state_flow_use_generated                    ; 0                                        ; Untyped        ;
+; sld_current_resource_width                      ; 1                                        ; Untyped        ;
+; sld_attribute_mem_mode                          ; OFF                                      ; Untyped        ;
+; SLD_STORAGE_QUALIFIER_BITS                      ; 1                                        ; Signed Integer ;
+; SLD_STORAGE_QUALIFIER_GAP_RECORD                ; 0                                        ; Signed Integer ;
+; SLD_STORAGE_QUALIFIER_MODE                      ; OFF                                      ; String         ;
+; SLD_STORAGE_QUALIFIER_ENABLE_ADVANCED_CONDITION ; 0                                        ; Signed Integer ;
+; sld_storage_qualifier_inversion_mask_length     ; 0                                        ; Untyped        ;
+; SLD_STORAGE_QUALIFIER_ADVANCED_CONDITION_ENTITY ; basic                                    ; String         ;
+; SLD_STORAGE_QUALIFIER_PIPELINE                  ; 0                                        ; Signed Integer ;
++-------------------------------------------------+------------------------------------------+----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
 +----------------------------------------------------------------------------------------------------------------------+
 ; Port Connectivity Checks: "decoder:decoder|tickgen:tick_gen"                                                         ;
 +------------+--------+----------+-------------------------------------------------------------------------------------+
@@ -428,13 +459,23 @@ Encoding Type:  One-Hot
 +------------+--------+----------+-------------------------------------------------------------------------------------+
 
 
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:01     ;
-+----------------+--------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; SignalTap II Logic Analyzer Settings                                                                                                                                                                                                                                    ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+; Instance Index ; Instance Name    ; Trigger Input Width ; Data Input Width ; Sample Depth ; Segments ; Storage Qualifier Type ; Trigger Flow Control ; Trigger Conditions ; Advanced Trigger Conditions ; Trigger In Used ; Trigger Out Used ; Power-Up Trigger Enabled ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+; 0              ; auto_signaltap_0 ; 3                   ; 3                ; 131072       ; 1        ; continuous             ; sequential           ; 1                  ; 0                           ; no              ; no               ; no                       ;
++----------------+------------------+---------------------+------------------+--------------+----------+------------------------+----------------------+--------------------+-----------------------------+-----------------+------------------+--------------------------+
+
+
++-----------------------------------------------+
+; Elapsed Time Per Partition                    ;
++--------------------------------+--------------+
+; Partition Name                 ; Elapsed Time ;
++--------------------------------+--------------+
+; sld_signaltap:auto_signaltap_0 ; 00:00:04     ;
+; sld_hub:auto_hub               ; 00:00:04     ;
++--------------------------------+--------------+
 
 
 +-------------------------------+
@@ -443,40 +484,40 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Fri Feb 23 11:09:01 2018
-Info: Command: quartus_map --read_settings_files=on --write_settings_files=off irda -c IrDA
-Info (11104): Parallel Compilation has detected 4 hyper-threaded processors. However, the extra hyper-threaded processors will not be used by default. Parallel Compilation will use 2 of the 2 physical processors detected instead.
-Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/IrDA.vhd
+    Info: Processing started: Wed Mar  7 16:45:07 2018
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off IrDA -c IrDA
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Source/IrDA.vhd
     Info (12022): Found design unit 1: IrDA-test_IrDA
     Info (12023): Found entity 1: IrDA
-Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/Tick_generator.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Source/Tick_generator.vhd
     Info (12022): Found design unit 1: tickgen-desc_tickgen
     Info (12023): Found entity 1: tickgen
-Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/Multiplexer.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Source/Multiplexer.vhd
     Info (12022): Found design unit 1: Multiplexer-Behavioral
     Info (12023): Found entity 1: Multiplexer
-Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/Manchester_Generator.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Source/Manchester_Generator.vhd
     Info (12022): Found design unit 1: Manchester_Generator-Behavioral
     Info (12023): Found entity 1: Manchester_Generator
-Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/MAE_emission.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Source/MAE_emission.vhd
     Info (12022): Found design unit 1: MAE_emission-desc_MAE_emission
     Info (12023): Found entity 1: MAE_emission
-Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/MAE_Demanchester.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Source/MAE_Demanchester.vhd
     Info (12022): Found design unit 1: MAE_demanchester-arch_MAE_demanchester
     Info (12023): Found entity 1: MAE_demanchester
-Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/MAE_decoder.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Source/MAE_decoder.vhd
     Info (12022): Found design unit 1: MAE_Decoder-Behavioral
     Info (12023): Found entity 1: MAE_Decoder
-Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/MAE_deburst.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Source/MAE_deburst.vhd
     Info (12022): Found design unit 1: MAE_deburst-desc_MAE_deburst
     Info (12023): Found entity 1: MAE_deburst
-Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/Encoder.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Source/Encoder.vhd
     Info (12022): Found design unit 1: Encoder-Behavioral
     Info (12023): Found entity 1: Encoder
-Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/Decoder.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Source/Decoder.vhd
     Info (12022): Found design unit 1: decoder-arch_decoder
     Info (12023): Found entity 1: decoder
-Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/Burst_Generator.vhd
+Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3521528/Projet/IrDA/Source/Burst_Generator.vhd
     Info (12022): Found design unit 1: Burst_Generator-Behavioral
     Info (12023): Found entity 1: Burst_Generator
 Info (12127): Elaborating entity "IrDA" for the top level hierarchy
@@ -491,71 +532,82 @@ Info (12129): Elaborating entity "MAE_Decoder" using architecture "A:behavioral"
 Info (12129): Elaborating entity "MAE_demanchester" using architecture "A:arch_mae_demanchester" for hierarchy "decoder:decoder|MAE_demanchester:demanchester"
 Warning (10036): Verilog HDL or VHDL warning at MAE_Demanchester.vhd(17): object "out_tmp" assigned a value but never read
 Info (12129): Elaborating entity "MAE_deburst" using architecture "A:desc_mae_deburst" for hierarchy "decoder:decoder|MAE_deburst:deburst"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_mp14.tdf
+    Info (12023): Found entity 1: altsyncram_mp14
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_udq1.tdf
+    Info (12023): Found entity 1: altsyncram_udq1
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_opa.tdf
+    Info (12023): Found entity 1: decode_opa
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_3kb.tdf
+    Info (12023): Found entity 1: mux_3kb
+Info (12021): Found 1 design units, including 1 entities, in source file db/mux_coc.tdf
+    Info (12023): Found entity 1: mux_coc
+Info (12021): Found 1 design units, including 1 entities, in source file db/decode_rqf.tdf
+    Info (12023): Found entity 1: decode_rqf
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_7ai.tdf
+    Info (12023): Found entity 1: cntr_7ai
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_6cc.tdf
+    Info (12023): Found entity 1: cmpr_6cc
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_48j.tdf
+    Info (12023): Found entity 1: cntr_48j
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_0ci.tdf
+    Info (12023): Found entity 1: cntr_0ci
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_acc.tdf
+    Info (12023): Found entity 1: cmpr_acc
+Info (12021): Found 1 design units, including 1 entities, in source file db/cntr_gui.tdf
+    Info (12023): Found entity 1: cntr_gui
+Info (12021): Found 1 design units, including 1 entities, in source file db/cmpr_5cc.tdf
+    Info (12023): Found entity 1: cmpr_5cc
+Info (12033): Analysis and Synthesis generated SignalTap II or debug node instance "auto_signaltap_0"
+Info (12206): 2 design partitions require synthesis
+    Info (12211): Partition "sld_signaltap:auto_signaltap_0" requires synthesis because there were changes to its dependent source files
+    Info (12217): Partition "sld_hub:auto_hub" requires synthesis because there were changes made to the parameters on the partition's root instance
+Info (12207): 1 design partition does not require synthesis
+    Info (12229): Partition "Top" does not require synthesis because there were no relevant design changes
+Info (281037): Using 4 processors to synthesize 2 partitions in parallel
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Wed Mar  7 16:45:12 2018
+Info: Command: quartus_map --parallel=1 --helper=1 --partition=sld_signaltap:auto_signaltap_0 IrDA -c IrDA
+Info (281019): Starting Logic Optimization and Technology Mapping for Partition sld_signaltap:auto_signaltap_0
 Info (13000): Registers with preset signals will power-up high
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
-Critical Warning (18061): Ignored Power-Up Level option on the following registers
-    Critical Warning (18010): Register Encoder:encoder|MAE_emission:MAE_emission|i[3] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|MAE_emission:MAE_emission|i[2] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|MAE_emission:MAE_emission|i[31] will power up to Low
-    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stbit[16] will power up to High
-    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stbit[14] will power up to High
-    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stbit[12] will power up to High
-    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stbit[11] will power up to High
-    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stbit[9] will power up to High
-    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stbit[8] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stmanch[15] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stmanch[13] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stmanch[11] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stmanch[10] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stmanch[8] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stmanch[7] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stbit[16] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stbit[14] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stbit[12] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stbit[11] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stbit[9] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stbit[8] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stburst[8] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stburst[6] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stburst[4] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stburst[3] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stburst[1] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stburst[0] will power up to High
-    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stmanch[15] will power up to High
-    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stmanch[13] will power up to High
-    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stmanch[11] will power up to High
-    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stmanch[10] will power up to High
-    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stmanch[8] will power up to High
-    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stmanch[7] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|sttrame[22] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|sttrame[20] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|sttrame[18] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|sttrame[17] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|sttrame[15] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|sttrame[14] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|sttrame[13] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|sttrame[12] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|sttrame[11] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|sttrame[8] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|sttrame[7] will power up to High
-    Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|sttrame[5] will power up to High
-    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stburst[8] will power up to High
-    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stburst[6] will power up to High
-    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stburst[4] will power up to High
-    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stburst[3] will power up to High
-    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stburst[1] will power up to High
-    Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stburst[0] will power up to High
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 643 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 14 input pins
+Warning (18057): The assignment to disallow NOT gate push-back on register "sld_signaltap:auto_signaltap_0|sld_signaltap_impl:sld_signaltap_body|sld_signaltap_implb:sld_signaltap_body|trigger_out_mode_ff" is ignored
+Info (21057): Implemented 899 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 63 input pins
     Info (21059): Implemented 16 output pins
-    Info (21061): Implemented 613 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 54 warnings
-    Info: Peak virtual memory: 657 megabytes
-    Info: Processing ended: Fri Feb 23 11:09:06 2018
-    Info: Elapsed time: 00:00:05
-    Info: Total CPU time (on all processors): 00:00:03
+    Info (21061): Implemented 724 logic cells
+    Info (21064): Implemented 96 RAM segments
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 553 megabytes
+    Info: Processing ended: Wed Mar  7 16:45:14 2018
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
+    Info: Processing started: Wed Mar  7 16:45:12 2018
+Info: Command: quartus_map --parallel=1 --helper=2 --partition=sld_hub:auto_hub IrDA -c IrDA
+Info (281019): Starting Logic Optimization and Technology Mapping for Partition sld_hub:auto_hub
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "sld_hub:auto_hub|receive[0][0]" is stuck at GND
+Info (21057): Implemented 202 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 19 input pins
+    Info (21059): Implemented 37 output pins
+    Info (21061): Implemented 146 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 550 megabytes
+    Info: Processing ended: Wed Mar  7 16:45:14 2018
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:01
+Info (281038): Finished parallel synthesis of all partitions
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 5 warnings
+    Info: Peak virtual memory: 680 megabytes
+    Info: Processing ended: Wed Mar  7 16:45:15 2018
+    Info: Elapsed time: 00:00:08
+    Info: Total CPU time (on all processors): 00:00:09
 
 
