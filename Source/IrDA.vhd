@@ -28,5 +28,5 @@ BEGIN
   encoder : entity work.Encoder(behavioral)
     port map(CLK => CLK, rst => rst ,Address => Address_in, Cmd => Cmd_in, Go => Go, Tx => Tx);
   decoder : entity work.decoder(arch_decoder)
-    port map(signal_in => not signal_in, CLK => CLK, reset => rst, enable => enable, address => Address_out, command => Cmd_out, toggle => toggle, error_sig => error_sig);
+    port map(signal_in => Tx, CLK => CLK, reset => rst, enable => enable, address => Address_out, command => Cmd_out, toggle => toggle, error_sig => error_sig);
 end architecture test_IrDA;

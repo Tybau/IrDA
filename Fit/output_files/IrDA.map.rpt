@@ -1,5 +1,5 @@
 Analysis & Synthesis report for IrDA
-Wed Mar  7 16:59:38 2018
+Wed Mar 14 14:46:52 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -12,8 +12,8 @@ Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Ver
   4. Parallel Compilation
   5. Analysis & Synthesis Source Files Read
   6. Partition Status Summary
-  7. Partition for Top-Level Resource Utilization by Entity
-  8. State Machine - |IrDA|decoder:decoder|MAE_deburst:deburst|EP
+  7. Dependent File Changes for Partition Top
+  8. Partition for Top-Level Resource Utilization by Entity
   9. State Machine - |IrDA|decoder:decoder|MAE_demanchester:demanchester|State
  10. State Machine - |IrDA|decoder:decoder|MAE_Decoder:decoder|EF
  11. State Machine - |IrDA|Encoder:encoder|MAE_emission:MAE_emission|EF
@@ -48,7 +48,7 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                          ;
 +------------------------------------+--------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Mar  7 16:59:38 2018            ;
+; Analysis & Synthesis Status        ; Successful - Wed Mar 14 14:46:52 2018            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; IrDA                                             ;
 ; Top-level Entity Name              ; IrDA                                             ;
@@ -186,13 +186,22 @@ applicable agreement for further details.
 +------------------------------------+-----------------+-----------------+-------------------------------------------------------------------------------------------+---------+
 
 
-+---------------------------------------------------------------+
-; Partition Status Summary                                      ;
-+----------------+-------------+--------------------------------+
-; Partition Name ; Synthesized ; Reason                         ;
-+----------------+-------------+--------------------------------+
-; Top            ; yes         ; No netlist in project database ;
-+----------------+-------------+--------------------------------+
++--------------------------------------------------------+
+; Partition Status Summary                               ;
++----------------+-------------+-------------------------+
+; Partition Name ; Synthesized ; Reason                  ;
++----------------+-------------+-------------------------+
+; Top            ; yes         ; Dependent files changed ;
++----------------+-------------+-------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------+
+; Dependent File Changes for Partition Top                                                                                            ;
++-----------+--------------------+-------------------+----------+----------------------------------+----------------------------------+
+; Hierarchy ; File Name          ; Relative Location ; Change   ; Old                              ; New                              ;
++-----------+--------------------+-------------------+----------+----------------------------------+----------------------------------+
+; |         ; ../Source/IrDA.vhd ; Project Directory ; Checksum ; 41fa288a6ea77f65de530380d3215ec8 ; 0880921dc9a812ef8c89771eb490c0aa ;
++-----------+--------------------+-------------------+----------+----------------------------------+----------------------------------+
 
 
 +----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -200,32 +209,19 @@ applicable agreement for further details.
 +--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                       ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                            ; Library Name ;
 +--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------+--------------+
-; |IrDA                                            ; 596 (0)           ; 333 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA                                                          ; work         ;
+; |IrDA                                            ; 742 (0)           ; 393 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA                                                          ; work         ;
 ;    |Encoder:encoder|                             ; 308 (1)           ; 177 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder                                          ; work         ;
 ;       |Burst_Generator:BurstGenerator|           ; 4 (4)             ; 3 (3)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder|Burst_Generator:BurstGenerator           ; work         ;
 ;       |MAE_emission:MAE_emission|                ; 103 (103)         ; 53 (53)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder|MAE_emission:MAE_emission                ; work         ;
 ;       |Manchester_Generator:ManchesterGenerator| ; 2 (2)             ; 1 (1)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder|Manchester_Generator:ManchesterGenerator ; work         ;
 ;       |tickgen:TickGenerator|                    ; 198 (198)         ; 120 (120)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|Encoder:encoder|tickgen:TickGenerator                    ; work         ;
-;    |decoder:decoder|                             ; 288 (0)           ; 156 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder                                          ; work         ;
+;    |decoder:decoder|                             ; 434 (0)           ; 216 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder                                          ; work         ;
 ;       |MAE_Decoder:decoder|                      ; 130 (130)         ; 51 (51)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder|MAE_Decoder:decoder                      ; work         ;
-;       |MAE_deburst:deburst|                      ; 3 (3)             ; 5 (5)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder|MAE_deburst:deburst                      ; work         ;
+;       |MAE_deburst:deburst|                      ; 149 (149)         ; 65 (65)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder|MAE_deburst:deburst                      ; work         ;
 ;       |MAE_demanchester:demanchester|            ; 10 (10)           ; 8 (8)        ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder|MAE_demanchester:demanchester            ; work         ;
 ;       |tickgen:tick_gen|                         ; 145 (145)         ; 92 (92)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |IrDA|decoder:decoder|tickgen:tick_gen                         ; work         ;
 +--------------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-Encoding Type:  One-Hot
-+--------------------------------------------------------------+
-; State Machine - |IrDA|decoder:decoder|MAE_deburst:deburst|EP ;
-+-------+-------+-------+-------+------------------------------+
-; Name  ; EP.E3 ; EP.E2 ; EP.E1 ; EP.E0                        ;
-+-------+-------+-------+-------+------------------------------+
-; EP.E0 ; 0     ; 0     ; 0     ; 0                            ;
-; EP.E1 ; 0     ; 0     ; 1     ; 1                            ;
-; EP.E2 ; 0     ; 1     ; 0     ; 1                            ;
-; EP.E3 ; 1     ; 0     ; 0     ; 1                            ;
-+-------+-------+-------+-------+------------------------------+
 
 
 Encoding Type:  One-Hot
@@ -280,11 +276,11 @@ Encoding Type:  One-Hot
 +------------------------------------------------------+--------------------------------------------------------------+
 ; Encoder:encoder|MAE_emission:MAE_emission|reg[12,13] ; Stuck at VCC due to stuck port data_in                       ;
 ; decoder:decoder|tickgen:tick_gen|stmanch[0]          ; Merged with decoder:decoder|tickgen:tick_gen|stbit[0]        ;
-; Encoder:encoder|tickgen:TickGenerator|stbit[0]       ; Merged with Encoder:encoder|tickgen:TickGenerator|stmanch[0] ;
 ; Encoder:encoder|tickgen:TickGenerator|sttrame[0]     ; Merged with Encoder:encoder|tickgen:TickGenerator|stmanch[0] ;
+; Encoder:encoder|tickgen:TickGenerator|stbit[0]       ; Merged with Encoder:encoder|tickgen:TickGenerator|stmanch[0] ;
 ; decoder:decoder|tickgen:tick_gen|stmanch[1]          ; Merged with decoder:decoder|tickgen:tick_gen|stbit[1]        ;
-; Encoder:encoder|tickgen:TickGenerator|sttrame[1]     ; Merged with Encoder:encoder|tickgen:TickGenerator|stmanch[1] ;
 ; Encoder:encoder|tickgen:TickGenerator|stbit[1]       ; Merged with Encoder:encoder|tickgen:TickGenerator|stmanch[1] ;
+; Encoder:encoder|tickgen:TickGenerator|sttrame[1]     ; Merged with Encoder:encoder|tickgen:TickGenerator|stmanch[1] ;
 ; Encoder:encoder|tickgen:TickGenerator|sttrame[2]     ; Merged with Encoder:encoder|tickgen:TickGenerator|stbit[2]   ;
 ; decoder:decoder|tickgen:tick_gen|stmanch[2]          ; Merged with decoder:decoder|tickgen:tick_gen|stbit[2]        ;
 ; Encoder:encoder|tickgen:TickGenerator|stbit[2]       ; Merged with Encoder:encoder|tickgen:TickGenerator|stmanch[2] ;
@@ -307,12 +303,14 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
-; 6:1                ; 30 bits   ; 120 LEs       ; 30 LEs               ; 90 LEs                 ; Yes        ; |IrDA|decoder:decoder|MAE_Decoder:decoder|i[20]           ;
+; 3:1                ; 30 bits   ; 60 LEs        ; 30 LEs               ; 30 LEs                 ; Yes        ; |IrDA|decoder:decoder|MAE_deburst:deburst|cmpt_stop[17]   ;
+; 6:1                ; 30 bits   ; 120 LEs       ; 30 LEs               ; 90 LEs                 ; Yes        ; |IrDA|decoder:decoder|MAE_Decoder:decoder|i[16]           ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |IrDA|decoder:decoder|MAE_deburst:deburst|cmpt_stop[31]   ;
 ; 4:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |IrDA|Encoder:encoder|MAE_emission:MAE_emission|i[0]      ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |IrDA|decoder:decoder|MAE_Decoder:decoder|i[0]            ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |IrDA|Encoder:encoder|MAE_emission:MAE_emission|Selector3 ;
-; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |IrDA|decoder:decoder|MAE_Decoder:decoder|Selector5       ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |IrDA|decoder:decoder|MAE_Decoder:decoder|Selector3       ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 2 LEs                ; 6 LEs                  ; Yes        ; |IrDA|decoder:decoder|MAE_Decoder:decoder|i[31]           ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |IrDA|Encoder:encoder|MAE_emission:MAE_emission|Selector4 ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 6 LEs                ; 4 LEs                  ; No         ; |IrDA|decoder:decoder|MAE_Decoder:decoder|Selector6       ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |IrDA|decoder:decoder|MAE_Decoder:decoder|Selector4       ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------+
 
 
@@ -324,9 +322,9 @@ Encoding Type:  One-Hot
 ; ../Source/Burst_Generator.vhd      ; Project Directory ; work    ; 6a9b783a07def769fe13d1bc44189eda ;
 ; ../Source/Decoder.vhd              ; Project Directory ; work    ; 3d0b327442eb48cd7ffd2909fc5d38ed ;
 ; ../Source/Encoder.vhd              ; Project Directory ; work    ; f5769dd826033ed1921aa881537aa8a2 ;
-; ../Source/IrDA.vhd                 ; Project Directory ; work    ; 0bbe6dd743621607b51a283c75028e77 ;
+; ../Source/IrDA.vhd                 ; Project Directory ; work    ; 0880921dc9a812ef8c89771eb490c0aa ;
 ; ../Source/MAE_Demanchester.vhd     ; Project Directory ; work    ; 703c869cac4249412182c9a41663868e ;
-; ../Source/MAE_deburst.vhd          ; Project Directory ; work    ; 3f94e9f848934d9d708380fd893ad9e3 ;
+; ../Source/MAE_deburst.vhd          ; Project Directory ; work    ; 0decfb0a6ed5161e08c813a59511d8ce ;
 ; ../Source/MAE_decoder.vhd          ; Project Directory ; work    ; 864381997bd15bd3248f0a0d93b28435 ;
 ; ../Source/MAE_emission.vhd         ; Project Directory ; work    ; 669939aeb9d6e841a91e79fc4af03f0d ;
 ; ../Source/Manchester_Generator.vhd ; Project Directory ; work    ; 3546d341f8c0e6dc5f101254b9027ad0 ;
@@ -358,7 +356,7 @@ Encoding Type:  One-Hot
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
-    Info: Processing started: Wed Mar  7 16:59:36 2018
+    Info: Processing started: Wed Mar 14 14:46:50 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off irda -c IrDA
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Source/IrDA.vhd
@@ -406,7 +404,7 @@ Info (12129): Elaborating entity "MAE_Decoder" using architecture "A:behavioral"
 Info (12129): Elaborating entity "MAE_demanchester" using architecture "A:arch_mae_demanchester" for hierarchy "decoder:decoder|MAE_demanchester:demanchester"
 Info (12129): Elaborating entity "MAE_deburst" using architecture "A:desc_mae_deburst" for hierarchy "decoder:decoder|MAE_deburst:deburst"
 Info (12205): 1 design partition requires Analysis and Synthesis
-    Info (12213): Partition "Top" requires synthesis because the project database does not contain a post-synthesis netlist for this partition
+    Info (12211): Partition "Top" requires synthesis because there were changes to its dependent source files
 Info (12209): No design partitions will skip synthesis in the current incremental compilation
 Info (281020): Starting Logic Optimization and Technology Mapping for Top Partition
 Info (13000): Registers with preset signals will power-up high
@@ -439,6 +437,7 @@ Critical Warning (18061): Ignored Power-Up Level option on the following registe
     Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stburst[3] will power up to High
     Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stburst[1] will power up to High
     Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|stburst[0] will power up to High
+    Critical Warning (18010): Register decoder:decoder|MAE_deburst:deburst|cmpt_start[31] will power up to Low
     Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stmanch[15] will power up to High
     Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stmanch[13] will power up to High
     Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stmanch[11] will power up to High
@@ -457,19 +456,22 @@ Critical Warning (18061): Ignored Power-Up Level option on the following registe
     Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|sttrame[8] will power up to High
     Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|sttrame[7] will power up to High
     Critical Warning (18010): Register Encoder:encoder|tickgen:TickGenerator|sttrame[5] will power up to High
+    Critical Warning (18010): Register decoder:decoder|MAE_deburst:deburst|cmpt_stop[31] will power up to Low
+    Critical Warning (18010): Register decoder:decoder|MAE_deburst:deburst|cmpt_stop[0] will power up to Low
+    Critical Warning (18010): Register decoder:decoder|MAE_deburst:deburst|cmpt_start[0] will power up to Low
     Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stburst[8] will power up to High
     Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stburst[6] will power up to High
     Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stburst[4] will power up to High
     Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stburst[3] will power up to High
     Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stburst[1] will power up to High
     Critical Warning (18010): Register decoder:decoder|tickgen:tick_gen|stburst[0] will power up to High
-Info (21057): Implemented 647 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 791 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 15 input pins
     Info (21059): Implemented 17 output pins
-    Info (21061): Implemented 615 logic cells
-Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 53 warnings
-    Info: Peak virtual memory: 613 megabytes
-    Info: Processing ended: Wed Mar  7 16:59:38 2018
+    Info (21061): Implemented 759 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 57 warnings
+    Info: Peak virtual memory: 611 megabytes
+    Info: Processing ended: Wed Mar 14 14:46:52 2018
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:02
 

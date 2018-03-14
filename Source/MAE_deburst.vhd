@@ -9,27 +9,38 @@ entity MAE_deburst is
 end entity MAE_deburst;
 
 architecture desc_MAE_deburst of MAE_deburst is
-  signal cmpt : integer;
+  signal cmpt_stop : integer;
+  signal cmpt_start : integer;
   
 begin
 	process(clk, rst)
 	begin
 		if (rst = '1') then
-				cmpt <= 0;
+				cmpt_stop <= 0;
+				cmpt_start <= 0;
 				trame_deburst <= '0';
 		elsif(rising_edge(clk)) then
 			if (tick = '1') then
+			  
 				if (trame_burst = '1') then
-				  cmpt <= 16;
+				  cmpt_stop <= 16;
+				else
+				  if (cmpt_stop > 0) then
+				    cmpt_stop <= cmpt_stop - 1;
+				  end if;
+				end if;
+				  
+				if (cmpt_stop > 0) then
+				  cmpt_start <= cmpt_start + 1;
+				else
+				  cmpt_start <= 0;
+				end if;
+				  
+				if (cmpt_start > 12) then
 				  trame_deburst <= '1';
 				else
-				  if (cmpt > 0) then
-				    trame_deburst <= '1';
-				    cmpt <= cmpt - 1;
-				  else
-				    trame_deburst <= '0';
-				    cmpt <= 0;
-				  end if;
+				  trame_deburst <= '0';
+				
 				end if;				  
 			end if;
 		end if;

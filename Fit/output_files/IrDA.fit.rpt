@@ -1,5 +1,5 @@
 Fitter report for IrDA
-Wed Mar  7 16:59:48 2018
+Wed Mar 14 14:47:03 2018
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Full Version
 
 
@@ -61,17 +61,17 @@ applicable agreement for further details.
 +---------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                        ;
 +------------------------------------+--------------------------------------------------+
-; Fitter Status                      ; Successful - Wed Mar  7 16:59:48 2018            ;
+; Fitter Status                      ; Successful - Wed Mar 14 14:47:03 2018            ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Full Version ;
 ; Revision Name                      ; IrDA                                             ;
 ; Top-level Entity Name              ; IrDA                                             ;
 ; Family                             ; Cyclone II                                       ;
 ; Device                             ; EP2C35F672C6                                     ;
 ; Timing Models                      ; Final                                            ;
-; Total logic elements               ; 604 / 33,216 ( 2 % )                             ;
-;     Total combinational functions  ; 596 / 33,216 ( 2 % )                             ;
-;     Dedicated logic registers      ; 333 / 33,216 ( 1 % )                             ;
-; Total registers                    ; 333                                              ;
+; Total logic elements               ; 747 / 33,216 ( 2 % )                             ;
+;     Total combinational functions  ; 742 / 33,216 ( 2 % )                             ;
+;     Dedicated logic registers      ; 393 / 33,216 ( 1 % )                             ;
+; Total registers                    ; 393                                              ;
 ; Total pins                         ; 32 / 475 ( 7 % )                                 ;
 ; Total virtual pins                 ; 0                                                ;
 ; Total memory bits                  ; 0 / 483,840 ( 0 % )                              ;
@@ -139,12 +139,12 @@ applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.60        ;
+; Average used               ; 1.86        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processors 2-4         ;  20.0%      ;
+;     Processors 2-4         ;  28.6%      ;
 +----------------------------+-------------+
 
 
@@ -154,8 +154,8 @@ applicable agreement for further details.
 ; Type                ; Value                  ;
 +---------------------+------------------------+
 ; Placement (by node) ;                        ;
-;     -- Requested    ; 0 / 966 ( 0.00 % )     ;
-;     -- Achieved     ; 0 / 966 ( 0.00 % )     ;
+;     -- Requested    ; 0 / 1172 ( 0.00 % )    ;
+;     -- Achieved     ; 0 / 1172 ( 0.00 % )    ;
 ;                     ;                        ;
 ; Routing (by net)    ;                        ;
 ;     -- Requested    ; 0 / 0 ( 0.00 % )       ;
@@ -178,7 +178,7 @@ applicable agreement for further details.
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 ; Partition Name                 ; # Nodes ; # Preserved Nodes ; Preservation Level Used ; Netlist Type Used ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
-; Top                            ; 964     ; 0                 ; N/A                     ; Source File       ;
+; Top                            ; 1170    ; 0                 ; N/A                     ; Source File       ;
 ; hard_block:auto_generated_inst ; 2       ; 0                 ; N/A                     ; Source File       ;
 +--------------------------------+---------+-------------------+-------------------------+-------------------+
 
@@ -189,52 +189,52 @@ applicable agreement for further details.
 The pin-out file can be found in /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet RC-5/irda/Fit/output_files/IrDA.pin.
 
 
-+----------------------------------------------------------------------+
-; Fitter Resource Usage Summary                                        ;
-+---------------------------------------------+------------------------+
-; Resource                                    ; Usage                  ;
-+---------------------------------------------+------------------------+
-; Total logic elements                        ; 604 / 33,216 ( 2 % )   ;
-;     -- Combinational with no register       ; 271                    ;
-;     -- Register only                        ; 8                      ;
-;     -- Combinational with a register        ; 325                    ;
-;                                             ;                        ;
-; Logic element usage by number of LUT inputs ;                        ;
-;     -- 4 input functions                    ; 179                    ;
-;     -- 3 input functions                    ; 35                     ;
-;     -- <=2 input functions                  ; 382                    ;
-;     -- Register only                        ; 8                      ;
-;                                             ;                        ;
-; Logic elements by mode                      ;                        ;
-;     -- normal mode                          ; 320                    ;
-;     -- arithmetic mode                      ; 276                    ;
-;                                             ;                        ;
-; Total registers*                            ; 333 / 34,593 ( < 1 % ) ;
-;     -- Dedicated logic registers            ; 333 / 33,216 ( 1 % )   ;
-;     -- I/O registers                        ; 0 / 1,377 ( 0 % )      ;
-;                                             ;                        ;
-; Total LABs:  partially or completely used   ; 50 / 2,076 ( 2 % )     ;
-; Virtual pins                                ; 0                      ;
-; I/O pins                                    ; 32 / 475 ( 7 % )       ;
-;     -- Clock pins                           ; 5 / 8 ( 63 % )         ;
-;                                             ;                        ;
-; Global signals                              ; 2                      ;
-; M4Ks                                        ; 0 / 105 ( 0 % )        ;
-; Total block memory bits                     ; 0 / 483,840 ( 0 % )    ;
-; Total block memory implementation bits      ; 0 / 483,840 ( 0 % )    ;
-; Embedded Multiplier 9-bit elements          ; 0 / 70 ( 0 % )         ;
-; PLLs                                        ; 0 / 4 ( 0 % )          ;
-; Global clocks                               ; 2 / 16 ( 13 % )        ;
-; JTAGs                                       ; 0 / 1 ( 0 % )          ;
-; ASMI blocks                                 ; 0 / 1 ( 0 % )          ;
-; CRC blocks                                  ; 0 / 1 ( 0 % )          ;
-; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%           ;
-; Peak interconnect usage (total/H/V)         ; 2% / 1% / 2%           ;
-; Maximum fan-out                             ; 333                    ;
-; Highest non-global fan-out                  ; 122                    ;
-; Total fan-out                               ; 2636                   ;
-; Average fan-out                             ; 2.72                   ;
-+---------------------------------------------+------------------------+
++--------------------------------------------------------------------+
+; Fitter Resource Usage Summary                                      ;
++---------------------------------------------+----------------------+
+; Resource                                    ; Usage                ;
++---------------------------------------------+----------------------+
+; Total logic elements                        ; 747 / 33,216 ( 2 % ) ;
+;     -- Combinational with no register       ; 354                  ;
+;     -- Register only                        ; 5                    ;
+;     -- Combinational with a register        ; 388                  ;
+;                                             ;                      ;
+; Logic element usage by number of LUT inputs ;                      ;
+;     -- 4 input functions                    ; 199                  ;
+;     -- 3 input functions                    ; 67                   ;
+;     -- <=2 input functions                  ; 476                  ;
+;     -- Register only                        ; 5                    ;
+;                                             ;                      ;
+; Logic elements by mode                      ;                      ;
+;     -- normal mode                          ; 404                  ;
+;     -- arithmetic mode                      ; 338                  ;
+;                                             ;                      ;
+; Total registers*                            ; 393 / 34,593 ( 1 % ) ;
+;     -- Dedicated logic registers            ; 393 / 33,216 ( 1 % ) ;
+;     -- I/O registers                        ; 0 / 1,377 ( 0 % )    ;
+;                                             ;                      ;
+; Total LABs:  partially or completely used   ; 60 / 2,076 ( 3 % )   ;
+; Virtual pins                                ; 0                    ;
+; I/O pins                                    ; 32 / 475 ( 7 % )     ;
+;     -- Clock pins                           ; 5 / 8 ( 63 % )       ;
+;                                             ;                      ;
+; Global signals                              ; 2                    ;
+; M4Ks                                        ; 0 / 105 ( 0 % )      ;
+; Total block memory bits                     ; 0 / 483,840 ( 0 % )  ;
+; Total block memory implementation bits      ; 0 / 483,840 ( 0 % )  ;
+; Embedded Multiplier 9-bit elements          ; 0 / 70 ( 0 % )       ;
+; PLLs                                        ; 0 / 4 ( 0 % )        ;
+; Global clocks                               ; 2 / 16 ( 13 % )      ;
+; JTAGs                                       ; 0 / 1 ( 0 % )        ;
+; ASMI blocks                                 ; 0 / 1 ( 0 % )        ;
+; CRC blocks                                  ; 0 / 1 ( 0 % )        ;
+; Average interconnect usage (total/H/V)      ; 0% / 0% / 0%         ;
+; Peak interconnect usage (total/H/V)         ; 1% / 1% / 1%         ;
+; Maximum fan-out                             ; 393                  ;
+; Highest non-global fan-out                  ; 122                  ;
+; Total fan-out                               ; 3235                 ;
+; Average fan-out                             ; 2.76                 ;
++---------------------------------------------+----------------------+
 *  Register count does not include registers inside RAM blocks or DSP blocks.
 
 
@@ -246,25 +246,25 @@ The pin-out file can be found in /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet
 +---------------------------------------------+---------------------+--------------------------------+
 ; Difficulty Clustering Region                ; Low                 ; Low                            ;
 ;                                             ;                     ;                                ;
-; Total logic elements                        ; 604 / 33216 ( 2 % ) ; 0 / 33216 ( 0 % )              ;
-;     -- Combinational with no register       ; 271                 ; 0                              ;
-;     -- Register only                        ; 8                   ; 0                              ;
-;     -- Combinational with a register        ; 325                 ; 0                              ;
+; Total logic elements                        ; 747 / 33216 ( 2 % ) ; 0 / 33216 ( 0 % )              ;
+;     -- Combinational with no register       ; 354                 ; 0                              ;
+;     -- Register only                        ; 5                   ; 0                              ;
+;     -- Combinational with a register        ; 388                 ; 0                              ;
 ;                                             ;                     ;                                ;
 ; Logic element usage by number of LUT inputs ;                     ;                                ;
-;     -- 4 input functions                    ; 179                 ; 0                              ;
-;     -- 3 input functions                    ; 35                  ; 0                              ;
-;     -- <=2 input functions                  ; 382                 ; 0                              ;
-;     -- Register only                        ; 8                   ; 0                              ;
+;     -- 4 input functions                    ; 199                 ; 0                              ;
+;     -- 3 input functions                    ; 67                  ; 0                              ;
+;     -- <=2 input functions                  ; 476                 ; 0                              ;
+;     -- Register only                        ; 5                   ; 0                              ;
 ;                                             ;                     ;                                ;
 ; Logic elements by mode                      ;                     ;                                ;
-;     -- normal mode                          ; 320                 ; 0                              ;
-;     -- arithmetic mode                      ; 276                 ; 0                              ;
+;     -- normal mode                          ; 404                 ; 0                              ;
+;     -- arithmetic mode                      ; 338                 ; 0                              ;
 ;                                             ;                     ;                                ;
-; Total registers                             ; 333                 ; 0                              ;
-;     -- Dedicated logic registers            ; 333 / 33216 ( 1 % ) ; 0 / 33216 ( 0 % )              ;
+; Total registers                             ; 393                 ; 0                              ;
+;     -- Dedicated logic registers            ; 393 / 33216 ( 1 % ) ; 0 / 33216 ( 0 % )              ;
 ;                                             ;                     ;                                ;
-; Total LABs:  partially or completely used   ; 50 / 2076 ( 2 % )   ; 0 / 2076 ( 0 % )               ;
+; Total LABs:  partially or completely used   ; 60 / 2076 ( 3 % )   ; 0 / 2076 ( 0 % )               ;
 ;                                             ;                     ;                                ;
 ; Virtual pins                                ; 0                   ; 0                              ;
 ; I/O pins                                    ; 32                  ; 0                              ;
@@ -280,8 +280,8 @@ The pin-out file can be found in /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet
 ;     -- Registered Output Connections        ; 0                   ; 0                              ;
 ;                                             ;                     ;                                ;
 ; Internal Connections                        ;                     ;                                ;
-;     -- Total Connections                    ; 2636                ; 0                              ;
-;     -- Registered Connections               ; 1014                ; 0                              ;
+;     -- Total Connections                    ; 3235                ; 0                              ;
+;     -- Registered Connections               ; 1192                ; 0                              ;
 ;                                             ;                     ;                                ;
 ; External Connections                        ;                     ;                                ;
 ;     -- Top                                  ; 0                   ; 0                              ;
@@ -327,7 +327,7 @@ The pin-out file can be found in /nfs/home/sasl/eleves/ei-se/3521043/VHDL/projet
 ; Cmd_in[5]     ; P2    ; 1        ; 0            ; 18           ; 2           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 2.5 V        ; Off         ; User                 ;
 ; Go            ; N25   ; 5        ; 65           ; 19           ; 0           ; 5                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 2.5 V        ; Off         ; User                 ;
 ; rst           ; N26   ; 5        ; 65           ; 19           ; 1           ; 7                     ; 0                  ; yes    ; no             ; no            ; no              ; no       ; Off          ; 2.5 V        ; Off         ; User                 ;
-; signal_in     ; AE25  ; 6        ; 65           ; 2            ; 3           ; 4                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 2.5 V        ; Off         ; User                 ;
+; signal_in     ; AE25  ; 6        ; 65           ; 2            ; 3           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; Off          ; 2.5 V        ; Off         ; User                 ;
 +---------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 
 
@@ -1095,17 +1095,17 @@ Note: User assignments will override these defaults. The user specified values a
 +--------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                       ; Logic Cells ; Dedicated Logic Registers ; I/O Registers ; Memory Bits ; M4Ks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; LUT-Only LCs ; Register-Only LCs ; LUT/Register LCs ; Full Hierarchy Name                                            ; Library Name ;
 +--------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------+--------------+
-; |IrDA                                            ; 604 (0)     ; 333 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 32   ; 0            ; 271 (0)      ; 8 (0)             ; 325 (0)          ; |IrDA                                                          ; work         ;
-;    |Encoder:encoder|                             ; 313 (1)     ; 177 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 136 (1)      ; 5 (0)             ; 172 (0)          ; |IrDA|Encoder:encoder                                          ; work         ;
+; |IrDA                                            ; 747 (0)     ; 393 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 32   ; 0            ; 354 (0)      ; 5 (0)             ; 388 (0)          ; |IrDA                                                          ; work         ;
+;    |Encoder:encoder|                             ; 311 (1)     ; 177 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 134 (1)      ; 3 (0)             ; 174 (0)          ; |IrDA|Encoder:encoder                                          ; work         ;
 ;       |Burst_Generator:BurstGenerator|           ; 4 (4)       ; 3 (3)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 3 (3)            ; |IrDA|Encoder:encoder|Burst_Generator:BurstGenerator           ; work         ;
-;       |MAE_emission:MAE_emission|                ; 108 (108)   ; 53 (53)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 55 (55)      ; 5 (5)             ; 48 (48)          ; |IrDA|Encoder:encoder|MAE_emission:MAE_emission                ; work         ;
-;       |Manchester_Generator:ManchesterGenerator| ; 2 (2)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 1 (1)            ; |IrDA|Encoder:encoder|Manchester_Generator:ManchesterGenerator ; work         ;
-;       |tickgen:TickGenerator|                    ; 198 (198)   ; 120 (120)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 78 (78)      ; 0 (0)             ; 120 (120)        ; |IrDA|Encoder:encoder|tickgen:TickGenerator                    ; work         ;
-;    |decoder:decoder|                             ; 291 (0)     ; 156 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 135 (0)      ; 3 (0)             ; 153 (0)          ; |IrDA|decoder:decoder                                          ; work         ;
+;       |MAE_emission:MAE_emission|                ; 106 (106)   ; 53 (53)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 52 (52)      ; 3 (3)             ; 51 (51)          ; |IrDA|Encoder:encoder|MAE_emission:MAE_emission                ; work         ;
+;       |Manchester_Generator:ManchesterGenerator| ; 3 (3)       ; 1 (1)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 1 (1)        ; 0 (0)             ; 2 (2)            ; |IrDA|Encoder:encoder|Manchester_Generator:ManchesterGenerator ; work         ;
+;       |tickgen:TickGenerator|                    ; 199 (199)   ; 120 (120)                 ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 79 (79)      ; 0 (0)             ; 120 (120)        ; |IrDA|Encoder:encoder|tickgen:TickGenerator                    ; work         ;
+;    |decoder:decoder|                             ; 436 (0)     ; 216 (0)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 220 (0)      ; 2 (0)             ; 214 (0)          ; |IrDA|decoder:decoder                                          ; work         ;
 ;       |MAE_Decoder:decoder|                      ; 130 (130)   ; 51 (51)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 79 (79)      ; 0 (0)             ; 51 (51)          ; |IrDA|decoder:decoder|MAE_Decoder:decoder                      ; work         ;
-;       |MAE_deburst:deburst|                      ; 5 (5)       ; 5 (5)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 0 (0)        ; 2 (2)             ; 3 (3)            ; |IrDA|decoder:decoder|MAE_deburst:deburst                      ; work         ;
+;       |MAE_deburst:deburst|                      ; 149 (149)   ; 65 (65)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 84 (84)      ; 0 (0)             ; 65 (65)          ; |IrDA|decoder:decoder|MAE_deburst:deburst                      ; work         ;
 ;       |MAE_demanchester:demanchester|            ; 10 (10)     ; 8 (8)                     ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 2 (2)        ; 0 (0)             ; 8 (8)            ; |IrDA|decoder:decoder|MAE_demanchester:demanchester            ; work         ;
-;       |tickgen:tick_gen|                         ; 146 (146)   ; 92 (92)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 54 (54)      ; 1 (1)             ; 91 (91)          ; |IrDA|decoder:decoder|tickgen:tick_gen                         ; work         ;
+;       |tickgen:tick_gen|                         ; 147 (147)   ; 92 (92)                   ; 0 (0)         ; 0           ; 0    ; 0            ; 0       ; 0         ; 0    ; 0            ; 55 (55)      ; 2 (2)             ; 90 (90)          ; |IrDA|decoder:decoder|tickgen:tick_gen                         ; work         ;
 +--------------------------------------------------+-------------+---------------------------+---------------+-------------+------+--------------+---------+-----------+------+--------------+--------------+-------------------+------------------+----------------------------------------------------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -1150,36 +1150,33 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------+----------+---------------+---------------+-----------------------+-----+
 
 
-+-----------------------------------------------------------------------------------------------+
-; Pad To Core Delay Chain Fanout                                                                ;
-+-----------------------------------------------------------------+-------------------+---------+
-; Source Pin / Fanout                                             ; Pad To Core Index ; Setting ;
-+-----------------------------------------------------------------+-------------------+---------+
-; Go                                                              ;                   ;         ;
-; signal_in                                                       ;                   ;         ;
-;      - decoder:decoder|MAE_deburst:deburst|trame_deburst~0      ; 1                 ; 6       ;
-;      - decoder:decoder|MAE_deburst:deburst|Selector0~0          ; 1                 ; 6       ;
-;      - decoder:decoder|MAE_deburst:deburst|EP~10                ; 1                 ; 6       ;
-;      - signal_out                                               ; 1                 ; 6       ;
-; CLK                                                             ;                   ;         ;
-; rst                                                             ;                   ;         ;
-; Address_in[3]                                                   ;                   ;         ;
-;      - Encoder:encoder|MAE_emission:MAE_emission|reg[9]         ; 1                 ; 6       ;
-; Address_in[4]                                                   ;                   ;         ;
-;      - Encoder:encoder|MAE_emission:MAE_emission|reg[10]~feeder ; 1                 ; 6       ;
-; Address_in[2]                                                   ;                   ;         ;
-;      - Encoder:encoder|MAE_emission:MAE_emission|reg[8]         ; 1                 ; 6       ;
-; Cmd_in[5]                                                       ;                   ;         ;
-; Address_in[0]                                                   ;                   ;         ;
-;      - Encoder:encoder|MAE_emission:MAE_emission|reg[6]         ; 0                 ; 6       ;
-; Cmd_in[4]                                                       ;                   ;         ;
-; Address_in[1]                                                   ;                   ;         ;
-;      - Encoder:encoder|MAE_emission:MAE_emission|reg[7]~feeder  ; 0                 ; 6       ;
-; Cmd_in[1]                                                       ;                   ;         ;
-; Cmd_in[2]                                                       ;                   ;         ;
-; Cmd_in[0]                                                       ;                   ;         ;
-; Cmd_in[3]                                                       ;                   ;         ;
-+-----------------------------------------------------------------+-------------------+---------+
++----------------------------------------------------------------------------------------+
+; Pad To Core Delay Chain Fanout                                                         ;
++----------------------------------------------------------+-------------------+---------+
+; Source Pin / Fanout                                      ; Pad To Core Index ; Setting ;
++----------------------------------------------------------+-------------------+---------+
+; Go                                                       ;                   ;         ;
+; signal_in                                                ;                   ;         ;
+;      - signal_out                                        ; 1                 ; 6       ;
+; CLK                                                      ;                   ;         ;
+; rst                                                      ;                   ;         ;
+; Address_in[3]                                            ;                   ;         ;
+;      - Encoder:encoder|MAE_emission:MAE_emission|reg[9]  ; 0                 ; 6       ;
+; Address_in[4]                                            ;                   ;         ;
+;      - Encoder:encoder|MAE_emission:MAE_emission|reg[10] ; 0                 ; 6       ;
+; Address_in[2]                                            ;                   ;         ;
+;      - Encoder:encoder|MAE_emission:MAE_emission|reg[8]  ; 1                 ; 6       ;
+; Cmd_in[5]                                                ;                   ;         ;
+; Address_in[0]                                            ;                   ;         ;
+;      - Encoder:encoder|MAE_emission:MAE_emission|reg[6]  ; 1                 ; 6       ;
+; Cmd_in[4]                                                ;                   ;         ;
+; Address_in[1]                                            ;                   ;         ;
+;      - Encoder:encoder|MAE_emission:MAE_emission|reg[7]  ; 0                 ; 6       ;
+; Cmd_in[1]                                                ;                   ;         ;
+; Cmd_in[2]                                                ;                   ;         ;
+; Cmd_in[0]                                                ;                   ;         ;
+; Cmd_in[3]                                                ;                   ;         ;
++----------------------------------------------------------+-------------------+---------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -1187,19 +1184,20 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 ; Name                                                                 ; Location           ; Fan-Out ; Usage        ; Global ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +----------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
-; CLK                                                                  ; PIN_N2             ; 333     ; Clock        ; yes    ; Global Clock         ; GCLK2            ; --                        ;
-; Encoder:encoder|MAE_emission:MAE_emission|clear                      ; LCFF_X23_Y17_N3    ; 122     ; Async. clear ; no     ; --                   ; --               ; --                        ;
-; Encoder:encoder|MAE_emission:MAE_emission|i[0]~1                     ; LCCOMB_X29_Y15_N2  ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; Encoder:encoder|MAE_emission:MAE_emission|reg[11]~0                  ; LCCOMB_X23_Y17_N22 ; 12      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; Encoder:encoder|Manchester_Generator:ManchesterGenerator|process_0~0 ; LCCOMB_X23_Y17_N24 ; 1       ; Async. clear ; no     ; --                   ; --               ; --                        ;
-; Encoder:encoder|tickgen:TickGenerator|tick_burst                     ; LCFF_X24_Y16_N13   ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; decoder:decoder|MAE_Decoder:decoder|EF.State_Extract                 ; LCFF_X34_Y5_N15    ; 48      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
-; decoder:decoder|MAE_Decoder:decoder|Selector7~0                      ; LCCOMB_X34_Y5_N22  ; 12      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; decoder:decoder|MAE_Decoder:decoder|i[0]~3                           ; LCCOMB_X34_Y5_N6   ; 32      ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; decoder:decoder|tickgen:tick_gen|tick_burst                          ; LCFF_X40_Y15_N17   ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; decoder:decoder|tickgen:tick_gen|tick_manch                          ; LCFF_X35_Y7_N21    ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; CLK                                                                  ; PIN_N2             ; 393     ; Clock        ; yes    ; Global Clock         ; GCLK2            ; --                        ;
+; Encoder:encoder|MAE_emission:MAE_emission|clear                      ; LCFF_X44_Y26_N21   ; 122     ; Async. clear ; no     ; --                   ; --               ; --                        ;
+; Encoder:encoder|MAE_emission:MAE_emission|i[0]~1                     ; LCCOMB_X42_Y26_N20 ; 5       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; Encoder:encoder|MAE_emission:MAE_emission|reg[11]~0                  ; LCCOMB_X43_Y26_N10 ; 12      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; Encoder:encoder|Manchester_Generator:ManchesterGenerator|process_0~0 ; LCCOMB_X43_Y26_N20 ; 1       ; Async. clear ; no     ; --                   ; --               ; --                        ;
+; Encoder:encoder|tickgen:TickGenerator|tick_burst                     ; LCFF_X43_Y24_N5    ; 3       ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; decoder:decoder|MAE_Decoder:decoder|EF.State_Extract                 ; LCFF_X34_Y10_N3    ; 47      ; Sync. clear  ; no     ; --                   ; --               ; --                        ;
+; decoder:decoder|MAE_Decoder:decoder|Selector7~0                      ; LCCOMB_X34_Y9_N14  ; 13      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; decoder:decoder|MAE_Decoder:decoder|i[0]~1                           ; LCCOMB_X35_Y9_N18  ; 32      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[31]~0                  ; LCCOMB_X22_Y23_N2  ; 32      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; decoder:decoder|tickgen:tick_gen|tick_burst                          ; LCFF_X27_Y22_N1    ; 34      ; Clock enable ; no     ; --                   ; --               ; --                        ;
+; decoder:decoder|tickgen:tick_gen|tick_manch                          ; LCFF_X16_Y10_N21   ; 8       ; Clock enable ; no     ; --                   ; --               ; --                        ;
 ; rst                                                                  ; PIN_N26            ; 7       ; Clock enable ; no     ; --                   ; --               ; --                        ;
-; rst                                                                  ; PIN_N26            ; 165     ; Async. clear ; yes    ; Global Clock         ; GCLK6            ; --                        ;
+; rst                                                                  ; PIN_N26            ; 225     ; Async. clear ; yes    ; Global Clock         ; GCLK6            ; --                        ;
 +----------------------------------------------------------------------+--------------------+---------+--------------+--------+----------------------+------------------+---------------------------+
 
 
@@ -1208,8 +1206,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +------+----------+---------+----------------------+------------------+---------------------------+
 ; Name ; Location ; Fan-Out ; Global Resource Used ; Global Line Name ; Enable Signal Source Name ;
 +------+----------+---------+----------------------+------------------+---------------------------+
-; CLK  ; PIN_N2   ; 333     ; Global Clock         ; GCLK2            ; --                        ;
-; rst  ; PIN_N26  ; 165     ; Global Clock         ; GCLK6            ; --                        ;
+; CLK  ; PIN_N2   ; 393     ; Global Clock         ; GCLK2            ; --                        ;
+; rst  ; PIN_N26  ; 225     ; Global Clock         ; GCLK6            ; --                        ;
 +------+----------+---------+----------------------+------------------+---------------------------+
 
 
@@ -1219,13 +1217,18 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Name                                                                 ; Fan-Out ;
 +----------------------------------------------------------------------+---------+
 ; Encoder:encoder|MAE_emission:MAE_emission|clear                      ; 122     ;
-; decoder:decoder|MAE_Decoder:decoder|EF.State_Extract                 ; 48      ;
-; decoder:decoder|MAE_Decoder:decoder|i[0]~3                           ; 32      ;
+; decoder:decoder|MAE_Decoder:decoder|EF.State_Extract                 ; 47      ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[31]                    ; 34      ;
+; decoder:decoder|tickgen:tick_gen|tick_burst                          ; 34      ;
+; Encoder:encoder|Tx~0                                                 ; 34      ;
+; decoder:decoder|MAE_deburst:deburst|LessThan0~9                      ; 33      ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[31]~0                  ; 32      ;
+; decoder:decoder|MAE_Decoder:decoder|i[0]~1                           ; 32      ;
 ; Encoder:encoder|MAE_emission:MAE_emission|i[0]~0                     ; 32      ;
 ; Encoder:encoder|MAE_emission:MAE_emission|Selector8~0                ; 27      ;
-; decoder:decoder|tickgen:tick_gen|tick_bit                            ; 19      ;
+; decoder:decoder|tickgen:tick_gen|tick_bit                            ; 18      ;
 ; decoder:decoder|MAE_demanchester:demanchester|WideOr0~0              ; 17      ;
-; decoder:decoder|MAE_Decoder:decoder|process_0~0                      ; 15      ;
+; decoder:decoder|MAE_Decoder:decoder|process_0~0                      ; 14      ;
 ; decoder:decoder|MAE_Decoder:decoder|i[3]                             ; 14      ;
 ; decoder:decoder|MAE_Decoder:decoder|i[2]                             ; 14      ;
 ; decoder:decoder|MAE_Decoder:decoder|i[1]                             ; 14      ;
@@ -1233,8 +1236,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Encoder:encoder|tickgen:TickGenerator|Equal3~8                       ; 13      ;
 ; Encoder:encoder|tickgen:TickGenerator|Equal3~3                       ; 13      ;
 ; Encoder:encoder|tickgen:TickGenerator|Equal3~2                       ; 13      ;
+; decoder:decoder|MAE_Decoder:decoder|Selector7~0                      ; 13      ;
 ; Encoder:encoder|MAE_emission:MAE_emission|reg[11]~0                  ; 12      ;
-; decoder:decoder|MAE_Decoder:decoder|Selector7~0                      ; 12      ;
 ; Encoder:encoder|MAE_emission:MAE_emission|EF.State_Send              ; 11      ;
 ; decoder:decoder|MAE_deburst:deburst|trame_deburst                    ; 9       ;
 ; decoder:decoder|tickgen:tick_gen|tick_manch                          ; 8       ;
@@ -1247,28 +1250,27 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; decoder:decoder|tickgen:tick_gen|Equal2~10                           ; 7       ;
 ; Encoder:encoder|MAE_emission:MAE_emission|EF.State_Init              ; 7       ;
 ; Encoder:encoder|MAE_emission:MAE_emission|i[1]                       ; 7       ;
-; decoder:decoder|MAE_Decoder:decoder|EF.State_Init                    ; 7       ;
 ; rst                                                                  ; 6       ;
 ; Encoder:encoder|MAE_emission:MAE_emission|EF.State_Close             ; 6       ;
+; decoder:decoder|MAE_demanchester:demanchester|State.Init             ; 6       ;
 ; Go                                                                   ; 5       ;
-; decoder:decoder|tickgen:tick_gen|tick_burst                          ; 5       ;
 ; Encoder:encoder|MAE_emission:MAE_emission|i[0]~1                     ; 5       ;
 ; Encoder:encoder|tickgen:TickGenerator|stmanch[0]                     ; 5       ;
 ; Encoder:encoder|MAE_emission:MAE_emission|EF.State_Clear             ; 5       ;
 ; Encoder:encoder|tickgen:TickGenerator|tick_bit                       ; 5       ;
 ; decoder:decoder|MAE_Decoder:decoder|EF.State_Begin                   ; 5       ;
-; decoder:decoder|MAE_demanchester:demanchester|State.Init             ; 5       ;
-; signal_in                                                            ; 4       ;
+; decoder:decoder|MAE_Decoder:decoder|EF.State_Init                    ; 5       ;
 ; Encoder:encoder|tickgen:TickGenerator|stmanch[1]                     ; 4       ;
 ; Encoder:encoder|tickgen:TickGenerator|stmanch[2]                     ; 4       ;
 ; Encoder:encoder|tickgen:TickGenerator|stmanch[3]                     ; 4       ;
 ; Encoder:encoder|tickgen:TickGenerator|stmanch[4]                     ; 4       ;
 ; decoder:decoder|MAE_Decoder:decoder|Selector4~4                      ; 4       ;
 ; Encoder:encoder|MAE_emission:MAE_emission|i[3]                       ; 4       ;
-; decoder:decoder|MAE_deburst:deburst|EP.E0                            ; 3       ;
+; decoder:decoder|MAE_Decoder:decoder|Equal0~9                         ; 4       ;
+; decoder:decoder|MAE_Decoder:decoder|Equal0~4                         ; 4       ;
 ; Encoder:encoder|tickgen:TickGenerator|stmanch[5]                     ; 3       ;
 ; Encoder:encoder|tickgen:TickGenerator|stmanch[6]                     ; 3       ;
-; decoder:decoder|MAE_Decoder:decoder|Selector3~2                      ; 3       ;
+; decoder:decoder|MAE_Decoder:decoder|Selector4~5                      ; 3       ;
 ; decoder:decoder|tickgen:tick_gen|stbit[0]                            ; 3       ;
 ; decoder:decoder|tickgen:tick_gen|stbit[1]                            ; 3       ;
 ; decoder:decoder|tickgen:tick_gen|stbit[2]                            ; 3       ;
@@ -1311,8 +1313,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Encoder:encoder|tickgen:TickGenerator|tick_burst                     ; 3       ;
 ; decoder:decoder|MAE_Decoder:decoder|EF.State_Send                    ; 3       ;
 ; decoder:decoder|MAE_Decoder:decoder|EF.State_Error                   ; 3       ;
-; decoder:decoder|MAE_Decoder:decoder|Equal0~9                         ; 3       ;
-; decoder:decoder|MAE_Decoder:decoder|Equal0~4                         ; 3       ;
 ; decoder:decoder|MAE_demanchester:demanchester|State.suit00           ; 3       ;
 ; decoder:decoder|MAE_demanchester:demanchester|State.valid0           ; 3       ;
 ; decoder:decoder|MAE_demanchester:demanchester|State.suit01           ; 3       ;
@@ -1336,14 +1336,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; decoder:decoder|tickgen:tick_gen|stburst[5]                          ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stburst[6]                          ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stburst[7]                          ; 2       ;
+; decoder:decoder|tickgen:tick_gen|stburst[14]                         ; 2       ;
+; decoder:decoder|tickgen:tick_gen|stburst[15]                         ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stburst[8]                          ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stburst[9]                          ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stburst[10]                         ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stburst[11]                         ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stburst[12]                         ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stburst[13]                         ; 2       ;
-; decoder:decoder|tickgen:tick_gen|stburst[14]                         ; 2       ;
-; decoder:decoder|tickgen:tick_gen|stburst[15]                         ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stburst[16]                         ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stburst[17]                         ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stburst[18]                         ; 2       ;
@@ -1360,6 +1360,37 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; decoder:decoder|tickgen:tick_gen|stburst[29]                         ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stburst[30]                         ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stburst[31]                         ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[0]                     ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[1]                     ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[2]                     ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[3]                     ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[4]                     ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[5]                     ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[6]                     ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[7]                     ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[8]                     ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[9]                     ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[10]                    ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[11]                    ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[12]                    ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[13]                    ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[14]                    ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[15]                    ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[16]                    ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[17]                    ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[18]                    ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[19]                    ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[20]                    ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[21]                    ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[22]                    ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[23]                    ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[24]                    ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[25]                    ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[26]                    ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[27]                    ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[28]                    ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[29]                    ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_stop[30]                    ; 2       ;
 ; Encoder:encoder|tickgen:TickGenerator|sttrame[8]                     ; 2       ;
 ; Encoder:encoder|tickgen:TickGenerator|sttrame[9]                     ; 2       ;
 ; Encoder:encoder|tickgen:TickGenerator|sttrame[10]                    ; 2       ;
@@ -1396,14 +1427,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; decoder:decoder|tickgen:tick_gen|stmanch[13]                         ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stmanch[14]                         ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stmanch[15]                         ; 2       ;
-; decoder:decoder|tickgen:tick_gen|stmanch[22]                         ; 2       ;
-; decoder:decoder|tickgen:tick_gen|stmanch[23]                         ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stmanch[16]                         ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stmanch[17]                         ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stmanch[18]                         ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stmanch[19]                         ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stmanch[20]                         ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stmanch[21]                         ; 2       ;
+; decoder:decoder|tickgen:tick_gen|stmanch[22]                         ; 2       ;
+; decoder:decoder|tickgen:tick_gen|stmanch[23]                         ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stmanch[24]                         ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stmanch[25]                         ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stmanch[26]                         ; 2       ;
@@ -1412,6 +1443,36 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; decoder:decoder|tickgen:tick_gen|stmanch[29]                         ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stmanch[30]                         ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stmanch[31]                         ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[4]                    ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[5]                    ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[6]                    ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[7]                    ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[8]                    ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[9]                    ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[10]                   ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[11]                   ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[12]                   ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[13]                   ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[14]                   ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[15]                   ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[16]                   ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[17]                   ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[18]                   ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[19]                   ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[20]                   ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[21]                   ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[22]                   ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[23]                   ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[24]                   ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[25]                   ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[26]                   ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[27]                   ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[28]                   ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[29]                   ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[30]                   ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[2]                    ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[3]                    ; 2       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[31]                   ; 2       ;
 ; decoder:decoder|MAE_demanchester:demanchester|State.valid1           ; 2       ;
 ; decoder:decoder|MAE_demanchester:demanchester|State.Start            ; 2       ;
 ; Encoder:encoder|MAE_emission:MAE_emission|toggle                     ; 2       ;
@@ -1530,6 +1591,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; decoder:decoder|tickgen:tick_gen|stbit[30]                           ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|stbit[31]                           ; 2       ;
 ; decoder:decoder|tickgen:tick_gen|Equal2~1                            ; 2       ;
+; decoder:decoder|MAE_Decoder:decoder|Selector12~0                     ; 2       ;
 ; decoder:decoder|MAE_demanchester:demanchester|State.suit10           ; 2       ;
 ; decoder:decoder|MAE_demanchester:demanchester|State.suit11           ; 2       ;
 ; Encoder:encoder|Burst_Generator:BurstGenerator|state[1]              ; 2       ;
@@ -1578,23 +1640,55 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Address_in[2]                                                        ; 1       ;
 ; Address_in[4]                                                        ; 1       ;
 ; Address_in[3]                                                        ; 1       ;
+; signal_in                                                            ; 1       ;
 ; decoder:decoder|tickgen:tick_gen|stburst[1]~10                       ; 1       ;
 ; Encoder:encoder|tickgen:TickGenerator|stburst[1]~9                   ; 1       ;
 ; Encoder:encoder|MAE_emission:MAE_emission|reg[11]~1                  ; 1       ;
 ; Encoder:encoder|Burst_Generator:BurstGenerator|state[0]~2            ; 1       ;
 ; decoder:decoder|MAE_Decoder:decoder|Selector2~2                      ; 1       ;
 ; decoder:decoder|MAE_Decoder:decoder|Selector6~3                      ; 1       ;
-; decoder:decoder|MAE_Decoder:decoder|Selector3~5                      ; 1       ;
-; decoder:decoder|MAE_Decoder:decoder|Selector4~6                      ; 1       ;
-; decoder:decoder|MAE_deburst:deburst|EP~10                            ; 1       ;
-; decoder:decoder|MAE_deburst:deburst|EP.E1                            ; 1       ;
+; decoder:decoder|MAE_Decoder:decoder|Selector3~2                      ; 1       ;
+; decoder:decoder|MAE_Decoder:decoder|Selector4~9                      ; 1       ;
 ; decoder:decoder|tickgen:tick_gen|stburst~5                           ; 1       ;
 ; decoder:decoder|tickgen:tick_gen|stburst~4                           ; 1       ;
 ; decoder:decoder|tickgen:tick_gen|stburst~3                           ; 1       ;
 ; decoder:decoder|tickgen:tick_gen|stburst~2                           ; 1       ;
 ; decoder:decoder|tickgen:tick_gen|stburst~1                           ; 1       ;
 ; decoder:decoder|tickgen:tick_gen|stburst~0                           ; 1       ;
-; decoder:decoder|MAE_deburst:deburst|EP.E2                            ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~95                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~94                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~93                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~92                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~91                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~90                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~89                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~88                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~87                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~86                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~85                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~84                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~83                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~82                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~81                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~80                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~79                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~78                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~77                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~76                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~75                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~74                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~73                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~72                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~71                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~70                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~69                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~68                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~67                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~66                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~65                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~64                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~95                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~94                          ; 1       ;
 ; Encoder:encoder|tickgen:TickGenerator|sttrame~11                     ; 1       ;
 ; Encoder:encoder|tickgen:TickGenerator|sttrame~10                     ; 1       ;
 ; Encoder:encoder|tickgen:TickGenerator|sttrame~9                      ; 1       ;
@@ -1623,8 +1717,47 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; decoder:decoder|tickgen:tick_gen|Equal0~2                            ; 1       ;
 ; decoder:decoder|tickgen:tick_gen|Equal0~1                            ; 1       ;
 ; decoder:decoder|tickgen:tick_gen|Equal0~0                            ; 1       ;
-; decoder:decoder|MAE_deburst:deburst|Selector0~0                      ; 1       ;
-; decoder:decoder|MAE_deburst:deburst|EP.E3                            ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~93                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~92                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~91                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~90                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~89                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~88                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~87                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~86                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~85                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~84                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~83                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~82                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~81                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~80                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~79                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~78                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~77                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~76                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~75                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~74                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~73                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~72                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~71                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~70                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~69                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~68                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~67                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~66                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~65                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add1~64                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|LessThan0~8                      ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|LessThan0~7                      ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|LessThan0~6                      ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|LessThan0~5                      ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|LessThan0~4                      ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|LessThan0~3                      ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|LessThan0~2                      ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|LessThan0~1                      ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|LessThan0~0                      ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[0]                    ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|cmpt_start[1]                    ; 1       ;
 ; decoder:decoder|MAE_demanchester:demanchester|Selector3~0            ; 1       ;
 ; decoder:decoder|MAE_demanchester:demanchester|Selector1~0            ; 1       ;
 ; Encoder:encoder|MAE_emission:MAE_emission|toggle~0                   ; 1       ;
@@ -1671,7 +1804,16 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; decoder:decoder|tickgen:tick_gen|Equal1~1                            ; 1       ;
 ; decoder:decoder|tickgen:tick_gen|Equal1~0                            ; 1       ;
 ; decoder:decoder|MAE_demanchester:demanchester|Selector6~0            ; 1       ;
-; decoder:decoder|MAE_deburst:deburst|trame_deburst~0                  ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|LessThan1~9                      ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|LessThan1~8                      ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|LessThan1~7                      ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|LessThan1~6                      ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|LessThan1~5                      ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|LessThan1~4                      ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|LessThan1~3                      ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|LessThan1~2                      ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|LessThan1~1                      ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|LessThan1~0                      ; 1       ;
 ; decoder:decoder|MAE_demanchester:demanchester|Selector7~0            ; 1       ;
 ; Encoder:encoder|MAE_emission:MAE_emission|Selector7~0                ; 1       ;
 ; Encoder:encoder|tickgen:TickGenerator|Equal1~9                       ; 1       ;
@@ -1740,9 +1882,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Encoder:encoder|Burst_Generator:BurstGenerator|state~0               ; 1       ;
 ; decoder:decoder|MAE_Decoder:decoder|Selector5~0                      ; 1       ;
 ; decoder:decoder|MAE_Decoder:decoder|Selector6~2                      ; 1       ;
-; decoder:decoder|MAE_Decoder:decoder|Selector3~4                      ; 1       ;
-; decoder:decoder|MAE_Decoder:decoder|Selector4~5                      ; 1       ;
-; decoder:decoder|MAE_Decoder:decoder|Selector3~3                      ; 1       ;
+; decoder:decoder|MAE_Decoder:decoder|Selector4~8                      ; 1       ;
+; decoder:decoder|MAE_Decoder:decoder|Selector4~7                      ; 1       ;
+; decoder:decoder|MAE_Decoder:decoder|Selector4~6                      ; 1       ;
 ; decoder:decoder|MAE_Decoder:decoder|Add0~95                          ; 1       ;
 ; decoder:decoder|MAE_Decoder:decoder|Add0~94                          ; 1       ;
 ; decoder:decoder|MAE_Decoder:decoder|Add0~93                          ; 1       ;
@@ -1783,8 +1925,7 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; decoder:decoder|MAE_Decoder:decoder|Add0~11                          ; 1       ;
 ; decoder:decoder|MAE_Decoder:decoder|Add0~8                           ; 1       ;
 ; decoder:decoder|MAE_Decoder:decoder|Add0~5                           ; 1       ;
-; decoder:decoder|MAE_Decoder:decoder|Selector12~0                     ; 1       ;
-; decoder:decoder|MAE_Decoder:decoder|i[0]~2                           ; 1       ;
+; decoder:decoder|MAE_Decoder:decoder|i[31]~0                          ; 1       ;
 ; decoder:decoder|MAE_Decoder:decoder|Add0~2                           ; 1       ;
 ; decoder:decoder|MAE_demanchester:demanchester|Selector4~0            ; 1       ;
 ; decoder:decoder|MAE_demanchester:demanchester|Selector2~0            ; 1       ;
@@ -1875,7 +2016,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; decoder:decoder|MAE_Decoder:decoder|Equal0~0                         ; 1       ;
 ; decoder:decoder|MAE_Decoder:decoder|data~0                           ; 1       ;
 ; decoder:decoder|MAE_Decoder:decoder|Decoder0~0                       ; 1       ;
-; Encoder:encoder|Tx~0                                                 ; 1       ;
 ; decoder:decoder|tickgen:tick_gen|Add0~62                             ; 1       ;
 ; decoder:decoder|tickgen:tick_gen|Add0~61                             ; 1       ;
 ; decoder:decoder|tickgen:tick_gen|Add0~60                             ; 1       ;
@@ -1939,6 +2079,69 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; decoder:decoder|tickgen:tick_gen|Add0~2                              ; 1       ;
 ; decoder:decoder|tickgen:tick_gen|Add0~1                              ; 1       ;
 ; decoder:decoder|tickgen:tick_gen|Add0~0                              ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~62                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~61                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~60                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~59                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~58                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~57                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~56                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~55                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~54                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~53                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~52                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~51                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~50                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~49                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~48                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~47                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~46                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~45                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~44                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~43                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~42                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~41                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~40                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~39                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~38                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~37                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~36                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~35                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~34                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~33                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~32                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~31                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~30                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~29                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~28                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~27                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~26                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~25                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~24                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~23                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~22                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~21                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~20                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~19                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~18                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~17                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~16                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~15                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~14                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~13                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~12                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~11                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~10                          ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~9                           ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~8                           ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~7                           ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~6                           ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~5                           ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~4                           ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~3                           ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~2                           ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~1                           ; 1       ;
+; decoder:decoder|MAE_deburst:deburst|Add0~0                           ; 1       ;
 ; Encoder:encoder|tickgen:TickGenerator|Add3~60                        ; 1       ;
 ; Encoder:encoder|tickgen:TickGenerator|Add3~59                        ; 1       ;
 ; Encoder:encoder|tickgen:TickGenerator|Add3~58                        ; 1       ;
@@ -2013,211 +2216,6 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; decoder:decoder|tickgen:tick_gen|Add1~46                             ; 1       ;
 ; decoder:decoder|tickgen:tick_gen|Add1~45                             ; 1       ;
 ; decoder:decoder|tickgen:tick_gen|Add1~44                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~43                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~42                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~41                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~40                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~39                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~38                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~37                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~36                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~35                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~34                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~33                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~32                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~31                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~30                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~29                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~28                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~27                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~26                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~25                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~24                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~23                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~22                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~21                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~20                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~19                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~18                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~17                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~16                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~15                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~14                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~13                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~12                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~11                             ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~9                              ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~7                              ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~5                              ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~3                              ; 1       ;
-; decoder:decoder|tickgen:tick_gen|Add1~1                              ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~62                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~61                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~60                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~59                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~58                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~57                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~56                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~55                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~54                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~53                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~52                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~51                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~50                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~49                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~48                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~47                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~46                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~45                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~44                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~43                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~42                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~41                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~40                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~39                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~38                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~37                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~36                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~35                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~34                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~33                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~32                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~31                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~30                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~29                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~28                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~27                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~26                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~25                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~24                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~23                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~22                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~21                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~20                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~19                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~18                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~17                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~16                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~15                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~14                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~60                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~59                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~58                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~57                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~56                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~55                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~54                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~53                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~52                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~51                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~50                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~49                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~48                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~47                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~46                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~45                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~44                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~43                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~42                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~41                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~40                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~39                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~38                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~37                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~36                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~35                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~34                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~33                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~32                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~31                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~30                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~29                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~28                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~27                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~26                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~25                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~24                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~23                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~22                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~21                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~20                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~19                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~18                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~17                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~16                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~15                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~14                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~13                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~12                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~11                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~9                         ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~7                         ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~5                         ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~3                         ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add2~1                         ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~13                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~12                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~11                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~10                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~9                         ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~8                         ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~7                         ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~6                         ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~5                         ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~4                         ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~3                         ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~2                         ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~1                         ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add1~0                         ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~62                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~61                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~60                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~59                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~58                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~57                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~56                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~55                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~54                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~53                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~52                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~51                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~50                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~49                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~48                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~47                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~46                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~45                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~44                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~43                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~42                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~41                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~40                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~39                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~38                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~37                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~36                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~35                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~34                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~33                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~32                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~31                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~30                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~29                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~28                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~27                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~26                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~25                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~24                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~23                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~22                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~21                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~20                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~19                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~18                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~17                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~16                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~15                        ; 1       ;
-; Encoder:encoder|tickgen:TickGenerator|Add0~14                        ; 1       ;
 +----------------------------------------------------------------------+---------+
 
 
@@ -2226,158 +2224,159 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------------+------------------------+
 ; Other Routing Resource Type ; Usage                  ;
 +-----------------------------+------------------------+
-; Block interconnects         ; 620 / 94,460 ( < 1 % ) ;
-; C16 interconnects           ; 11 / 3,315 ( < 1 % )   ;
-; C4 interconnects            ; 168 / 60,840 ( < 1 % ) ;
-; Direct links                ; 337 / 94,460 ( < 1 % ) ;
+; Block interconnects         ; 816 / 94,460 ( < 1 % ) ;
+; C16 interconnects           ; 17 / 3,315 ( < 1 % )   ;
+; C4 interconnects            ; 184 / 60,840 ( < 1 % ) ;
+; Direct links                ; 453 / 94,460 ( < 1 % ) ;
 ; Global clocks               ; 2 / 16 ( 13 % )        ;
-; Local interconnects         ; 391 / 33,216 ( 1 % )   ;
-; R24 interconnects           ; 26 / 3,091 ( < 1 % )   ;
-; R4 interconnects            ; 177 / 81,294 ( < 1 % ) ;
+; Local interconnects         ; 423 / 33,216 ( 1 % )   ;
+; R24 interconnects           ; 30 / 3,091 ( < 1 % )   ;
+; R4 interconnects            ; 231 / 81,294 ( < 1 % ) ;
 +-----------------------------+------------------------+
 
 
 +----------------------------------------------------------------------------+
 ; LAB Logic Elements                                                         ;
 +---------------------------------------------+------------------------------+
-; Number of Logic Elements  (Average = 12.08) ; Number of LABs  (Total = 50) ;
+; Number of Logic Elements  (Average = 12.45) ; Number of LABs  (Total = 60) ;
 +---------------------------------------------+------------------------------+
-; 1                                           ; 1                            ;
-; 2                                           ; 1                            ;
-; 3                                           ; 1                            ;
-; 4                                           ; 3                            ;
-; 5                                           ; 3                            ;
-; 6                                           ; 2                            ;
+; 1                                           ; 3                            ;
+; 2                                           ; 2                            ;
+; 3                                           ; 0                            ;
+; 4                                           ; 1                            ;
+; 5                                           ; 4                            ;
+; 6                                           ; 1                            ;
 ; 7                                           ; 1                            ;
-; 8                                           ; 2                            ;
+; 8                                           ; 1                            ;
 ; 9                                           ; 1                            ;
-; 10                                          ; 2                            ;
-; 11                                          ; 0                            ;
-; 12                                          ; 3                            ;
-; 13                                          ; 2                            ;
-; 14                                          ; 0                            ;
-; 15                                          ; 3                            ;
-; 16                                          ; 25                           ;
+; 10                                          ; 4                            ;
+; 11                                          ; 4                            ;
+; 12                                          ; 0                            ;
+; 13                                          ; 0                            ;
+; 14                                          ; 2                            ;
+; 15                                          ; 2                            ;
+; 16                                          ; 34                           ;
 +---------------------------------------------+------------------------------+
 
 
 +-------------------------------------------------------------------+
 ; LAB-wide Signals                                                  ;
 +------------------------------------+------------------------------+
-; LAB-wide Signals  (Average = 1.74) ; Number of LABs  (Total = 50) ;
+; LAB-wide Signals  (Average = 1.83) ; Number of LABs  (Total = 60) ;
 +------------------------------------+------------------------------+
-; 1 Async. clear                     ; 36                           ;
-; 1 Clock                            ; 39                           ;
-; 1 Clock enable                     ; 9                            ;
+; 1 Async. clear                     ; 42                           ;
+; 1 Clock                            ; 48                           ;
+; 1 Clock enable                     ; 18                           ;
 ; 1 Sync. clear                      ; 2                            ;
-; 2 Clock enables                    ; 1                            ;
 +------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Signals Sourced                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Signals Sourced  (Average = 18.36) ; Number of LABs  (Total = 50) ;
+; Number of Signals Sourced  (Average = 18.68) ; Number of LABs  (Total = 60) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
-; 1                                            ; 1                            ;
-; 2                                            ; 1                            ;
+; 1                                            ; 3                            ;
+; 2                                            ; 0                            ;
 ; 3                                            ; 0                            ;
-; 4                                            ; 3                            ;
-; 5                                            ; 4                            ;
+; 4                                            ; 2                            ;
+; 5                                            ; 3                            ;
 ; 6                                            ; 0                            ;
-; 7                                            ; 1                            ;
+; 7                                            ; 3                            ;
 ; 8                                            ; 0                            ;
 ; 9                                            ; 0                            ;
-; 10                                           ; 0                            ;
-; 11                                           ; 4                            ;
-; 12                                           ; 0                            ;
+; 10                                           ; 1                            ;
+; 11                                           ; 0                            ;
+; 12                                           ; 1                            ;
 ; 13                                           ; 1                            ;
-; 14                                           ; 0                            ;
-; 15                                           ; 2                            ;
-; 16                                           ; 7                            ;
-; 17                                           ; 0                            ;
+; 14                                           ; 2                            ;
+; 15                                           ; 3                            ;
+; 16                                           ; 9                            ;
+; 17                                           ; 1                            ;
 ; 18                                           ; 1                            ;
 ; 19                                           ; 1                            ;
 ; 20                                           ; 2                            ;
-; 21                                           ; 1                            ;
-; 22                                           ; 3                            ;
-; 23                                           ; 1                            ;
-; 24                                           ; 0                            ;
-; 25                                           ; 0                            ;
-; 26                                           ; 3                            ;
-; 27                                           ; 5                            ;
-; 28                                           ; 1                            ;
-; 29                                           ; 1                            ;
-; 30                                           ; 1                            ;
+; 21                                           ; 2                            ;
+; 22                                           ; 1                            ;
+; 23                                           ; 6                            ;
+; 24                                           ; 1                            ;
+; 25                                           ; 1                            ;
+; 26                                           ; 2                            ;
+; 27                                           ; 1                            ;
+; 28                                           ; 3                            ;
+; 29                                           ; 0                            ;
+; 30                                           ; 2                            ;
 ; 31                                           ; 2                            ;
-; 32                                           ; 4                            ;
+; 32                                           ; 6                            ;
 +----------------------------------------------+------------------------------+
 
 
-+--------------------------------------------------------------------------------+
-; LAB Signals Sourced Out                                                        ;
-+-------------------------------------------------+------------------------------+
-; Number of Signals Sourced Out  (Average = 9.76) ; Number of LABs  (Total = 50) ;
-+-------------------------------------------------+------------------------------+
-; 0                                               ; 0                            ;
-; 1                                               ; 4                            ;
-; 2                                               ; 3                            ;
-; 3                                               ; 2                            ;
-; 4                                               ; 4                            ;
-; 5                                               ; 1                            ;
-; 6                                               ; 4                            ;
-; 7                                               ; 3                            ;
-; 8                                               ; 4                            ;
-; 9                                               ; 0                            ;
-; 10                                              ; 2                            ;
-; 11                                              ; 1                            ;
-; 12                                              ; 3                            ;
-; 13                                              ; 1                            ;
-; 14                                              ; 0                            ;
-; 15                                              ; 1                            ;
-; 16                                              ; 12                           ;
-; 17                                              ; 4                            ;
-; 18                                              ; 0                            ;
-; 19                                              ; 1                            ;
-+-------------------------------------------------+------------------------------+
++---------------------------------------------------------------------------------+
+; LAB Signals Sourced Out                                                         ;
++--------------------------------------------------+------------------------------+
+; Number of Signals Sourced Out  (Average = 10.38) ; Number of LABs  (Total = 60) ;
++--------------------------------------------------+------------------------------+
+; 0                                                ; 0                            ;
+; 1                                                ; 5                            ;
+; 2                                                ; 3                            ;
+; 3                                                ; 1                            ;
+; 4                                                ; 2                            ;
+; 5                                                ; 1                            ;
+; 6                                                ; 5                            ;
+; 7                                                ; 3                            ;
+; 8                                                ; 7                            ;
+; 9                                                ; 2                            ;
+; 10                                               ; 3                            ;
+; 11                                               ; 3                            ;
+; 12                                               ; 0                            ;
+; 13                                               ; 1                            ;
+; 14                                               ; 1                            ;
+; 15                                               ; 0                            ;
+; 16                                               ; 18                           ;
+; 17                                               ; 3                            ;
+; 18                                               ; 0                            ;
+; 19                                               ; 0                            ;
+; 20                                               ; 0                            ;
+; 21                                               ; 2                            ;
++--------------------------------------------------+------------------------------+
 
 
 +-----------------------------------------------------------------------------+
 ; LAB Distinct Inputs                                                         ;
 +----------------------------------------------+------------------------------+
-; Number of Distinct Inputs  (Average = 13.14) ; Number of LABs  (Total = 50) ;
+; Number of Distinct Inputs  (Average = 14.33) ; Number of LABs  (Total = 60) ;
 +----------------------------------------------+------------------------------+
 ; 0                                            ; 0                            ;
 ; 1                                            ; 0                            ;
-; 2                                            ; 0                            ;
-; 3                                            ; 4                            ;
+; 2                                            ; 1                            ;
+; 3                                            ; 6                            ;
 ; 4                                            ; 4                            ;
 ; 5                                            ; 1                            ;
-; 6                                            ; 1                            ;
+; 6                                            ; 0                            ;
 ; 7                                            ; 2                            ;
-; 8                                            ; 3                            ;
-; 9                                            ; 3                            ;
-; 10                                           ; 0                            ;
-; 11                                           ; 2                            ;
-; 12                                           ; 0                            ;
-; 13                                           ; 2                            ;
-; 14                                           ; 2                            ;
-; 15                                           ; 1                            ;
-; 16                                           ; 9                            ;
-; 17                                           ; 5                            ;
-; 18                                           ; 0                            ;
+; 8                                            ; 1                            ;
+; 9                                            ; 2                            ;
+; 10                                           ; 2                            ;
+; 11                                           ; 1                            ;
+; 12                                           ; 1                            ;
+; 13                                           ; 3                            ;
+; 14                                           ; 3                            ;
+; 15                                           ; 4                            ;
+; 16                                           ; 5                            ;
+; 17                                           ; 4                            ;
+; 18                                           ; 1                            ;
 ; 19                                           ; 4                            ;
 ; 20                                           ; 3                            ;
-; 21                                           ; 1                            ;
-; 22                                           ; 0                            ;
-; 23                                           ; 2                            ;
-; 24                                           ; 0                            ;
-; 25                                           ; 0                            ;
+; 21                                           ; 3                            ;
+; 22                                           ; 2                            ;
+; 23                                           ; 1                            ;
+; 24                                           ; 1                            ;
+; 25                                           ; 1                            ;
 ; 26                                           ; 0                            ;
-; 27                                           ; 0                            ;
-; 28                                           ; 0                            ;
-; 29                                           ; 0                            ;
+; 27                                           ; 1                            ;
+; 28                                           ; 1                            ;
+; 29                                           ; 1                            ;
 ; 30                                           ; 1                            ;
 +----------------------------------------------+------------------------------+
 
@@ -2437,24 +2436,24 @@ Info (176353): Automatically promoted node rst (placed in PIN N26 (CLK5, LVDSCLK
         Info (176357): Destination node decoder:decoder|MAE_Decoder:decoder|enable
         Info (176357): Destination node Encoder:encoder|Burst_Generator:BurstGenerator|Out_burst~0
         Info (176357): Destination node Encoder:encoder|Manchester_Generator:ManchesterGenerator|process_0~0
-        Info (176357): Destination node decoder:decoder|MAE_Decoder:decoder|i[0]~2
+        Info (176357): Destination node decoder:decoder|MAE_Decoder:decoder|i[0]~1
         Info (176357): Destination node Encoder:encoder|MAE_emission:MAE_emission|reg[11]~0
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (171121): Fitter preparation operations ending: elapsed time is 00:00:01
+Info (171121): Fitter preparation operations ending: elapsed time is 00:00:00
 Info (170189): Fitter placement preparation operations beginning
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:00
 Info (170191): Fitter placement operations beginning
 Info (170137): Fitter placement was successful
-Info (170192): Fitter placement operations ending: elapsed time is 00:00:01
+Info (170192): Fitter placement operations ending: elapsed time is 00:00:02
 Info (170193): Fitter routing operations beginning
 Info (170195): Router estimated average interconnect usage is 0% of the available device resources
-    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X22_Y12 to location X32_Y23
-Info (170194): Fitter routing operations ending: elapsed time is 00:00:01
+    Info (170196): Router estimated peak interconnect usage is 1% of the available device resources in the region that extends from location X33_Y0 to location X43_Y11
+Info (170194): Fitter routing operations ending: elapsed time is 00:00:02
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.56 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.58 seconds.
 Info (306004): Started post-fitting delay annotation
 Warning (306006): Found 17 output pins without output pin load capacitance assignment
     Info (306007): Pin "Address_out[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
@@ -2480,9 +2479,9 @@ Info (306005): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Warning (169174): The Reserve All Unused Pins setting has not been specified, and will default to 'As output driving ground'.
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 784 megabytes
-    Info: Processing ended: Wed Mar  7 16:59:48 2018
-    Info: Elapsed time: 00:00:06
+    Info: Peak virtual memory: 792 megabytes
+    Info: Processing ended: Wed Mar 14 14:47:04 2018
+    Info: Elapsed time: 00:00:08
     Info: Total CPU time (on all processors): 00:00:09
 
 
