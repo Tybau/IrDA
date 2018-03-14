@@ -1,0 +1,9 @@
+do Simu/do_bench_encoder.do
+# Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+# ** Error: (vcom-7) Failed to open design unit file "../Source/Burst_Generator.vhd" in read mode.
+# No such file or directory. (errno = ENOENT)
+# ** Error: /opt/altera/13.0/modelsim_ase/linuxaloem/vcom failed.
+# Error in macro ./Simu/do_bench_encoder.do line 4
+# /opt/altera/13.0/modelsim_ase/linuxaloem/vcom failed.
+#     while executing
+# "vcom -93 ../Source/Burst_Generator.vhd"

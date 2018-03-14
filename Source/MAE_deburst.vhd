@@ -9,34 +9,28 @@ entity MAE_deburst is
 end entity MAE_deburst;
 
 architecture desc_MAE_deburst of MAE_deburst is
-	type State IS (E0, E1, E2, E3);
-	signal EP: State := E0;
+  signal cmpt : integer;
+  
 begin
 	process(clk, rst)
 	begin
 		if (rst = '1') then
-				EP <= E0;
+				cmpt <= 0;
 				trame_deburst <= '0';
 		elsif(rising_edge(clk)) then
 			if (tick = '1') then
-				case EP is
-					when E0 =>
-						if (trame_burst = '1') then
-							EP <= E1;
-						else
-							EP <= E0;
-						end if;
-						trame_deburst <= trame_burst;
-					when E1 =>
-						EP <= E2;
-						trame_deburst <= '1';
-					when E2 =>
-						EP <= E3;
-						trame_deburst <= '1';
-					when E3 =>
-						EP <= E0;
-						trame_deburst <= '1';
-				end case;
+				if (trame_burst = '1') then
+				  cmpt <= 16;
+				  trame_deburst <= '1';
+				else
+				  if (cmpt > 0) then
+				    trame_deburst <= '1';
+				    cmpt <= cmpt - 1;
+				  else
+				    trame_deburst <= '0';
+				    cmpt <= 0;
+				  end if;
+				end if;				  
 			end if;
 		end if;
 	end process;

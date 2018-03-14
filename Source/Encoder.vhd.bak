@@ -21,14 +21,14 @@ ARCHITECTURE Behavioral OF Encoder IS
 	SIGNAL manch: std_logic;
 	SIGNAL manch_trame: std_logic;
 	SIGNAL burst: std_logic;
-	SIGNAL : std_logic;
+	SIGNAL clear: std_logic;
 
 	BEGIN
 		manch_trame <= manch xor trame;
 		Tx <= enable and manch_trame and burst;
 
 		ManchesterGenerator : entity work.Manchester_Generator(Behavioral)
-			port map(Tick => tick_manchester, CLK => CLK, Out_manch => manch, rst => rst);
+			port map(Tick => tick_manchester, CLK => CLK, Out_manch => manch, rst => rst, clear => clear);
 
 		BurstGenerator : entity work.Burst_Generator(Behavioral)
 			port map(Tick => tick_burst, CLK => CLK, Out_burst => burst, rst => rst);
