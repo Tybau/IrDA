@@ -25,4 +25,4 @@ add wave Cmd_out
 add wave toggle
 add wave error_sig
 
-run 130 ms
+run 35ms

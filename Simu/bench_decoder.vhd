@@ -21,13 +21,13 @@ BEGIN
   decoder : entity work.decoder(arch_decoder)
     port map(signal_in => Tx, CLK => CLK,reset => rst, enable => enable, address => Address_out, command => Cmd_out, toggle => toggle, error_sig => error_sig);
   
-  cloked : process
+  clocked : process
   BEGIN
     CLK <= '0';
     wait for 10 ns;
     CLK <= '1';
     wait for 10 ns;
-  end process cloked;
+  end process clocked;
   
   Test : process
   BEGIN
